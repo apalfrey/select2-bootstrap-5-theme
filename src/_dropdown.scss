@@ -19,6 +19,7 @@
         .select2-search {
             padding: $s2bs5-padding-y $s2bs5-padding-x;
 
+            // Search field
             .select2-search__field {
                 display: block;
                 width: 100%;
@@ -34,9 +35,8 @@
                 appearance: none;
 
                 @include border-radius($s2bs5-border-radius, 0);
-
                 @include box-shadow($s2bs5-box-shadow);
-                @include transition($input-transition);
+                @include transition($s2bs5-transition);
 
                 &:focus {
                     border-color: $s2bs5-focus-border-color;
@@ -50,13 +50,15 @@
             max-height: $s2bs5-options-max-height;
             overflow-y: auto;
 
+            // Item
             .select2-results__option {
                 padding: $s2bs5-item-padding-y $s2bs5-item-padding-x;
                 font-weight: $s2bs5-font-weight;
                 line-height: $s2bs5-line-height;
 
+                // No results message
                 &.select2-results__message {
-                    color: $input-placeholder-color;
+                    color: $s2bs5-placeholder-color;
                 }
 
                 // Highlighted Item

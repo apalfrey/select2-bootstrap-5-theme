@@ -20,7 +20,7 @@
         border: $s2bs5-border-width solid $s2bs5-border-color;
         @include border-radius($s2bs5-border-radius, 0);
         @include box-shadow($s2bs5-box-shadow);
-        @include transition($input-transition);
+        @include transition($s2bs5-transition);
         appearance: none;
     }
 
@@ -39,7 +39,7 @@
         @include border-bottom-radius(0);
     }
 
-    // Hide bottom border when open and above
+    // Hide top border when open and above
     &.select2-container--open.select2-container--above .select2-selection {
         border-top: $s2bs5-border-width solid transparent;
         @include border-top-radius(0);
@@ -57,15 +57,15 @@
             position: absolute;
             top: 50%;
             right: $s2bs5-indicator-padding;
-            width: .75rem;
-            height: .75rem;
-            padding: $btn-close-padding-y $btn-close-padding-x;
-            background: transparent escape-svg($s2bs5-clear-bg) center / .75rem auto no-repeat;
+            width: $s2b25-clear-width;
+            height: $s2b25-clear-height;
+            padding: $s2bs5-clear-padding-y $s2bs5-clear-padding-x;
+            background: $s2bs5-clear-bg;
             transform: translateY(-50%);
 
             // Change icon on hover
             &:hover {
-                background: transparent escape-svg($s2bs5-clear-hover-bg) center / .75rem auto no-repeat;
+                background: $s2bs5-clear-hover-bg;
             }
 
             // Hide children

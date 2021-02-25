@@ -24,6 +24,7 @@
                 }
             }
 
+            // Remove search field if no items selected
             .select2-selection__rendered:not(:empty) {
                 padding-bottom: 0;
 

@@ -1,3 +1,4 @@
+// Duplicated & altered from Bootstrap 5
 .input-group {
     &:not(.has-validation) {
         > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
@@ -27,6 +28,7 @@
         }
     }
 
+    // Ensure container takes up remaining room
     .select2-container--bootstrap-5 {
         flex-grow: 1;
     }
