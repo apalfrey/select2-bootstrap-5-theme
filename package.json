@@ -1,0 +1,30 @@
+{
+  "name": "select2-bootstrap-5-theme",
+  "description": "Select2 v4 theme for Bootstrap 5",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": "Andrew Palfrey <apalfrey@apalfrey.me>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apalfrey/select2-bootstrap-5-theme.git"
+  },
+  "bugs": "https://github.com/apalfrey/select2-bootstrap-5-theme/issues",
+  "files": [
+    "README.md"
+  ],
+  "keywords": [
+    "select2",
+    "theme",
+    "select2-theme",
+    "bootstrap",
+    "bootstrap5",
+    "css",
+    "scss",
+    "sass"
+  ],
+  "main": "",
+  "style": "dist/select2-bootstrap-5-theme.css",
+  "sass": "scss/select2-bootstrap-5-theme.scss",
+  "dependencies": {},
+  "devDependencies": {}
+}
