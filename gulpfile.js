@@ -27,7 +27,7 @@ const compile = ( style ) => {
             suffix: ".min"
         } ) ) )
         .pipe( gulp.dest( "dist" ) )
-        .pipe( gulpif( style == "expanded", gulp.dest( "examples" ) ) )
+        .pipe( gulpif( style == "expanded", gulp.dest( "docs" ) ) )
 }
 
 gulp.task( "compile:dev", () => {
@@ -61,9 +61,9 @@ gulp.task( "clean", () => {
 
 gulp.task( "browsersync", ( done ) => {
     browsersync.init( {
-        server: "./examples",
+        server: "./docs",
         files: [
-            "examples/**/*.*"
+            "docs/**/*.*"
         ],
         watch: true,
         ui: false
