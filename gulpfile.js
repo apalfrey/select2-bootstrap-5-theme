@@ -3,6 +3,7 @@ const gulp = require( "gulp" )
 
 // External dependencies
 const autoprefixer = require( "autoprefixer" )
+const browsersync = require( "browser-sync" )
 const del = require( "del" )
 const gulpif = require( "gulp-if" )
 const postcss = require( "gulp-postcss" )
@@ -26,6 +27,7 @@ const compile = ( style ) => {
             suffix: ".min"
         } ) ) )
         .pipe( gulp.dest( "dist" ) )
+        .pipe( gulpif( style == "expanded", gulp.dest( "examples" ) ) )
 }
 
 gulp.task( "compile:dev", () => {
@@ -40,7 +42,7 @@ gulp.task( "lint", () => {
         .pipe( stylelint( {
             failAfterError: true,
             reporters: [
-                { formatter: 'verbose', console: true },
+                { formatter: "verbose", console: true },
             ]
         } ) )
 } )
@@ -57,5 +59,16 @@ gulp.task( "clean", () => {
     ] )
 } )
 
+gulp.task( "browsersync", ( done ) => {
+    browsersync.init( {
+        server: "./examples",
+        files: [
+            "examples/**/*.*"
+        ],
+        watch: true,
+        ui: false
+    }, done )
+} )
+
 gulp.task( "compile", gulp.series( "clean", "lint", "compile:dev", "compile:min" ) )
-gulp.task( "default", gulp.series( "compile", "watch" ) )
+gulp.task( "default", gulp.series( "compile", "browsersync", "watch" ) )
