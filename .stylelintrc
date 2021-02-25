@@ -28,6 +28,11 @@
                 "ignore": "local"
             }
         ],
-        "scss/selector-no-union-class-name": true
+        "scss/selector-no-union-class-name": true,
+        "selector-class-pattern": null,
+        "selector-max-class": null,
+        "selector-max-combinators": null,
+        "selector-max-compound-selectors": null,
+        "selector-no-qualifying-type": null
     }
 }

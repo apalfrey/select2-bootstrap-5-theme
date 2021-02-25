@@ -1,0 +1,69 @@
+.select2-container--bootstrap-5 {
+    .select2-selection--multiple {
+        // List items
+        .select2-selection__rendered {
+            display: flex;
+            flex-direction: row;
+            margin: 0;
+            list-style: none;
+
+            &:not(:empty) {
+                padding-bottom: $s2bs5-padding-y;
+            }
+
+            // Items
+            .select2-selection__choice {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: $badge-padding-y $badge-padding-x;
+                margin-right: .375rem; // TODO variables
+                margin-bottom: .375rem;
+                color: $s2bs5-color;
+                cursor: auto;
+                border: $s2bs5-border-width solid $s2bs5-border-color;
+                @include border-radius($s2bs5-border-radius);
+
+                // Removal button
+                .select2-selection__choice__remove {
+                    width: .75rem;
+                    height: .75rem;
+                    padding: $btn-close-padding-y $btn-close-padding-x;
+                    margin-right: .25rem;
+                    background: transparent escape-svg($s2bs5-clear-bg) center / .75rem auto no-repeat;
+                    border: 0;
+
+                    &:hover {
+                        background: transparent escape-svg($s2bs5-clear-hover-bg) center / .75rem auto no-repeat;
+                    }
+
+                    // Remove children
+                    >span {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .select2-search {
+            display: block;
+            width: 100%;
+            height: $input-line-height * 1em;
+
+            .select2-search__field {
+                width: 100%;
+                height: $input-line-height * 1em;
+                margin-top: 0;
+                margin-left: 0;
+                font-family: $s2bs5-font-family;
+                line-height: $s2bs5-line-height;
+                background-color: transparent;
+            }
+        }
+
+        // Clear button override
+        .select2-selection__clear {
+            right: $s2bs5-padding-x;
+        }
+    }
+}

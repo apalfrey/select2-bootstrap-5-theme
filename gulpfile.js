@@ -17,6 +17,9 @@ const compile = ( style ) => {
             precision: 6,
             outputStyle: style,
             errLogToConsole: true,
+            includePaths: [
+                "node_modules"
+            ]
         } ) )
         .pipe( postcss( [
             autoprefixer( {
@@ -66,7 +69,8 @@ gulp.task( "browsersync", ( done ) => {
             "docs/**/*.*"
         ],
         watch: true,
-        ui: false
+        ui: false,
+        open: false
     }, done )
 } )
 

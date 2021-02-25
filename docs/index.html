@@ -16,132 +16,417 @@
     <link href="select2-bootstrap-5-theme.css" rel="stylesheet"> <!-- for local development env -->
 </head>
 
-<body class="py-5">
+<body class="bg-light pb-5">
+    <div class="container-fluid bg-primary text-white p-5 mb-5">
+        <div class="container">
+            <h1><a href="https://github.com/apalfrey/select2-bootstrap-5-theme" target="_blank" class="link-light">select2-bootstrap-5-theme</a> Example Page</h1>
+        </div>
+    </div>
 
-    <div class="container">
-        <h3>Example of <a href="https://github.com/apalfrey/select2-bootstrap-5-theme" target="_blank">select2-bootstrap-5-theme</a></h3>
+    <div class="container pb-3 mb-5">
+        <h2>Overview</h2>
         <hr>
 
+        <h3>Single Select</h3>
+        <form class="mb-4">
+            <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                <option></option>
+                <option>Reactive</option>
+                <option>Solution</option>
+                <option>Conglomeration</option>
+                <option>Algoritm</option>
+                <option>Holistic</option>
+            </select>
+        </form>
+
+        <h3>Single Select w/ optgroup</h3>
+        <form class="mb-4">
+            <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                <option></option>
+                <optgroup label="Group 1">
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                </optgroup>
+                <optgroup label="Group 2">
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </optgroup>
+            </select>
+        </form>
+
+        <h3>Multiple Select</h3>
+        <form class="mb-4">
+            <select class="form-select" multiple data-placeholder="Choose anything" data-allow-clear="1">
+                <option>Christmas Island</option>
+                <option>South Sudan</option>
+                <option>Jamaica</option>
+                <option>Kenya</option>
+                <option>French Guiana</option>
+                <option>Mayotta</option>
+                <option>Liechtenstein</option>
+                <option>Denmark</option>
+                <option>Eritrea</option>
+                <option>Gibraltar</option>
+                <option>Saint Helena, Ascension and Tristan da Cunha</option>
+                <option>Haiti</option>
+                <option>Namibia</option>
+                <option>South Georgia and the South Sandwich Islands</option>
+                <option>Vietnam</option>
+                <option>Yemen</option>
+                <option>Philippines</option>
+                <option>Benin</option>
+                <option>Czech Republic</option>
+                <option>Russia</option>
+            </select>
+        </form>
+    </div>
+
+    <div class="container pb-3 mb-5">
+        <h2>Disabled</h2>
+        <hr>
+
+        <h3>Disabled Single Select</h3>
+        <form class="mb-4">
+            <select class="form-select" disabled data-placeholder="Choose one thing" data-allow-clear="1">
+                <option></option>
+                <option>Reactive</option>
+                <option>Solution</option>
+                <option>Conglomeration</option>
+                <option>Algoritm</option>
+                <option>Holistic</option>
+            </select>
+        </form>
+
+        <h3>Disabled Multiple Select</h3>
+        <form class="mb-4">
+            <select class="form-select" disabled multiple data-placeholder="Choose anything" data-allow-clear="1">
+                <option>Christmas Island</option>
+                <option>South Sudan</option>
+                <option selected>Jamaica</option>
+                <option>Kenya</option>
+                <option>French Guiana</option>
+                <option>Mayotta</option>
+                <option selected>Liechtenstein</option>
+                <option selected>Denmark</option>
+                <option>Eritrea</option>
+                <option>Gibraltar</option>
+                <option>Saint Helena, Ascension and Tristan da Cunha</option>
+                <option>Haiti</option>
+                <option>Namibia</option>
+                <option selected>South Georgia and the South Sandwich Islands</option>
+                <option>Vietnam</option>
+                <option>Yemen</option>
+                <option>Philippines</option>
+                <option>Benin</option>
+                <option>Czech Republic</option>
+                <option>Russia</option>
+            </select>
+        </form>
+    </div>
+
+    <div class="container pb-3 mb-5">
+        <h2>Input Groups</h2>
+        <hr>
+
+        <h3>Prepend</h3>
+        <form class="mb-5">
+            <div class="input-group mb-3">
+                <div class="input-group-text">Prepend</div>
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary" type="button">Prepend</button>
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Prepend</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+            </div>
+
+            <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary">Prepend</button>
+                <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+            </div>
+        </form>
+
+        <h3>Append</h3>
+        <form class="mb-5">
+            <div class="input-group mb-3">
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+                <div class="input-group-text">Append</div>
+            </div>
+
+            <div class="input-group mb-3">
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+                <button class="btn btn-outline-secondary" type="button">Append</button>
+            </div>
+
+            <div class="input-group mb-3">
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Append</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+
+            <div class="input-group mb-3">
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+                <button class="btn btn-outline-secondary">Append</button>
+                <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </form>
+
+        <h3>Prepend & Append</h3>
+        <form class="mb-5">
+            <div class="input-group mb-3">
+                <div class="input-group-text">Prepend</div>
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+                <div class="input-group-text">Append</div>
+            </div>
+
+            <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary" type="button">Prepend</button>
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+                <button class="btn btn-outline-secondary" type="button">Append</button>
+            </div>
+
+            <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Prepend</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+                <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Append</button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+
+            <div class="input-group mb-3">
+                <button class="btn btn-outline-secondary">Prepend</button>
+                <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+                <select class="form-select" data-placeholder="Choose one thing" data-allow-clear="1">
+                    <option></option>
+                    <option>Reactive</option>
+                    <option>Solution</option>
+                    <option>Conglomeration</option>
+                    <option>Algoritm</option>
+                    <option>Holistic</option>
+                </select>
+                <button class="btn btn-outline-secondary">Append</button>
+                <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Action</a></li>
+                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    <li><hr class="dropdown-divider"></li>
+                    <li><a class="dropdown-item" href="#">Separated link</a></li>
+                </ul>
+            </div>
+        </form>
+    </div>
+
+    <div class="container pb-3 mb-5">
+        <h2>Validation</h2>
+        <hr>
+
+        <h3>With <code>.was-validated</code></h3>
+        <form class="was-validated mb-5">
+            <select class="form-select mb-3" required data-placeholder="Choose one thing" data-allow-clear="1" data-selection-css-class="mb-3">
+                <option></option>
+                <option selected>Reactive</option>
+                <option>Solution</option>
+                <option>Conglomeration</option>
+                <option>Algoritm</option>
+                <option>Holistic</option>
+            </select>
+
+            <select class="form-select mb-3" multiple required data-placeholder="Choose anything" data-allow-clear="1" data-selection-css-class="mb-3">
+                <option>Cuba</option>
+                <option>Poland</option>
+                <option>Russia</option>
+                <option>Poland</option>
+                <option>Indonesia</option>
+                <option>China</option>
+                <option>Philippines</option>
+                <option>Philippines</option>
+                <option>Sweden</option>
+                <option>Japan</option>
+                <option>Bulgaria</option>
+                <option>Russia</option>
+                <option>China</option>
+                <option>Greece</option>
+                <option>Swaziland</option>
+                <option>Ireland</option>
+                <option>China</option>
+                <option>China</option>
+                <option>Czech Republic</option>
+                <option>Russia</option>
+            </select>
+        </form>
+
+        <h3>With <code>.is-valid</code> and <code>.is-invalid</code></h3>
         <form>
-            <div class="form-group">
-                <label>Example of select</label>
-                <select data-placeholder="Choose one thing" data-allow-clear="1">
-                    <option></option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
+            <select class="form-select mb-3 is-valid" required data-placeholder="Choose one thing" data-allow-clear="1" data-selection-css-class="mb-3">
+                <option></option>
+                <option selected>Reactive</option>
+                <option>Solution</option>
+                <option>Conglomeration</option>
+                <option>Algoritm</option>
+                <option>Holistic</option>
+            </select>
 
-            <div class="form-group">
-                <label>Example of multiple select</label>
-                <select multiple data-placeholder="Choose anything" data-allow-clear="1">
-                    <option>Tommy Yount</option>
-                    <option>Hye Panter</option>
-                    <option>Vi Yohe</option>
-                    <option>Keva Bandy</option>
-                    <option>Hannelore Corning</option>
-                    <option>Delorse Whitcher</option>
-                    <option>Katharyn Marrinan</option>
-                    <option>Jeannine Tope</option>
-                    <option>Jamila Braggs</option>
-                    <option>Eden Cunniff</option>
-                    <option>Suzy Schoen</option>
-                    <option>Elza Mccook</option>
-                    <option>Liana Goris</option>
-                    <option>Pauletta Schlabach</option>
-                    <option>Synthia Dupuis</option>
-                    <option>Scarlett Kestler</option>
-                    <option>Magdalen Mele</option>
-                    <option>Susanna Schenk</option>
-                    <option>Else Stupka</option>
-                    <option>Pennie Khang</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Example of disabled select</label>
-                <select disabled data-placeholder="Cannot choose" data-allow-clear="1">
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Example of disabled multiple select with selected items</label>
-                <select disabled multiple>
-                    <option selected>Tommy Yount</option>
-                    <option selected>Hye Panter</option>
-                    <option selected>Vi Yohe</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Example of select with optgroup</label>
-                <select data-placeholder="Choose one thing" data-allow-clear="1">
-                    <option></option>
-                    <optgroup label="Group A">
-                        <option>A1</option>
-                        <option>A2</option>
-                        <option>A3</option>
-                    </optgroup>
-                    <optgroup label="Group B">
-                        <option>B1</option>
-                        <option>B2</option>
-                        <option>B3</option>
-                    </optgroup>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label>Example of input-group</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Prepend</span>
-                    </div>
-                    <select data-placeholder="Choose one thing" data-allow-clear="1">
-                        <option></option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
-                </div>
-                <div class="input-group mt-2">
-                    <select data-placeholder="Choose one thing" data-allow-clear="1">
-                        <option></option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
-                    <div class="input-group-append">
-                        <span class="input-group-text">Append</span>
-                    </div>
-                </div>
-                <div class="input-group mt-2">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">Prepend</span>
-                    </div>
-                    <select data-placeholder="Choose one thing" data-allow-clear="1">
-                        <option></option>
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                    </select>
-                    <div class="input-group-append">
-                        <span class="input-group-text">Append</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label>Example of validated select</label>
-                <select data-placeholder="Invalid example" class="form-control is-invalid" data-allow-clear="1">
-                    <option></option>
-                </select>
-                <div class="invalid-feedback">
-                    Something is wrong.
-                </div>
-            </div>
+            <select class="form-select mb-3 is-invalid" multiple required data-placeholder="Choose anything" data-allow-clear="1" data-selection-css-class="mb-3">
+                <option>Cuba</option>
+                <option>Poland</option>
+                <option>Russia</option>
+                <option>Poland</option>
+                <option>Indonesia</option>
+                <option>China</option>
+                <option>Philippines</option>
+                <option>Philippines</option>
+                <option>Sweden</option>
+                <option>Japan</option>
+                <option>Bulgaria</option>
+                <option>Russia</option>
+                <option>China</option>
+                <option>Greece</option>
+                <option>Swaziland</option>
+                <option>Ireland</option>
+                <option>China</option>
+                <option>China</option>
+                <option>Czech Republic</option>
+                <option>Russia</option>
+            </select>
         </form>
     </div>
 

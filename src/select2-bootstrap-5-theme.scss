@@ -1,0 +1,17 @@
+/*!
+ * Select2 v4 Bootstrap 5 theme v1.0.0
+*/
+
+@import "bootstrap/scss/functions";
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+@import "variables";
+
+@import "layout"; // TODO implement sizing
+@import "dropdown";
+@import "single";
+@import "multiple";
+@import "disabled";
+@import "input-group";
+@import "validation";
