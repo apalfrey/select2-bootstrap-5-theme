@@ -2,8 +2,10 @@
 const gulp = require( "gulp" )
 
 // External dependencies
+const autoprefixer = require( "autoprefixer" )
 const del = require( "del" )
 const gulpif = require( "gulp-if" )
+const postcss = require( "gulp-postcss" )
 const rename = require( "gulp-rename" )
 const sass = require( "gulp-sass" )
 const stylelint = require( "gulp-stylelint" )
@@ -15,6 +17,11 @@ const compile = ( style ) => {
             outputStyle: style,
             errLogToConsole: true,
         } ) )
+        .pipe( postcss( [
+            autoprefixer( {
+                cascade: true
+            } )
+        ] ) )
         .pipe( gulpif( style == "compressed", rename( {
             suffix: ".min"
         } ) ) )
