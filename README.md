@@ -1,10 +1,13 @@
 # Select2 Bootstrap 5 Theme
 
-<!-- Badges -->
+![npm](https://img.shields.io/npm/v/select2-bootstrap-5-theme?style=for-the-badge)
+![License](https://img.shields.io/github/license/apalfrey/select2-bootstrap-5-theme?style=for-the-badge)
+![Dependencies](https://img.shields.io/david/apalfrey/select2-bootstrap-5-theme?style=for-the-badge)
 
 [Select2](https://github.com/select2/select2) v4 theme for Bootstrap 5, inspired by [select2-bootstrap4-theme](https://github.com/ttskch/select2-bootstrap4-theme)
 
-<!-- Demo -->
+## Examples
+https://apalfrey.github.io/select2-bootstrap-5-theme/
 
 ## Installation
 
@@ -25,14 +28,55 @@ $ npm install select2-bootstrap-5-theme
 $ yarn add select2-bootstrap-5-theme
 ```
 
-<!-- Inclusion -->
+<!-- TODO Inclusion -->
 
 ## Usage
 
 ```js
+// Basic
 $("select").select2({
     theme: "bootstrap-5",
 });
+
+// Small
+$("select").select2({
+    theme: "bootstrap-5",
+    selectionCssClass: "select2--small",
+    dropdownCssClass: "select2--small",
+});
+
+// Large
+$("select").select2({
+    theme: "bootstrap-5",
+    selectionCssClass: "select2--large",
+    dropdownCssClass: "select2--large",
+});
 ```
 
-<!-- Contributions/building -->
+<!-- TODO Contributions/building -->
+
+## License
+
+```
+MIT License
+
+Copyright (c) 2020 Andrew Palfrey <apalfrey@apalfrey.me>
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```

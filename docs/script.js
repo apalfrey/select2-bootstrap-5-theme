@@ -6,7 +6,8 @@ function select2( size ) {
             placeholder: $( this ).data( "placeholder" ),
             allowClear: Boolean( $( this ).data( "allow-clear" ) ),
             closeOnSelect: !$( this ).attr( "multiple" ),
-            selectionCssClass: size == "small" || size == "large" ? "select2--" + size : ""
+            selectionCssClass: size == "small" || size == "large" ? "select2--" + size : "",
+            dropdownCssClass: size == "small" || size == "large" ? "select2--" + size : "",
         } );
     } );
 }
