@@ -1,6 +1,5 @@
 // Small
-.form-select-sm + .select2-container--bootstrap-5,
-.select2--small {
+.select2-container--bootstrap-5 .select2--small {
     // Layout
     &.select2-selection {
         min-height: $s2bs5-height-sm;
@@ -87,8 +86,7 @@
 }
 
 // Large
-.form-select-lg + .select2-container--bootstrap-5,
-.select2--large {
+.select2-container--bootstrap-5 .select2--large {
     // Layout
     &.select2-selection {
         min-height: $s2bs5-height-lg;
