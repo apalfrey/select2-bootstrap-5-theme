@@ -6,6 +6,8 @@ $( function () {
             placeholder: $( this ).data( "placeholder" ),
             allowClear: Boolean( $( this ).data( "allow-clear" ) ),
             closeOnSelect: !$( this ).attr( "multiple" ),
+            selectionCssClass: "select2--small",
+            dropdownCssClass: "select2--small"
         } );
     } );
 } );

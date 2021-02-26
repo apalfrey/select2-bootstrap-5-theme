@@ -17,9 +17,10 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                padding: $badge-padding-y $badge-padding-x;
+                padding: $s2bs5-multi-item-padding-y $s2bs5-multi-item-padding-x;
                 margin-right: .375rem;
                 margin-bottom: .375rem;
+                @include font-size($s2bs5-font-size);
                 color: $s2bs5-color;
                 cursor: auto;
                 border: $s2bs5-border-width solid $s2bs5-border-color;
