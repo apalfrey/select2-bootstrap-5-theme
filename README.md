@@ -28,7 +28,17 @@ $ npm install select2-bootstrap-5-theme
 $ yarn add select2-bootstrap-5-theme
 ```
 
-<!-- TODO Inclusion -->
+#### HTML
+```html
+<link rel="stylesheet" href="/path/to/select2.css">
+<link rel="stylesheet" href="/path/to/select2-bootstrap-5.min.css">
+```
+
+#### SCSS
+```scss
+@import "node_modules/select2/src/scss/core";
+@import "node_modules/select2-bootstrap-5-theme/src/select2-bootstrap-5-theme";
+```
 
 ## Usage
 
