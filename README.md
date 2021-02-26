@@ -15,7 +15,7 @@ https://apalfrey.github.io/select2-bootstrap-5-theme/
 
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.0.0/dist/select2-bootstrap-5.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.0.0/dist/select2-bootstrap-5-theme.min.css" />
 ```
 
 ### Package Managers
@@ -31,7 +31,7 @@ $ yarn add select2-bootstrap-5-theme
 #### HTML
 ```html
 <link rel="stylesheet" href="/path/to/select2.css">
-<link rel="stylesheet" href="/path/to/select2-bootstrap-5.min.css">
+<link rel="stylesheet" href="/path/to/select2-bootstrap-5-theme.min.css">
 ```
 
 #### SCSS
