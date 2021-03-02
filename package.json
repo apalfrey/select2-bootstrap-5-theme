@@ -27,7 +27,7 @@
   ],
   "main": "",
   "style": "dist/select2-bootstrap-5-theme.css",
-  "sass": "scss/select2-bootstrap-5-theme.scss",
+  "sass": "src/select2-bootstrap-5-theme.scss",
   "dependencies": {
     "bootstrap": "5.0.0-beta2"
   },
