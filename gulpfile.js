@@ -16,10 +16,7 @@ const compile = ( style ) => {
         .pipe( sass( {
             precision: 6,
             outputStyle: style,
-            errLogToConsole: true,
-            includePaths: [
-                "node_modules"
-            ]
+            errLogToConsole: true
         } ) )
         .pipe( postcss( [
             autoprefixer( {
