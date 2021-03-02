@@ -1,5 +1,5 @@
 /*!
- * Select2 v4 Bootstrap 5 theme v1.0.0
+ * Select2 v4 Bootstrap 5 theme v1.0.1
 */
 .select2-container--bootstrap-5 {
   display: block;
@@ -195,6 +195,7 @@
 .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   margin: 0;
   list-style: none;
 }
