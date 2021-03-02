@@ -5,6 +5,7 @@
 [![Dependencies](https://img.shields.io/david/apalfrey/select2-bootstrap-5-theme?style=for-the-badge)](https://david-dm.org/apalfrey/select2-bootstrap-5-theme)
 
 [Select2](https://github.com/select2/select2) v4 theme for Bootstrap 5, inspired by [select2-bootstrap4-theme](https://github.com/ttskch/select2-bootstrap4-theme)
+**Currently only works for Select2 v4.1.0**
 
 ## Examples
 https://apalfrey.github.io/select2-bootstrap-5-theme/
@@ -14,7 +15,7 @@ https://apalfrey.github.io/select2-bootstrap-5-theme/
 ### CDN
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.0.0/dist/select2-bootstrap-5-theme.min.css" />
 ```
 
