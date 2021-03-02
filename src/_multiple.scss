@@ -4,6 +4,7 @@
         .select2-selection__rendered {
             display: flex;
             flex-direction: row;
+            flex-wrap: wrap;
             margin: 0;
             list-style: none;
 
