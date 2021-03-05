@@ -27,6 +27,9 @@ $ npm install select2-bootstrap-5-theme
 
 # yarn
 $ yarn add select2-bootstrap-5-theme
+
+# composer
+$ composer require apalfrey/select2-bootstrap-5-theme
 ```
 
 #### HTML
