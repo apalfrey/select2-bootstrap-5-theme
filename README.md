@@ -1,8 +1,10 @@
 # Select2 Bootstrap 5 Theme
 
-[![npm](https://img.shields.io/npm/v/select2-bootstrap-5-theme?style=for-the-badge)](https://www.npmjs.com/package/select2-bootstrap-5-theme)
-[![License](https://img.shields.io/github/license/apalfrey/select2-bootstrap-5-theme?style=for-the-badge)](LICENSE)
-[![Dependencies](https://img.shields.io/david/apalfrey/select2-bootstrap-5-theme?style=for-the-badge)](https://david-dm.org/apalfrey/select2-bootstrap-5-theme)
+[![GitHub](https://img.shields.io/github/v/release/apalfrey/select2-bootstrap-5-theme?style=flat-square)](https://github.com/apalfrey/select2-bootstrap-5-theme)
+[![npm](https://img.shields.io/npm/v/select2-bootstrap-5-theme?style=flat-square)](https://www.npmjs.com/package/select2-bootstrap-5-theme)
+[![Packagist Version](https://img.shields.io/packagist/v/apalfrey/select2-bootstrap-5-theme?style=flat-square)](https://packagist.org/packages/apalfrey/select2-bootstrap-5-theme)
+[![License](https://img.shields.io/github/license/apalfrey/select2-bootstrap-5-theme?style=flat-square)](LICENSE)
+[![Dependencies](https://img.shields.io/david/apalfrey/select2-bootstrap-5-theme?style=flat-square)](https://david-dm.org/apalfrey/select2-bootstrap-5-theme)
 
 [Select2](https://github.com/select2/select2) v4 theme for Bootstrap 5, inspired by [select2-bootstrap4-theme](https://github.com/ttskch/select2-bootstrap4-theme)
 **Currently only works for Select2 v4.1.0**
