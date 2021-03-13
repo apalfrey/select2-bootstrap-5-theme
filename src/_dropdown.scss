@@ -69,7 +69,8 @@
                 }
 
                 // Selected Item
-                &.select2-results__option--selected {
+                &.select2-results__option--selected,
+                &[aria-selected="true"] {
                     color: color-contrast($s2bs5-item-active-bg);
                     background-color: $s2bs5-item-active-bg;
                 }

@@ -14,31 +14,45 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
 
     <!-- select2-bootstrap-5-theme -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.1.0/dist/select2-bootstrap-5-theme.min.css" /> <!-- for live demo page -->
-    <link href="select2-bootstrap-5-theme.css" rel="stylesheet"> <!-- for local development env -->
+    <link href="/select2-bootstrap-5-theme.css" rel="stylesheet"> <!-- for local development env -->
 </head>
 
 <body class="bg-light pb-5">
     <div class="container-fluid bg-primary text-white p-5 mb-3">
         <div class="container">
             <h1><a href="https://github.com/apalfrey/select2-bootstrap-5-theme" target="_blank" class="link-light">select2-bootstrap-5-theme</a> Example Page</h1>
+            <h2>Using Select2 v4.1.x</h2>
         </div>
     </div>
-    <div class="container">
-        <ul class="nav nav-pills mb-5">
-            <li class="nav-item">
-                <a href="#" class="nav-link select2-size active" id="normal">Normal size</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link select2-size" id="small">Small size</a>
-            </li>
-            <li class="nav-item">
-                <a href="#" class="nav-link select2-size" id="large">Large size</a>
-            </li>
-            <li class="nav-item ms-auto">
-                <a href="/rtl.html" class="nav-link">RTL</a>
-            </li>
-        </ul>
+    <div class="container mb-5">
+        <div class="row justify-content-between">
+            <div class="col-12 col-md-auto">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link select2-size active" id="normal">Normal size</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link select2-size" id="small">Small size</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link select2-size" id="large">Large size</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-12 col-md-auto">
+                <ul class="nav nav-pills">
+                    <li class="nav-item">
+                        <a href="/4.0" class="nav-link">Select2 4.0</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/4.1" class="nav-link active">Select2 4.1</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="rtl.html" class="nav-link">RTL</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 
     <div class="container pb-3 mb-5">
@@ -464,7 +478,7 @@
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 
     <!-- select2-bootstrap-5-theme -->
-    <script src="script.js"></script>
+    <script src="/script.js"></script>
 </body>
 
 </html>
