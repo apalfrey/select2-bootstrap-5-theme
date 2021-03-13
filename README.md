@@ -7,7 +7,8 @@
 [![Dependencies](https://img.shields.io/david/apalfrey/select2-bootstrap-5-theme?style=flat-square)](https://david-dm.org/apalfrey/select2-bootstrap-5-theme)
 
 [Select2](https://github.com/select2/select2) v4 theme for Bootstrap 5, inspired by [select2-bootstrap4-theme](https://github.com/ttskch/select2-bootstrap4-theme)
-**Currently only works for Select2 v4.1.0**
+
+**Works with Select2 v4.0 and v4.1**
 
 ## Examples
 https://apalfrey.github.io/select2-bootstrap-5-theme/
@@ -16,8 +17,21 @@ https://apalfrey.github.io/select2-bootstrap-5-theme/
 
 ### CDN
 
+#### Select2 v4.0
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.1.0/dist/select2-bootstrap-5-theme.min.css" />
+<!-- Or for RTL support -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.1.0/dist/select2-bootstrap-5-theme.rtl.min.css" />
+```
+
+#### Select2 v4.1
 ```html
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.1.0/dist/select2-bootstrap-5-theme.min.css" />
 <!-- Or for RTL support -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.1.0/dist/select2-bootstrap-5-theme.rtl.min.css" />
@@ -61,14 +75,16 @@ $("select").select2({
 // Small
 $("select").select2({
     theme: "bootstrap-5",
-    selectionCssClass: "select2--small",
+    containerCssClass: "select2--small", // For Select2 v4.0
+    selectionCssClass: "select2--small", // For Select2 v4.1
     dropdownCssClass: "select2--small",
 });
 
 // Large
 $("select").select2({
     theme: "bootstrap-5",
-    selectionCssClass: "select2--large",
+    containerCssClass: "select2--large", // For Select2 v4.0
+    selectionCssClass: "select2--large", // For Select2 v4.1
     dropdownCssClass: "select2--large",
 });
 ```

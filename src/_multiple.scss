@@ -5,13 +5,9 @@
             display: flex;
             flex-direction: row;
             flex-wrap: wrap;
+            padding-left: 0;
             margin: 0;
             list-style: none;
-
-            // Add bottom padding when items selected
-            &:not(:empty) {
-                padding-bottom: $s2bs5-padding-y;
-            }
 
             // Items
             .select2-selection__choice {
@@ -33,6 +29,9 @@
                     height: $s2b25-clear-height;
                     padding: $s2bs5-clear-padding-y $s2bs5-clear-padding-x;
                     margin-right: .25rem;
+                    overflow: hidden;
+                    text-indent: 100%;
+                    white-space: nowrap;
                     background: $s2bs5-clear-bg;
                     border: 0;
 

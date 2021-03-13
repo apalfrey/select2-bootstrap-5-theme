@@ -60,6 +60,9 @@
             width: $s2b25-clear-width;
             height: $s2b25-clear-height;
             padding: $s2bs5-clear-padding-y $s2bs5-clear-padding-x;
+            overflow: hidden;
+            text-indent: 100%;
+            white-space: nowrap;
             background: $s2bs5-clear-bg;
             transform: translateY(-50%);
 
