@@ -75,6 +75,12 @@
                     background-color: $s2bs5-item-active-bg;
                 }
 
+                // Disabled Item
+                &.select2-results__option--disabled,
+                &[aria-disabled="true"] {
+                    color: $s2bs5-disabled-color;
+                }
+
                 // Optgroup
                 &[role="group"] {
                     padding: 0;

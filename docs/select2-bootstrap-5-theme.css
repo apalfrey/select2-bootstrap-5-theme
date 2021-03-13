@@ -155,6 +155,10 @@
   background-color: #0d6efd;
 }
 
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--disabled, .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[aria-disabled="true"] {
+  color: #6c757d;
+}
+
 .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[role="group"] {
   padding: 0;
 }
