@@ -29,7 +29,8 @@
   "style": "dist/select2-bootstrap-5-theme.css",
   "sass": "src/select2-bootstrap-5-theme.scss",
   "dependencies": {
-    "bootstrap": "5.0.0-beta2"
+    "bootstrap": "5.0.0-beta2",
+    "gulp-rtlcss": "^1.4.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",
