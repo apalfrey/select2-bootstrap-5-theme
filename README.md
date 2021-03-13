@@ -41,7 +41,7 @@ $ composer require apalfrey/select2-bootstrap-5-theme
 #### SCSS
 ```scss
 @import "node_modules/select2/src/scss/core";
-@import "node_modules/select2-bootstrap-5-theme/src/select2-bootstrap-5-theme";
+@import "node_modules/select2-bootstrap-5-theme/src/include-all";
 ```
 
 ## Usage
