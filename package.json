@@ -29,8 +29,7 @@
   "style": "dist/select2-bootstrap-5-theme.css",
   "sass": "src/select2-bootstrap-5-theme.scss",
   "dependencies": {
-    "bootstrap": "5.0.0-beta2",
-    "gulp-rtlcss": "^1.4.1"
+    "bootstrap": "5.0.0-beta2"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",
@@ -41,6 +40,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^9.0.0",
     "gulp-rename": "^2.0.0",
+    "gulp-rtlcss": "^1.4.1",
     "gulp-sass": "^4.1.0",
     "gulp-stylelint": "^13.0.0",
     "postcss": "^8.2.6",
