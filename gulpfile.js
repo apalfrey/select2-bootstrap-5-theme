@@ -73,13 +73,17 @@ gulp.task( "clean", () => {
 
 gulp.task( "browsersync", ( done ) => {
     browsersync.init( {
-        server: "./docs",
-        files: [
-            "docs/**/*.*"
-        ],
+        files: "./docs/**/*",
+        startPath: "/select2-bootstrap-5-theme",
+        server: {
+            baseDir: "-",
+            routes: {
+                "/select2-bootstrap-5-theme": "./docs"
+            }
+        },
         watch: true,
         ui: false,
-        open: false
+        open: false,
     }, done )
 } )
 
