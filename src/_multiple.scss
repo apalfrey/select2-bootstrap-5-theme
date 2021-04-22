@@ -53,6 +53,10 @@
             width: 100%;
             height: $s2bs5-height-inner;
 
+            &.select2-search--inline {
+                display: none;
+            }
+
             // Input field
             .select2-search__field {
                 width: 100%;
