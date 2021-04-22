@@ -10,7 +10,7 @@
     .select2-selection {
         width: 100%;
         min-height: $s2bs5-height;
-        padding: $s2bs5-padding-y $s2bs5-padding-x;
+        padding: $s2bs5-padding-y max($s2bs5-padding-x - $s2bs5-multi-item-padding-x, 0) max($s2bs5-padding-y - $s2bs5-multi-item-padding-y, 0) $s2bs5-padding-x;
         font-family: $s2bs5-font-family;
         @include font-size($s2bs5-font-size);
         font-weight: $s2bs5-font-weight;
