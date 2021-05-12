@@ -44,7 +44,7 @@ $s2bs5-invalid-border-color:     $form-feedback-invalid-color !default;
 $s2bs5-invalid-focus-box-shadow: 0 0 0 $s2bs5-focus-width rgba($s2bs5-invalid-border-color, $input-btn-focus-color-opacity) !default;
 
 // Disabled
-$s2bs5-disabled-color:           $form-select-disabled-color !default;
+$s2bs5-disabled-color:           $text-muted !default;
 $s2bs5-disabled-bg:              $form-select-disabled-bg !default;
 $s2bs5-disabled-border-color:    $s2bs5-border-color !default;
 
