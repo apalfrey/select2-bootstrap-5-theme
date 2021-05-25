@@ -12,6 +12,22 @@ const rtlcss = require( "gulp-rtlcss" )
 const sass = require( "gulp-dart-sass" )
 const stylelint = require( "gulp-stylelint" )
 
+gulp.task( "clean", () => {
+    return del( [
+        "dist"
+    ] )
+} )
+
+gulp.task( "lint", () => {
+    return gulp.src( "src/**/*.scss" )
+        .pipe( stylelint( {
+            failAfterError: true,
+            reporters: [
+                { formatter: "verbose", console: true },
+            ]
+        } ) )
+} )
+
 const compile = ( style, rtl = false ) => {
     return gulp.src( "src/select2-bootstrap-5-theme.scss" )
         .pipe( sass.sync( {
@@ -33,12 +49,14 @@ const compile = ( style, rtl = false ) => {
         .pipe( gulpif( style == "expanded", gulp.dest( "docs" ) ) )
 }
 
-gulp.task( "compile:dev", () => {
+gulp.task( "compile:main:dev", () => {
     return compile( "expanded" )
 } )
-gulp.task( "compile:min", () => {
+gulp.task( "compile:main:min", () => {
     return compile( "compressed" )
 } )
+
+gulp.task( "compile:main", gulp.series( "compile:main:dev", "compile:main:min" ) )
 
 gulp.task( "compile:rtl:dev", () => {
     return compile( "expanded", true )
@@ -47,26 +65,13 @@ gulp.task( "compile:rtl:min", () => {
     return compile( "compressed", true )
 } )
 
-gulp.task( "lint", () => {
-    return gulp.src( "src/**/*.scss" )
-        .pipe( stylelint( {
-            failAfterError: true,
-            reporters: [
-                { formatter: "verbose", console: true },
-            ]
-        } ) )
-} )
+gulp.task( "compile:rtl", gulp.series( "compile:rtl:dev", "compile:rtl:min" ) )
+
+gulp.task( "compile", gulp.series( "clean", "lint", "compile:main", "compile:rtl" ) )
 
 gulp.task( "watch", ( done ) => {
     gulp.watch( "src/*.scss", gulp.series( "compile" ) )
-
     done()
-} )
-
-gulp.task( "clean", () => {
-    return del( [
-        "dist"
-    ] )
 } )
 
 gulp.task( "browsersync", ( done ) => {
@@ -85,5 +90,4 @@ gulp.task( "browsersync", ( done ) => {
     }, done )
 } )
 
-gulp.task( "compile", gulp.series( "clean", "lint", "compile:dev", "compile:min", "compile:rtl:dev", "compile:rtl:min" ) )
 gulp.task( "default", gulp.series( "compile", "browsersync", "watch" ) )
