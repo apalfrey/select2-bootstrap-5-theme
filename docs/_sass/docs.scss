@@ -1,0 +1,9 @@
+// stylelint-disable no-invalid-position-at-import-rule
+@import "bootstrap";
+[dir="ltr"] {
+    @import "src/select2-bootstrap-5-theme";
+}
+
+@import "variables";
+
+// stylelint-enable no-invalid-position-at-import-rule

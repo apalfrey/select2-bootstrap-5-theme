@@ -3,7 +3,6 @@ const gulp = require( "gulp" )
 
 // External dependencies
 const autoprefixer = require( "autoprefixer" )
-const browsersync = require( "browser-sync" )
 const del = require( "del" )
 const gulpif = require( "gulp-if" )
 const postcss = require( "gulp-postcss" )
@@ -74,3 +73,56 @@ gulp.task( "watch", ( done ) => {
 } )
 
 gulp.task( "default", gulp.series( "compile", "watch" ) )
+
+// For docs
+gulp.task( "docs:compile:main", () => {
+    return gulp.src( "docs/_sass/docs.scss" )
+        .pipe( sass.sync( {
+            outputStyle: "compressed"
+        } ).on( "error", sass.logError ) )
+        .pipe( postcss( [
+            autoprefixer( {
+                cascade: true
+            } )
+        ] ) )
+        .pipe( gulp.dest( "docs/assets/css" ) )
+} )
+gulp.task( "docs:compile:rtl", () => {
+    return gulp.src( "docs/_sass/rtl.scss" )
+        .pipe( sass.sync( {
+            outputStyle: "compressed"
+        } ).on( "error", sass.logError ) )
+        .pipe( postcss( [
+            autoprefixer( {
+                cascade: true
+            } )
+        ] ) )
+        .pipe( rtlcss() )
+        .pipe( gulp.dest( "docs/assets/css" ) )
+} )
+
+gulp.task( "docs:lint", () => {
+    return gulp.src( "docs/_sass/**/*.scss" )
+        .pipe( stylelint( {
+            failAfterError: true,
+            reporters: [
+                { formatter: "verbose", console: true },
+            ]
+        } ) )
+} )
+
+gulp.task( "docs:watch", ( done ) => {
+    gulp.watch( "docs/_sass/**/*.scss", gulp.series( "docs:compile" ) )
+
+    done()
+} )
+
+gulp.task( "docs:clean", () => {
+    return del( [
+        "docs/assets/css"
+    ] )
+} )
+
+gulp.task( "docs:compile", gulp.series( "docs:clean", "docs:lint", "docs:compile:main", "docs:compile:rtl" ) )
+
+gulp.task( "docs", gulp.series( "docs:compile", "docs:watch" ) )
