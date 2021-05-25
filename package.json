@@ -39,7 +39,9 @@
     "compile:rtl": "gulp compile:rtl",
     "compile:rtl:dev": "gulp compile:rtl:dev",
     "compile:rtl:min": "gulp compile:rtl:min",
-    "watch": "gulp watch"
+    "watch": "gulp watch",
+    "docs:build": "cd docs && bundle exec jekyll build",
+    "docs:serve": "cd docs && bundle exec jekyll serve"
   },
   "dependencies": {
     "bootstrap": "^5.0.0"

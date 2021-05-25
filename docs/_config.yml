@@ -1,0 +1,26 @@
+# Site settings
+title: Select2 Bootstrap 5 Theme # the title for the site
+description: >- # ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: /select2-bootstrap-5-theme # the subpath of the site
+url: https://apalfrey.github.io # the base hostname & protocol for the site
+
+# Build settings
+theme: null # prevents style.css from being generated
+plugins:
+  - jekyll-sitemap
+
+# Exclude from processing.
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
