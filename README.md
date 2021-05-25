@@ -90,23 +90,25 @@ $("select").select2({
 ```
 
 ## Building
-This repo uses Gulp to compile the assets, see below for the included Gulp tasks and what they do;
+This repo uses Gulp to compile the assets, see below for the included npm scripts and Gulp tasks and what they do;
 
-| Task                   | Description                                                                                                            |
-| ---------------------- | ---------------------------------------------------------------------------------------------------------------------- |
-| `gulp`                 | Cleans the `dist` directory, lints the scss, compiles the dev and min versions, starts browsersync and starts watching |
-| `gulp clean`           | Cleans the `dist` directory, removing the directory and it's contents                                                  |
-| `gulp lint`            | Lints the scss files using [Stylelint](https://stylelint.io/), see [.stylelintrc](.stylelintrc) and [stylelint-config-twbs-bootstrap](https://github.com/twbs/stylelint-config-twbs-bootstrap) for linting rules                                                                                                |
-| `gulp compile`         | Lints the scss, compiles the RTL and LTR dev and min versions                                                          |
-| `gulp compile:dev`     | Compiles the LTR dev version, saving in `dist` and `examples`                                                          |
-| `gulp compile:min`     | Compiles the LTR min version, saving in `dist`                                                                         |
-| `gulp compile:rtl:dev` | Compiles the RTL dev version, saving in `dist` and `examples`                                                          |
-| `gulp compile:rtl:min` | Compiles the RTL min version, saving in `dist`                                                                         |
-| `gulp browsersync`     | Sets up a browsersync server serving the `examples` directory for development                                          |
-| `gulp watch`           | Watches all files in `src`, compiling the scss when changes are detected                                               |
+| npm script         | Gulp task          | Description                                                                                                            |
+| ------------------ | ------------------ | ---------------------------------------------------------------------------------------------------------------------- |
+| `start`            | `default`          | Cleans the `dist` directory, lints the scss, compiles the dev and min versions, starts browsersync and starts watching |
+| `clean`            | `clean`            | Cleans the `dist` directory, removing the directory and it's contents                                                  |
+| `lint`             | `lint`             | Lints the scss files using [Stylelint](https://stylelint.io/), see [.stylelintrc](.stylelintrc) and [stylelint-config-twbs-bootstrap](https://github.com/twbs/stylelint-config-twbs-bootstrap) for linting rules                                                                                                 |
+| `compile`          | `compile`          | Lints the scss, compiles the RTL and LTR dev and min versions                                                          |
+| `compile:main`     | `compile:main`     | Compiles all LTR versions, saving in `dist` and `docs`                                                                 |
+| `compile:main:dev` | `compile:main:dev` | Compiles the LTR expanded version, saving in `dist` and `docs`                                                         |
+| `compile:main:min` | `compile:main:min` | Compiles the LTR compressed version, saving in `dist`                                                                  |
+| `compile:rtl`      | `compile:rtl`      | Compiles all RTL versions, saving in `dist` and `docs`                                                                 |
+| `compile:rtl:dev`  | `compile:rtl:dev`  | Compiles the RTL expanded version, saving in `dist` and `docs`                                                         |
+| `compile:rtl:min`  | `compile:rtl:min`  | Compiles the RTL compressed version, saving in `dist`                                                                  |
+| `watch`            | `watch`            | Watches all files in `src`, compiling the scss when changes are detected                                               |
+| `browsersync`      | `browsersync`      | Sets up a browsersync server serving the `docs` directory for development                                              |
 
 ## Contributing
-If you have ideas for improvements or changes, feel free to submit an [issue](https://github.com/apalfrey/select2-bootstrap-5-theme/issues/new), or if you have changes you'd like in the project, feel free to [submit a pull request](https://github.com/apalfrey/select2-bootstrap-5-theme/compare). Make sure you run `gulp compile` before submitting a pull request to ensure the styles are compiled.
+If you have ideas for improvements or changes, feel free to submit an [issue](https://github.com/apalfrey/select2-bootstrap-5-theme/issues/new), or if you have changes you'd like in the project, feel free to [submit a pull request](https://github.com/apalfrey/select2-bootstrap-5-theme/compare). Make sure you run `gulp compile` or `npm run compile` before submitting a pull request to ensure the styles are compiled.
 
 ## License
 

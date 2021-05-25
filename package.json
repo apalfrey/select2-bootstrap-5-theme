@@ -28,6 +28,20 @@
   "main": "",
   "style": "dist/select2-bootstrap-5-theme.css",
   "sass": "src/select2-bootstrap-5-theme.scss",
+  "scripts": {
+    "start": "gulp",
+    "clean": "gulp clean",
+    "lint": "gulp lint",
+    "compile": "gulp compile",
+    "compile:main": "gulp compile:main",
+    "compile:main:dev": "gulp compile:main:dev",
+    "compile:main:min": "gulp compile:main:min",
+    "compile:rtl": "gulp compile:rtl",
+    "compile:rtl:dev": "gulp compile:rtl:dev",
+    "compile:rtl:min": "gulp compile:rtl:min",
+    "watch": "gulp watch",
+    "browsersync": "gulp browsersync"
+  },
   "dependencies": {
     "bootstrap": "^5.0.0"
   },
