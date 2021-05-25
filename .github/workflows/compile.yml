@@ -19,11 +19,11 @@ jobs:
         with:
           node-version: "${{ env.NODE }}"
 
-      - name: Install Yarn & Gulp.js
-        run: npm install -g yarn gulp-cli
+      - name: Install Gulp.js
+        run: npm install -g gulp-cli
 
       - name: Install dependencies
-        run: yarn install
+        run: npm ci
 
       - name: Compile CSS with Gulp.js
         run: gulp compile
