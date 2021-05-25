@@ -45,3 +45,12 @@ scripts:
   clipboardjs: https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js
   anchorjs: https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js
   docs: /assets/js/script.js
+
+# External links
+links:
+  github: https://github.com/apalfrey/select2-bootstrap-5-theme/
+  npm: https://www.npmjs.com/package/select2-bootstrap-5-theme/
+  packagist: https://packagist.org/packages/apalfrey/select2-bootstrap-5-theme/
+  select2: https://select2.org/
+  bootstrap: https://getbootstrap.com/
+  download: /

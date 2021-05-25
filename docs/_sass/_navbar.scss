@@ -1,0 +1,22 @@
+.s2bs5-navbar {
+    padding: .75rem 0;
+    background-color: $s2bs5-primary;
+
+    .navbar-nav {
+        flex-direction: row;
+
+        .nav-link {
+            color: rgba($white, .85);
+
+            &:hover,
+            &:focus {
+                color: $white;
+            }
+        }
+    }
+
+    .navbar-nav-svg {
+        width: 2rem;
+        height: 2rem;
+    }
+}
