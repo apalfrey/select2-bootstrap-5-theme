@@ -19,11 +19,8 @@ jobs:
         with:
           node-version: "${{ env.NODE }}"
 
-      - name: Install Gulp.js
-        run: npm install -g gulp-cli
-
       - name: Install dependencies
         run: npm ci
 
       - name: Compile CSS with Gulp.js
-        run: gulp compile
+        run: npm run compile
