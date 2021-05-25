@@ -46,7 +46,6 @@ const compile = ( style, rtl = false ) => {
             suffix: ".min"
         } ) ) )
         .pipe( gulp.dest( "dist" ) )
-        .pipe( gulpif( style == "expanded", gulp.dest( "docs" ) ) )
 }
 
 gulp.task( "compile:main:dev", () => {
@@ -74,20 +73,4 @@ gulp.task( "watch", ( done ) => {
     done()
 } )
 
-gulp.task( "browsersync", ( done ) => {
-    browsersync.init( {
-        files: "./docs/**/*",
-        startPath: "/select2-bootstrap-5-theme",
-        server: {
-            baseDir: "-",
-            routes: {
-                "/select2-bootstrap-5-theme": "./docs"
-            }
-        },
-        watch: true,
-        ui: false,
-        open: false,
-    }, done )
-} )
-
-gulp.task( "default", gulp.series( "compile", "browsersync", "watch" ) )
+gulp.task( "default", gulp.series( "compile", "watch" ) )

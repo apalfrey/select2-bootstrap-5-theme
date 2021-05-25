@@ -39,15 +39,13 @@
     "compile:rtl": "gulp compile:rtl",
     "compile:rtl:dev": "gulp compile:rtl:dev",
     "compile:rtl:min": "gulp compile:rtl:min",
-    "watch": "gulp watch",
-    "browsersync": "gulp browsersync"
+    "watch": "gulp watch"
   },
   "dependencies": {
     "bootstrap": "^5.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",
-    "browser-sync": "^2.26.14",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-dart-sass": "^1.0.2",
