@@ -9,16 +9,14 @@ const gulpif = require( "gulp-if" )
 const postcss = require( "gulp-postcss" )
 const rename = require( "gulp-rename" )
 const rtlcss = require( "gulp-rtlcss" )
-const sass = require( "gulp-sass" )
+const sass = require( "gulp-dart-sass" )
 const stylelint = require( "gulp-stylelint" )
 
 const compile = ( style, rtl = false ) => {
     return gulp.src( "src/select2-bootstrap-5-theme.scss" )
-        .pipe( sass( {
-            precision: 6,
-            outputStyle: style,
-            errLogToConsole: true
-        } ) )
+        .pipe( sass.sync( {
+            outputStyle: style
+        } ).on( "error", sass.logError ) )
         .pipe( postcss( [
             autoprefixer( {
                 cascade: true
