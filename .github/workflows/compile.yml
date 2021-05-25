@@ -1,0 +1,26 @@
+name: Compile CSS
+
+on:
+  push:
+  pull_request:
+
+env:
+  NODE: 14
+
+jobs:
+  css:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "${{ env.NODE }}"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Compile CSS with Gulp.js
+        run: npm run compile
