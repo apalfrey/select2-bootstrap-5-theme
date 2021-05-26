@@ -6,6 +6,7 @@ description: >- # ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: /select2-bootstrap-5-theme # the subpath of the site
 url: https://apalfrey.github.io # the base hostname & protocol for the site
+version: 1.1.1
 
 # Build settings
 theme: null # prevents style.css from being generated
@@ -42,7 +43,7 @@ styles:
 # Site scripts
 scripts:
   jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js
-  bootstrap: https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js
+  bootstrap: https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js
   select2:
     old: https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js
     new: https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js

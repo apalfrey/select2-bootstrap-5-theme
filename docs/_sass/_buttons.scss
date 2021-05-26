@@ -11,3 +11,7 @@
     @include font-size(.65rem);
     @include button-outline-variant($s2bs5-primary);
 }
+
+.btn-s2bs5-primary {
+    @include button-variant($s2bs5-primary, $s2bs5-primary);
+}

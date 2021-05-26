@@ -61,6 +61,9 @@ $ composer require apalfrey/select2-bootstrap-5-theme
 #### SCSS
 ```scss
 @import "node_modules/select2/src/scss/core";
+// If you need to import Bootstrap as well:
+@import "node_modules/select2-bootstrap-5-theme/src/select2-bootstrap-5-theme";
+// Or if you have already imported Bootstrap:
 @import "node_modules/select2-bootstrap-5-theme/src/include-all";
 ```
 
