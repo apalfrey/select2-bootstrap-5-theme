@@ -27,7 +27,7 @@
         background-color: transparent;
         border: 0;
 
-        &code {
+        code {
             @include font-size(inherit);
             color: $gray-900; // Effectively the base text color
             word-wrap: normal;
