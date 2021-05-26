@@ -21,7 +21,7 @@
         <div class="container-xxl my-md-4 s2bs5-layout">
             {% include layout/sidebar.html %}
             <main class="s2bs5-main order-1">
-                {% if page.layout != "redirect" and page.error != true %}
+                {% if page.layout != "redirect" and page.error != true and page.toc != false %}
                 <div class="s2bs5-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted">
                     <strong class="d-block h6 my-2 pb-2 border-bottom">On this page</strong>
                     <nav id="table-of-contents">
