@@ -1,2 +1,3 @@
 // stylelint-disable scss/dollar-variable-default
 $s2bs5-primary: $indigo;
+$s2bs5-primary-light: lighten(saturate($s2bs5-primary, 5%), 25%); // stylelint-disable-line function-disallowed-list

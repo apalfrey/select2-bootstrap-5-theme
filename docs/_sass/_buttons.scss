@@ -1,0 +1,3 @@
+.btn-dropdown {
+    @include button-outline-variant($s2bs5-primary-light, $s2bs5-primary, $white, $s2bs5-primary, $s2bs5-primary);
+}
