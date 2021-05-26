@@ -12,6 +12,13 @@
     }
 }
 
+.simple-highlight {
+    .highlight {
+        background-color: $gray-100;
+        @include border-radius(.25rem);
+    }
+}
+
 .highlight {
     padding: 1rem;
 
