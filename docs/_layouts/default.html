@@ -16,9 +16,11 @@
         <div class="container-xxl my-md-4 s2bs5-layout">
             {% include layout/sidebar.html %}
             <main class="s2bs5-main order-1">
-                <div class="s2bs5-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5">
+                <div class="s2bs5-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5 text-muted">
                     <strong class="d-block h6 my-2 pb-2 border-bottom">On this page</strong>
-                    <nav id="table-of-contents"></nav>
+                    <nav id="table-of-contents">
+                        {% include layout/toc.html html=content sanitize=true %}
+                    </nav>
                 </div>
                 <div class="s2bs5-content ps-lg-4">
                     {% if page.title %}<h1 class="s2bs5-title">{{ page.title }}</h1>{% endif %}
