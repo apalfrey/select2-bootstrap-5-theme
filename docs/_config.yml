@@ -44,7 +44,7 @@ scripts:
     4-1: https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js
   clipboardjs: https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js
   anchorjs: https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js
-  docs: /assets/js/script.js
+  docs: /assets/js/docs.js
 
 # External links
 links:
