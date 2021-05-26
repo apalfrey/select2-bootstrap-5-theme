@@ -63,3 +63,8 @@
     font-weight: 300;
     @include font-size(3rem);
 }
+
+.s2bs5-lead {
+    @include font-size(1.5rem);
+    font-weight: 300;
+}
