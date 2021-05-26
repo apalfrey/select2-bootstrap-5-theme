@@ -5,8 +5,8 @@
                 <span class="d-none d-lg-inline">Select2</span> {% if page.permalink contains "4.0" %}v4.0.x{% else %}v4.1.x{% endif %}
             </button>
             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="s2bs5-versions">
-                <li><a class="dropdown-item{% unless page.permalink contains "4.0" %} active{% endunless %}" aria-current="true" href="{{ "/" | absolute_url }}">Select2 v4.1.x</a></li>
-                <li><a class="dropdown-item{% if page.permalink contains "4.0" %} active{% endif %}" aria-current="true" href="{{ "/4.0/" | absolute_url }}">Select2 v4.0.x</a></li>
+                <li><a class="dropdown-item{% unless page.permalink contains "4.0" %} active{% endunless %}" aria-current="true" href="{{ site.links.4-1 | absolute_url }}">Select2 v4.1.x</a></li>
+                <li><a class="dropdown-item{% if page.permalink contains "4.0" %} active{% endif %}" aria-current="true" href="{{ site.links.4-0 | absolute_url }}">Select2 v4.0.x</a></li>
             </ul>
         </div>
 

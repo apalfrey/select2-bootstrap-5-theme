@@ -46,7 +46,7 @@ scripts:
   anchorjs: https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js
   docs: /assets/js/docs.js
 
-# External links
+# Header links
 links:
   github: https://github.com/apalfrey/select2-bootstrap-5-theme/
   npm: https://www.npmjs.com/package/select2-bootstrap-5-theme/
@@ -54,3 +54,40 @@ links:
   select2: https://select2.org/
   bootstrap: https://getbootstrap.com/
   download: /
+  4-0: /examples/single-select/4.0/
+  4-1: /examples/single-select/
+
+# Sidebar
+sidebar:
+  - name: introduction
+    label: Introduction
+    version-switch: false
+    dropdown: false
+    permalink: /
+  - name: getting-started
+    label: Getting started
+    version-switch: false
+    dropdown: true
+    pages:
+      - /getting-started/download-install/
+      - /getting-started/select2-versions/
+      - /getting-started/browsers-devices/
+      - /getting-started/build-tools/
+      - /getting-started/rtl-support/
+  - name: examples
+    label: Examples
+    version-switch: true
+    dropdown: true
+    pages:
+      - /examples/single-select/
+      - /examples/multiple-select/
+      - /examples/disabled/
+      - /examples/input-groups/
+      - /examples/validation/
+  - name: about
+    label: About
+    version-switch: false
+    dropdown: true
+    pages:
+      - /about/contributing/
+      - /about/license/

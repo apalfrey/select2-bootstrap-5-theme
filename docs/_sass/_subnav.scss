@@ -27,3 +27,30 @@
         top: 0;
     }
 }
+
+.s2bs5-sidebar-toggle {
+    color: $text-muted;
+
+    &:hover,
+    &:focus {
+        color: $s2bs5-primary;
+    }
+
+    &:focus {
+        box-shadow: 0 0 0 3px rgba($s2bs5-primary, .25);
+    }
+
+    .bi-collapse {
+        display: none;
+    }
+
+    &:not(.collapsed) {
+        .bi-expand {
+            display: none;
+        }
+
+        .bi-collapse {
+            display: inline-block;
+        }
+    }
+}
