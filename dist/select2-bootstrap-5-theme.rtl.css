@@ -112,7 +112,7 @@
   border-color: #86b7fe;
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
-.select2-container--bootstrap-5 .select2-dropdown .select2-results__options {
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options:not(.select2-results__options--nested) {
   max-height: 15rem;
   overflow-y: auto;
 }
