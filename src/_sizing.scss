@@ -84,6 +84,7 @@
     }
 }
 
+// Using options
 .select2-container--bootstrap-5 {
     // Small
     .select2--small {
@@ -97,5 +98,20 @@
         ~ {
             @include s2bs5-sizing($s2bs5-large);
         }
+    }
+}
+
+// Using bootstrap classes
+// Small
+.form-select-sm {
+    ~.select2-container--bootstrap-5 {
+        @include s2bs5-sizing($s2bs5-small);
+    }
+}
+
+// Large
+.form-select-lg {
+    ~.select2-container--bootstrap-5 {
+        @include s2bs5-sizing($s2bs5-large);
     }
 }
