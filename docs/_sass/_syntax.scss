@@ -1,5 +1,5 @@
 .highlight-container {
-    margin: 0 (-$grid-gutter-width / 2) 1rem;
+    margin: 0 (-$grid-gutter-width * .5) 1rem;
     background-color: $gray-100;
     border: solid $gray-300;
     border-width: 0 0 1px;
