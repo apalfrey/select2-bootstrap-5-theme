@@ -57,7 +57,7 @@ $s2bs5-item-focus-bg:            $gray-200 !default;
 
 // Groups
 $s2bs5-group-padding-y:          $s2bs5-padding-y !default;
-$s2bs5-group-padding-x:          $s2bs5-padding-x / 2 !default;
+$s2bs5-group-padding-x:          $s2bs5-padding-x * .5 !default;
 $s2bs5-group-color:              $secondary !default;
 $s2bs5-group-font-weight:        $headings-font-weight !default;
 
@@ -84,7 +84,7 @@ $s2bs5-font-size-sm:             $form-select-font-size-sm !default;
 $s2bs5-item-padding-y-sm:        $s2bs5-padding-y-sm !default;
 $s2bs5-item-padding-x-sm:        $s2bs5-padding-x-sm !default;
 $s2bs5-group-padding-y-sm:       $s2bs5-padding-y-sm !default;
-$s2bs5-group-padding-x-sm:       $s2bs5-padding-x-sm / 2 !default;
+$s2bs5-group-padding-x-sm:       $s2bs5-padding-x-sm * .5 !default;
 $s2b25-clear-width-sm:           .5rem !default;
 $s2b25-clear-height-sm:          .5rem !default;
 $s2bs5-clear-padding-y-sm:       .125rem !default;
@@ -100,7 +100,7 @@ $s2bs5-font-size-lg:             $form-select-font-size-lg !default;
 $s2bs5-item-padding-y-lg:        $s2bs5-padding-y-lg !default;
 $s2bs5-item-padding-x-lg:        $s2bs5-padding-x-lg !default;
 $s2bs5-group-padding-y-lg:       $s2bs5-padding-y-lg !default;
-$s2bs5-group-padding-x-lg:       $s2bs5-padding-x-lg / 2 !default;
+$s2bs5-group-padding-x-lg:       $s2bs5-padding-x-lg * .5 !default;
 $s2b25-clear-width-lg:           1rem !default;
 $s2b25-clear-height-lg:          1rem !default;
 $s2bs5-clear-padding-y-lg:       .5rem !default;
