@@ -75,23 +75,24 @@ sidebar:
     dropdown: true
     pages:
       - /getting-started/download-install/
-      - /getting-started/select2-versions/
-      - /getting-started/build-tools/
-      - /getting-started/rtl-support/
+      - /getting-started/select2-versions/ # TODO select2 versions page
+      - /getting-started/build-tools/ # TODO build tools page
+      - /getting-started/rtl-support/ # TODO rtl support page
   - name: examples
     label: Examples
     version-switch: true
     dropdown: true
     pages:
-      - /examples/single-select/
-      - /examples/multiple-select/
-      - /examples/disabled/
-      - /examples/input-groups/
-      - /examples/validation/
+      - /examples/single-select/ # TODO single select page
+      - /examples/multiple-select/ # TODO multiple select page
+      - /examples/disabled/ # TODO disabled page
+      - /examples/input-groups/ # TODO input groups page
+      - /examples/sizing/ # TODO sizing page
+      - /examples/validation/ # TODO validation page
   - name: about
     label: About
     version-switch: false
     dropdown: true
     pages:
-      - /about/contributing/
+      - /about/contributing/ # TODO contributing page
       - /about/license/
