@@ -1,6 +1,6 @@
 // Height
 $s2bs5-height:                   $input-height !default;
-$s2bs5-height-inner:             $input-line-height * 1em !default;
+$s2bs5-height-inner:             $input-line-height * 1rem !default;
 
 // Padding
 $s2bs5-padding-y:                $form-select-padding-y !default;
@@ -68,13 +68,13 @@ $s2bs5-multi-item-padding-x:     $badge-padding-x !default;
 $s2bs5-options-max-height:       15rem !default;
 
 // Clear/Remove
-$s2b25-clear-width:              .75rem !default;
-$s2b25-clear-height:             .75rem !default;
+$s2bs5-clear-width:              .75rem !default;
+$s2bs5-clear-height:             .75rem !default;
 $s2bs5-clear-padding-y:          $btn-close-padding-y !default;
 $s2bs5-clear-padding-x:          $btn-close-padding-x !default;
 $s2bs5-clear-icon:               str-replace($btn-close-bg, #{$btn-close-color}, #{shade-color($s2bs5-border-color, 50%)}) !default;
-$s2bs5-clear-bg:                 transparent escape-svg($s2bs5-clear-icon) center / $s2b25-clear-height auto no-repeat !default;
-$s2bs5-clear-hover-bg:           transparent escape-svg($btn-close-bg) center / $s2b25-clear-height auto no-repeat !default;
+$s2bs5-clear-bg:                 transparent escape-svg($s2bs5-clear-icon) center / $s2bs5-clear-height auto no-repeat !default;
+$s2bs5-clear-hover-bg:           transparent escape-svg($btn-close-bg) center / $s2bs5-clear-height auto no-repeat !default;
 
 // Small
 $s2bs5-height-sm:                $input-height-sm !default;
@@ -85,12 +85,12 @@ $s2bs5-item-padding-y-sm:        $s2bs5-padding-y-sm !default;
 $s2bs5-item-padding-x-sm:        $s2bs5-padding-x-sm !default;
 $s2bs5-group-padding-y-sm:       $s2bs5-padding-y-sm !default;
 $s2bs5-group-padding-x-sm:       $s2bs5-padding-x-sm * .5 !default;
-$s2b25-clear-width-sm:           .5rem !default;
-$s2b25-clear-height-sm:          .5rem !default;
+$s2bs5-clear-width-sm:           .5rem !default;
+$s2bs5-clear-height-sm:          .5rem !default;
 $s2bs5-clear-padding-y-sm:       .125rem !default;
 $s2bs5-clear-padding-x-sm:       .125rem !default;
-$s2bs5-clear-bg-sm:              transparent escape-svg($s2bs5-clear-icon) center / $s2b25-clear-height-sm auto no-repeat !default;
-$s2bs5-clear-hover-bg-sm:        transparent escape-svg($btn-close-bg) center / $s2b25-clear-height-sm auto no-repeat !default;
+$s2bs5-clear-bg-sm:              transparent escape-svg($s2bs5-clear-icon) center / $s2bs5-clear-height-sm auto no-repeat !default;
+$s2bs5-clear-hover-bg-sm:        transparent escape-svg($btn-close-bg) center / $s2bs5-clear-height-sm auto no-repeat !default;
 
 // Large
 $s2bs5-height-lg:                $input-height-lg !default;
@@ -101,9 +101,9 @@ $s2bs5-item-padding-y-lg:        $s2bs5-padding-y-lg !default;
 $s2bs5-item-padding-x-lg:        $s2bs5-padding-x-lg !default;
 $s2bs5-group-padding-y-lg:       $s2bs5-padding-y-lg !default;
 $s2bs5-group-padding-x-lg:       $s2bs5-padding-x-lg * .5 !default;
-$s2b25-clear-width-lg:           1rem !default;
-$s2b25-clear-height-lg:          1rem !default;
+$s2bs5-clear-width-lg:           1rem !default;
+$s2bs5-clear-height-lg:          1rem !default;
 $s2bs5-clear-padding-y-lg:       .5rem !default;
 $s2bs5-clear-padding-x-lg:       .5rem !default;
-$s2bs5-clear-bg-lg:              transparent escape-svg($s2bs5-clear-icon) center / $s2b25-clear-height-lg auto no-repeat !default;
-$s2bs5-clear-hover-bg-lg:        transparent escape-svg($btn-close-bg) center / $s2b25-clear-height-lg auto no-repeat !default;
+$s2bs5-clear-bg-lg:              transparent escape-svg($s2bs5-clear-icon) center / $s2bs5-clear-height-lg auto no-repeat !default;
+$s2bs5-clear-hover-bg-lg:        transparent escape-svg($btn-close-bg) center / $s2bs5-clear-height-lg auto no-repeat !default;

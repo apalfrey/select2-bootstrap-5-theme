@@ -10,8 +10,8 @@
     &.select2-selection--single,
     &.select2-selection--multiple {
         .select2-selection__clear {
-            width: $s2b25-clear-width-sm;
-            height: $s2b25-clear-height-sm;
+            width: $s2bs5-clear-width-sm;
+            height: $s2bs5-clear-height-sm;
             padding: $s2bs5-clear-padding-y-sm $s2bs5-clear-padding-x-sm;
             background: $s2bs5-clear-bg-sm;
 
@@ -67,8 +67,8 @@
                 @include font-size($s2bs5-font-size-sm);
 
                 .select2-selection__choice__remove {
-                    width: $s2b25-clear-width-sm;
-                    height: $s2b25-clear-height-sm;
+                    width: $s2bs5-clear-width-sm;
+                    height: $s2bs5-clear-height-sm;
                     padding: $s2bs5-clear-padding-y-sm $s2bs5-clear-padding-x-sm;
                     background: $s2bs5-clear-bg-sm;
 
@@ -97,8 +97,8 @@
     &.select2-selection--single,
     &.select2-selection--multiple {
         .select2-selection__clear {
-            width: $s2b25-clear-width-lg;
-            height: $s2b25-clear-height-lg;
+            width: $s2bs5-clear-width-lg;
+            height: $s2bs5-clear-height-lg;
             padding: $s2bs5-clear-padding-y-lg $s2bs5-clear-padding-x-lg;
             background: $s2bs5-clear-bg-lg;
 
@@ -154,8 +154,8 @@
                 @include font-size($s2bs5-font-size-lg);
 
                 .select2-selection__choice__remove {
-                    width: $s2b25-clear-width-lg;
-                    height: $s2b25-clear-height-lg;
+                    width: $s2bs5-clear-width-lg;
+                    height: $s2bs5-clear-height-lg;
                     padding: $s2bs5-clear-padding-y-lg $s2bs5-clear-padding-x-lg;
                     background: $s2bs5-clear-bg-lg;
 

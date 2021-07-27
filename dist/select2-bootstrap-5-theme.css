@@ -212,11 +212,11 @@
 .select2-container--bootstrap-5 .select2-selection--multiple .select2-search {
   display: block;
   width: 100%;
-  height: 1.5em;
+  height: 1.5rem;
 }
 .select2-container--bootstrap-5 .select2-selection--multiple .select2-search .select2-search__field {
   width: 100%;
-  height: 1.5em;
+  height: 1.5rem;
   margin-top: 0;
   margin-left: 0;
   font-family: inherit;
