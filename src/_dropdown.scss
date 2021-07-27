@@ -47,8 +47,10 @@
 
         // Items
         .select2-results__options {
-            max-height: $s2bs5-options-max-height;
-            overflow-y: auto;
+            &:not(.select2-results__options--nested) {
+                max-height: $s2bs5-options-max-height;
+                overflow-y: auto;
+            }
 
             // Item
             .select2-results__option {
