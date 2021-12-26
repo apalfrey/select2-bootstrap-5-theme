@@ -2,6 +2,7 @@
     // Dropdown
     .select2-dropdown {
         z-index: 1056;
+        background-color: $s2bs5-bg;
         border-color: $s2bs5-border-color;
         @include border-radius($s2bs5-border-radius);
 
