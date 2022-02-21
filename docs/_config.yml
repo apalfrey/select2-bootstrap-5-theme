@@ -84,7 +84,6 @@ sidebar:
     pages:
       - /examples/single-select/ # TODO single select page
       - /examples/multiple-select/ # TODO multiple select page
-      - /examples/disabled/ # TODO disabled page
       - /examples/input-groups/ # TODO input groups page
       - /examples/sizing/ # TODO sizing page
       - /examples/validation/ # TODO validation page
