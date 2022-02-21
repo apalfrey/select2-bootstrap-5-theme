@@ -76,8 +76,7 @@ sidebar:
     pages:
       - /getting-started/download-install/
       - /getting-started/select2-versions/ # TODO select2 versions page
-      - /getting-started/build-tools/ # TODO build tools page
-      - /getting-started/rtl-support/ # TODO rtl support page
+      - /getting-started/build-tools/
   - name: examples
     label: Examples
     version-switch: true
