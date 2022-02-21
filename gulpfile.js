@@ -75,6 +75,22 @@ gulp.task( "watch", ( done ) => {
 gulp.task( "default", gulp.series( "compile", "watch" ) )
 
 // For docs
+gulp.task( "docs:clean", () => {
+    return del( [
+        "docs/assets/css"
+    ] )
+} )
+
+gulp.task( "docs:lint", () => {
+    return gulp.src( "docs/_sass/**/*.scss" )
+        .pipe( stylelint( {
+            failAfterError: true,
+            reporters: [
+                { formatter: "verbose", console: true },
+            ]
+        } ) )
+} )
+
 gulp.task( "docs:compile:main", () => {
     return gulp.src( "docs/_sass/docs.scss" )
         .pipe( sass.sync( {
@@ -101,26 +117,10 @@ gulp.task( "docs:compile:rtl", () => {
         .pipe( gulp.dest( "docs/assets/css" ) )
 } )
 
-gulp.task( "docs:lint", () => {
-    return gulp.src( "docs/_sass/**/*.scss" )
-        .pipe( stylelint( {
-            failAfterError: true,
-            reporters: [
-                { formatter: "verbose", console: true },
-            ]
-        } ) )
-} )
-
 gulp.task( "docs:watch", ( done ) => {
     gulp.watch( "docs/_sass/**/*.scss", gulp.series( "docs:compile" ) )
 
     done()
-} )
-
-gulp.task( "docs:clean", () => {
-    return del( [
-        "docs/assets/css"
-    ] )
 } )
 
 gulp.task( "docs:compile", gulp.series( "docs:clean", "docs:lint", "docs:compile:main", "docs:compile:rtl" ) )
