@@ -75,7 +75,7 @@ sidebar:
     dropdown: true
     pages:
       - /getting-started/download-install/
-      - /getting-started/select2-versions/ # TODO select2 versions page
+      - /getting-started/basic-usage/
       - /getting-started/build-tools/
   - name: examples
     label: Examples

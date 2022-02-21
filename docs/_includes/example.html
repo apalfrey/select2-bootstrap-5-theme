@@ -1,0 +1,48 @@
+<nav class="mt-3">
+    <div class="nav nav-tabs border-0" id="code-example-tab" role="tablist">
+        <button class="nav-link active" id="code-example-ltr-tab" data-bs-toggle="tab" data-bs-target="#code-example-ltr-content" type="button"
+            role="tab" aria-controls="code-example-ltr" aria-selected="true">LTR</button>
+        <button class="nav-link" id="code-example-rtl-tab" data-bs-toggle="tab" data-bs-target="#code-example-rtl-content" type="button" role="tab"
+            aria-controls="code-example-rtl" aria-selected="false">RTL</button>
+    </div>
+</nav>
+<div class="tab-content s2bs5-example" id="code-example-content">
+    <div class="tab-pane fade show active" id="code-example-ltr-content" role="tabpanel" aria-labelledby="code-example-ltr-tab">
+        <div dir="ltr">
+            code-example-html
+        </div>
+        <script>
+            code-example-js
+        </script>
+    </div>
+    <div class="tab-pane fade" id="code-example-rtl-content" role="tabpanel" aria-labelledby="code-example-rtl-tab">
+        <div dir="rtl">
+            code-example-html-rtl
+        </div>
+        <script>
+            code-example-js-rtl
+        </script>
+    </div>
+</div>
+<nav class="border-start border-end border-top">
+    <div class="nav nav-tabs" id="code-example-code-tab" role="tablist">
+        <button class="nav-link rounded-0 border-start-0 border-top-0 active" id="code-example-code-html-tab" data-bs-toggle="tab" data-bs-target="#code-example-code-html" type="button"
+            role="tab" aria-controls="code-example-code-html" aria-selected="true">HTML</button>
+        <button class="nav-link rounded-0 border-top-0" id="code-example-code-js-tab" data-bs-toggle="tab" data-bs-target="#code-example-code-js" type="button" role="tab"
+            aria-controls="code-example-code-js" aria-selected="false">JS</button>
+    </div>
+</nav>
+<div class="tab-content highlight-container" id="code-example-code-content">
+    <div class="tab-pane fade show active" id="code-example-code-html" role="tabpanel" aria-labelledby="code-example-code-html-tab">
+        <div class="simple-highlight">
+            {% include clipboard.html %}
+            code-example-html-highlight
+        </div>
+    </div>
+    <div class="tab-pane fade" id="code-example-code-js" role="tabpanel" aria-labelledby="code-example-code-js-tab">
+        <div class="simple-highlight">
+            {% include clipboard.html %}
+            code-example-js-highlight
+        </div>
+    </div>
+</div>

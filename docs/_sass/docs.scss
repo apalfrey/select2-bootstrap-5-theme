@@ -1,8 +1,6 @@
 // stylelint-disable no-invalid-position-at-import-rule
 @import "bootstrap";
-[dir="ltr"] {
-    @import "src/select2-bootstrap-5-theme";
-}
+@import "src/select2-bootstrap-5-theme";
 
 @import "variables";
 
@@ -20,4 +18,5 @@
 @import "clipboard";
 @import "buttons";
 @import "syntax";
+@import "examples";
 // stylelint-enable no-invalid-position-at-import-rule
