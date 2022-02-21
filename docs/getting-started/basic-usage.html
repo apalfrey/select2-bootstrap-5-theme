@@ -5,12 +5,9 @@ title_tag: true
 permalink: /getting-started/basic-usage/
 ---
 
-{% capture code-example %}
-{% include example.html %}
-{% endcapture %}
-
-{% capture basic-usage-html %}
-<select class="form-select" data-placeholder="Choose one thing" id="basic-usage" data-allow-clear="1">
+{% assign field_name = "basic-usage" %}
+{% capture example_html %}
+<select class="form-select" id="{{ field_name }}" data-placeholder="Choose one thing">
     <option></option>
     <option>Reactive</option>
     <option>Solution</option>
@@ -19,45 +16,24 @@ permalink: /getting-started/basic-usage/
     <option>Holistic</option>
 </select>
 {% endcapture %}
-{% assign basic-usage-html-rtl = basic-usage-html | replace: 'basic-usage', 'basic-usage-rtl' %}
 
-{% capture basic-usage-html-highlight %}
-{% highlight html %}{{ basic-usage-html }}{% endhighlight %}
-{% endcapture %}
-
-{% capture basic-usage-js %}
-$( '#basic-usage' ).select2( {
+{% capture example_js %}
+$( '#{{ field_name }}' ).select2( {
     theme: "bootstrap-5",
     width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
     placeholder: $( this ).data( 'placeholder' ),
 } );
 {% endcapture %}
-{% assign basic-usage-js-rtl = basic-usage-js | replace: 'basic-usage', 'basic-usage-rtl' %}
 
-{% capture basic-usage-js-highlight %}
-{% highlight js %}{{ basic-usage-js }}{% endhighlight %}
-{% endcapture %}
-
-{% assign basic-usage = code-example |
-    replace: 'code-example-html-highlight', basic-usage-html-highlight |
-    replace: 'code-example-js-highlight', basic-usage-js-highlight |
-
-    replace: 'code-example-html-rtl', basic-usage-html-rtl |
-    replace: 'code-example-js-rtl', basic-usage-js-rtl |
-
-    replace: 'code-example-html', basic-usage-html |
-    replace: 'code-example-js', basic-usage-js |
-
-    replace: 'code-example', 'basic-usage'
-%}
-{{ basic-usage }}
+{% include example.html %}
 
 <h2 id="select2-versions">Select2 versions</h2>
 <p>There are 2 versions of Select2 which changed some options. The Select2 Bootstrap 5 theme supports both 4.0.x and 4.1.x-rc.x. Which version of Select2 you use will change some of the usage for the Select2 Bootstrap 5 theme.</p>
 
 <h3 id="sizing">Sizing</h3>
 <p>There are 2 ways to set the sizing of the Select2 element; using Select2 options, or using Bootstrap 5 classes and Select2 options. Between 4.0.x and 4.1.x-rc.x, Select2 changed the option name for adding classes to the main element (the one you see before opening the dropdown) from <code>containerCssClass</code> to <code>selectionCssClass</code>. See below for an example</p>
-
+<div class="simple-highlight">
+{% include clipboard.html %}
 {% highlight js %}
 // For Select2 4.0
 $("#form-select-sm").select2({
@@ -73,3 +49,4 @@ $("#form-select-sm").select2({
     dropdownCssClass: "select2--small",
 });
 {% endhighlight %}
+</div>

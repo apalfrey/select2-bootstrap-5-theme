@@ -26,6 +26,10 @@
         padding: 1rem 1.5rem;
     }
 
+    @at-root .tab-pane & {
+        margin-bottom: 0;
+    }
+
     pre {
         width: 100%;
         padding: 0;
