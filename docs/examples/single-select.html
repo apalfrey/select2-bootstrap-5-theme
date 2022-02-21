@@ -4,3 +4,146 @@ title: Single select
 title_tag: true
 permalink: /examples/single-select/
 ---
+
+{% capture code-example %}
+{% include example.html %}
+{% endcapture %}
+
+<h2 id="single-select">Single select</h2>
+{% capture single-select-html %}
+<select class="form-select" data-placeholder="Choose one thing" id="single-select-field" data-allow-clear="1">
+    <option></option>
+    <option>Reactive</option>
+    <option>Solution</option>
+    <option>Conglomeration</option>
+    <option>Algoritm</option>
+    <option>Holistic</option>
+</select>
+{% endcapture %}
+
+{% capture single-select-js %}
+$( '#single-select-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+{% endcapture %}
+
+{% assign single-select-html-rtl = single-select-html | replace: 'single-select-field', 'single-select-rtl-field' %}
+{% assign single-select-js-rtl = single-select-js | replace: 'single-select-field', 'single-select-rtl-field' %}
+
+{% capture single-select-html-highlight %}
+{% highlight html %}{{ single-select-html }}{% endhighlight %}
+{% endcapture %}
+
+{% capture single-select-js-highlight %}
+{% highlight js %}{{ single-select-js }}{% endhighlight %}
+{% endcapture %}
+
+{% assign single-select = code-example |
+    replace: 'code-example-html-highlight', single-select-html-highlight |
+    replace: 'code-example-js-highlight', single-select-js-highlight |
+
+    replace: 'code-example-html-rtl', single-select-html-rtl |
+    replace: 'code-example-js-rtl', single-select-js-rtl |
+
+    replace: 'code-example-html', single-select-html |
+    replace: 'code-example-js', single-select-js |
+
+    replace: 'code-example',  'single-select-field'
+%}
+{{ single-select }}
+
+<h2 id="single-select-optgroup">Single select w/ optgroup</h2>
+{% capture single-select-optgroup-html %}
+<select class="form-select" data-placeholder="Choose one thing" id="single-select-optgroup-field" data-allow-clear="1">
+    <option></option>
+    <optgroup label="Group 1">
+        <option>Reactive</option>
+        <option>Solution</option>
+        <option>Conglomeration</option>
+    </optgroup>
+    <optgroup label="Group 2">
+        <option>Algoritm</option>
+        <option>Holistic</option>
+    </optgroup>
+</select>
+{% endcapture %}
+
+{% capture single-select-optgroup-js %}
+$( '#single-select-optgroup-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+{% endcapture %}
+
+{% assign single-select-optgroup-html-rtl = single-select-optgroup-html | replace: 'single-select-optgroup-field', 'single-select-optgroup-rtl-field' %}
+{% assign single-select-optgroup-js-rtl = single-select-optgroup-js | replace: 'single-select-optgroup-field', 'single-select-optgroup-rtl-field' %}
+
+{% capture single-select-optgroup-html-highlight %}
+{% highlight html %}{{ single-select-optgroup-html }}{% endhighlight %}
+{% endcapture %}
+
+{% capture single-select-optgroup-js-highlight %}
+{% highlight js %}{{ single-select-optgroup-js }}{% endhighlight %}
+{% endcapture %}
+
+{% assign single-select-optgroup = code-example |
+    replace: 'code-example-html-highlight', single-select-optgroup-html-highlight |
+    replace: 'code-example-js-highlight', single-select-optgroup-js-highlight |
+
+    replace: 'code-example-html-rtl', single-select-optgroup-html-rtl |
+    replace: 'code-example-js-rtl', single-select-optgroup-js-rtl |
+
+    replace: 'code-example-html', single-select-optgroup-html |
+    replace: 'code-example-js', single-select-optgroup-js |
+
+    replace: 'code-example',  'single-select-optgroup-field'
+%}
+{{ single-select-optgroup }}
+
+<h2 id="single-select-disabled">Disabled single select</h2>
+{% capture single-select-disabled-html %}
+<select class="form-select" data-placeholder="Choose one thing" id="single-select-disabled-field" data-allow-clear="1" disabled>
+    <option></option>
+    <option>Reactive</option>
+    <option>Solution</option>
+    <option>Conglomeration</option>
+    <option>Algoritm</option>
+    <option>Holistic</option>
+</select>
+{% endcapture %}
+
+{% capture single-select-disabled-js %}
+$( '#single-select-disabled-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+{% endcapture %}
+
+{% assign single-select-disabled-html-rtl = single-select-disabled-html | replace: 'single-select-disabled-field', 'single-select-disabled-rtl-field' %}
+{% assign single-select-disabled-js-rtl = single-select-disabled-js | replace: 'single-select-disabled-field', 'single-select-disabled-rtl-field' %}
+
+{% capture single-select-disabled-html-highlight %}
+{% highlight html %}{{ single-select-disabled-html }}{% endhighlight %}
+{% endcapture %}
+
+{% capture single-select-disabled-js-highlight %}
+{% highlight js %}{{ single-select-disabled-js }}{% endhighlight %}
+{% endcapture %}
+
+{% assign single-select-disabled = code-example |
+    replace: 'code-example-html-highlight', single-select-disabled-html-highlight |
+    replace: 'code-example-js-highlight', single-select-disabled-js-highlight |
+
+    replace: 'code-example-html-rtl', single-select-disabled-html-rtl |
+    replace: 'code-example-js-rtl', single-select-disabled-js-rtl |
+
+    replace: 'code-example-html', single-select-disabled-html |
+    replace: 'code-example-js', single-select-disabled-js |
+
+    replace: 'code-example',  'single-select-disabled-field'
+%}
+{{ single-select-disabled }}
