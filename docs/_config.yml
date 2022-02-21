@@ -94,5 +94,5 @@ sidebar:
     version-switch: false
     dropdown: true
     pages:
-      - /about/contributing/ # TODO contributing page
+      - /about/contributing/
       - /about/license/
