@@ -4,3 +4,315 @@ title: Multiple select
 title_tag: true
 permalink: /examples/multiple-select/4.0/
 ---
+
+{% capture code-example %}
+{% include example.html %}
+{% endcapture %}
+
+<h2 id="multiple-select">Basic multiple select</h2>
+{% capture multiple-select-html %}
+<select class="form-select" data-placeholder="Choose anything" id="multiple-select-field" multiple>
+    <option>Christmas Island</option>
+    <option>South Sudan</option>
+    <option>Jamaica</option>
+    <option>Kenya</option>
+    <option>French Guiana</option>
+    <option>Mayotta</option>
+    <option>Liechtenstein</option>
+    <option>Denmark</option>
+    <option>Eritrea</option>
+    <option>Gibraltar</option>
+    <option>Saint Helena, Ascension and Tristan da Cunha</option>
+    <option>Haiti</option>
+    <option>Namibia</option>
+    <option>South Georgia and the South Sandwich Islands</option>
+    <option>Vietnam</option>
+    <option>Yemen</option>
+    <option>Philippines</option>
+    <option>Benin</option>
+    <option>Czech Republic</option>
+    <option>Russia</option>
+</select>
+{% endcapture %}
+
+{% capture multiple-select-js %}
+$( '#multiple-select-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% assign multiple-select-html-rtl = multiple-select-html | replace: 'multiple-select-field', 'multiple-select-rtl-field' %}
+{% assign multiple-select-js-rtl = multiple-select-js | replace: 'multiple-select-field', 'multiple-select-rtl-field' %}
+
+{% capture multiple-select-html-highlight %}
+{% highlight html %}{{ multiple-select-html }}{% endhighlight %}
+{% endcapture %}
+
+{% capture multiple-select-js-highlight %}
+{% highlight js %}{{ multiple-select-js }}{% endhighlight %}
+{% endcapture %}
+
+{% assign multiple-select = code-example |
+    replace: 'code-example-html-highlight', multiple-select-html-highlight |
+    replace: 'code-example-js-highlight', multiple-select-js-highlight |
+
+    replace: 'code-example-html-rtl', multiple-select-html-rtl |
+    replace: 'code-example-js-rtl', multiple-select-js-rtl |
+
+    replace: 'code-example-html', multiple-select-html |
+    replace: 'code-example-js', multiple-select-js |
+
+    replace: 'code-example',  'multiple-select-field'
+%}
+{{ multiple-select }}
+
+<h2 id="multiple-select-optgroup">Multiple select w/ optgroup</h2>
+{% capture multiple-select-optgroup-html %}
+<select class="form-select" data-placeholder="Choose anything" id="multiple-select-optgroup-field" multiple>
+    <optgroup label="Group 1">
+        <option>Christmas Island</option>
+        <option>South Sudan</option>
+        <option>Jamaica</option>
+        <option>Kenya</option>
+        <option>French Guiana</option>
+        <option>Mayotta</option>
+    </optgroup>
+    <optgroup label="Group 2">
+        <option>Liechtenstein</option>
+        <option>Denmark</option>
+        <option>Eritrea</option>
+        <option>Gibraltar</option>
+        <option>Saint Helena, Ascension and Tristan da Cunha</option>
+        <option>Haiti</option>
+        <option>Namibia</option>
+    </optgroup>
+    <optgroup label="Group 3">
+        <option>South Georgia and the South Sandwich Islands</option>
+        <option>Vietnam</option>
+        <option>Yemen</option>
+        <option>Philippines</option>
+        <option>Benin</option>
+        <option>Czech Republic</option>
+        <option>Russia</option>
+    </optgroup>
+</select>
+{% endcapture %}
+
+{% capture multiple-select-optgroup-js %}
+$( '#multiple-select-optgroup-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% assign multiple-select-optgroup-html-rtl = multiple-select-optgroup-html | replace: 'multiple-select-optgroup-field', 'multiple-select-optgroup-rtl-field' %}
+{% assign multiple-select-optgroup-js-rtl = multiple-select-optgroup-js | replace: 'multiple-select-optgroup-field', 'multiple-select-optgroup-rtl-field' %}
+
+{% capture multiple-select-optgroup-html-highlight %}
+{% highlight html %}{{ multiple-select-optgroup-html }}{% endhighlight %}
+{% endcapture %}
+
+{% capture multiple-select-optgroup-js-highlight %}
+{% highlight js %}{{ multiple-select-optgroup-js }}{% endhighlight %}
+{% endcapture %}
+
+{% assign multiple-select-optgroup = code-example |
+    replace: 'code-example-html-highlight', multiple-select-optgroup-html-highlight |
+    replace: 'code-example-js-highlight', multiple-select-optgroup-js-highlight |
+
+    replace: 'code-example-html-rtl', multiple-select-optgroup-html-rtl |
+    replace: 'code-example-js-rtl', multiple-select-optgroup-js-rtl |
+
+    replace: 'code-example-html', multiple-select-optgroup-html |
+    replace: 'code-example-js', multiple-select-optgroup-js |
+
+    replace: 'code-example',  'multiple-select-optgroup-field'
+%}
+{{ multiple-select-optgroup }}
+
+<h2 id="multiple-select-clear">Multiple select w/ allow clear</h2>
+{% capture multiple-select-clear-html %}
+<select class="form-select" data-placeholder="Choose anything" id="multiple-select-clear-field" multiple>
+    <option>Christmas Island</option>
+    <option>South Sudan</option>
+    <option>Jamaica</option>
+    <option>Kenya</option>
+    <option>French Guiana</option>
+    <option>Mayotta</option>
+    <option>Liechtenstein</option>
+    <option>Denmark</option>
+    <option>Eritrea</option>
+    <option>Gibraltar</option>
+    <option>Saint Helena, Ascension and Tristan da Cunha</option>
+    <option>Haiti</option>
+    <option>Namibia</option>
+    <option>South Georgia and the South Sandwich Islands</option>
+    <option>Vietnam</option>
+    <option>Yemen</option>
+    <option>Philippines</option>
+    <option>Benin</option>
+    <option>Czech Republic</option>
+    <option>Russia</option>
+</select>
+{% endcapture %}
+
+{% capture multiple-select-clear-js %}
+$( '#multiple-select-clear-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    allowClear: true,
+} );
+{% endcapture %}
+
+{% assign multiple-select-clear-html-rtl = multiple-select-clear-html | replace: 'multiple-select-clear-field', 'multiple-select-clear-rtl-field' %}
+{% assign multiple-select-clear-js-rtl = multiple-select-clear-js | replace: 'multiple-select-clear-field', 'multiple-select-clear-rtl-field' %}
+
+{% capture multiple-select-clear-html-highlight %}
+{% highlight html %}{{ multiple-select-clear-html }}{% endhighlight %}
+{% endcapture %}
+
+{% capture multiple-select-clear-js-highlight %}
+{% highlight js %}{{ multiple-select-clear-js }}{% endhighlight %}
+{% endcapture %}
+
+{% assign multiple-select-clear = code-example |
+    replace: 'code-example-html-highlight', multiple-select-clear-html-highlight |
+    replace: 'code-example-js-highlight', multiple-select-clear-js-highlight |
+
+    replace: 'code-example-html-rtl', multiple-select-clear-html-rtl |
+    replace: 'code-example-js-rtl', multiple-select-clear-js-rtl |
+
+    replace: 'code-example-html', multiple-select-clear-html |
+    replace: 'code-example-js', multiple-select-clear-js |
+
+    replace: 'code-example',  'multiple-select-clear-field'
+%}
+{{ multiple-select-clear }}
+
+<h2 id="multiple-select-custom">Multiple select w/ custom entries</h2>
+{% capture multiple-select-custom-html %}
+<select class="form-select" data-placeholder="Choose anything" id="multiple-select-custom-field" multiple>
+    <option>Christmas Island</option>
+    <option>South Sudan</option>
+    <option>Jamaica</option>
+    <option>Kenya</option>
+    <option>French Guiana</option>
+    <option>Mayotta</option>
+    <option>Liechtenstein</option>
+    <option>Denmark</option>
+    <option>Eritrea</option>
+    <option>Gibraltar</option>
+    <option>Saint Helena, Ascension and Tristan da Cunha</option>
+    <option>Haiti</option>
+    <option>Namibia</option>
+    <option>South Georgia and the South Sandwich Islands</option>
+    <option>Vietnam</option>
+    <option>Yemen</option>
+    <option>Philippines</option>
+    <option>Benin</option>
+    <option>Czech Republic</option>
+    <option>Russia</option>
+</select>
+{% endcapture %}
+
+{% capture multiple-select-custom-js %}
+$( '#multiple-select-custom-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    tags: true,
+} );
+{% endcapture %}
+
+{% assign multiple-select-custom-html-rtl = multiple-select-custom-html | replace: 'multiple-select-custom-field', 'multiple-select-custom-rtl-field' %}
+{% assign multiple-select-custom-js-rtl = multiple-select-custom-js | replace: 'multiple-select-custom-field', 'multiple-select-custom-rtl-field' %}
+
+{% capture multiple-select-custom-html-highlight %}
+{% highlight html %}{{ multiple-select-custom-html }}{% endhighlight %}
+{% endcapture %}
+
+{% capture multiple-select-custom-js-highlight %}
+{% highlight js %}{{ multiple-select-custom-js }}{% endhighlight %}
+{% endcapture %}
+
+{% assign multiple-select-custom = code-example |
+    replace: 'code-example-html-highlight', multiple-select-custom-html-highlight |
+    replace: 'code-example-js-highlight', multiple-select-custom-js-highlight |
+
+    replace: 'code-example-html-rtl', multiple-select-custom-html-rtl |
+    replace: 'code-example-js-rtl', multiple-select-custom-js-rtl |
+
+    replace: 'code-example-html', multiple-select-custom-html |
+    replace: 'code-example-js', multiple-select-custom-js |
+
+    replace: 'code-example',  'multiple-select-custom-field'
+%}
+{{ multiple-select-custom }}
+
+<h2 id="multiple-select-disabled">Disabled multiple select</h2>
+{% capture multiple-select-disabled-html %}
+<select class="form-select" data-placeholder="Choose anything" id="multiple-select-disabled-field" multiple disabled>
+    <option>Christmas Island</option>
+    <option>South Sudan</option>
+    <option>Jamaica</option>
+    <option>Kenya</option>
+    <option>French Guiana</option>
+    <option>Mayotta</option>
+    <option>Liechtenstein</option>
+    <option>Denmark</option>
+    <option>Eritrea</option>
+    <option>Gibraltar</option>
+    <option>Saint Helena, Ascension and Tristan da Cunha</option>
+    <option>Haiti</option>
+    <option>Namibia</option>
+    <option>South Georgia and the South Sandwich Islands</option>
+    <option>Vietnam</option>
+    <option>Yemen</option>
+    <option>Philippines</option>
+    <option>Benin</option>
+    <option>Czech Republic</option>
+    <option>Russia</option>
+</select>
+{% endcapture %}
+
+{% capture multiple-select-disabled-js %}
+$( '#multiple-select-disabled-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% assign multiple-select-disabled-html-rtl = multiple-select-disabled-html | replace: 'multiple-select-disabled-field', 'multiple-select-disabled-rtl-field' %}
+{% assign multiple-select-disabled-js-rtl = multiple-select-disabled-js | replace: 'multiple-select-disabled-field', 'multiple-select-disabled-rtl-field' %}
+
+{% capture multiple-select-disabled-html-highlight %}
+{% highlight html %}{{ multiple-select-disabled-html }}{% endhighlight %}
+{% endcapture %}
+
+{% capture multiple-select-disabled-js-highlight %}
+{% highlight js %}{{ multiple-select-disabled-js }}{% endhighlight %}
+{% endcapture %}
+
+{% assign multiple-select-disabled = code-example |
+    replace: 'code-example-html-highlight', multiple-select-disabled-html-highlight |
+    replace: 'code-example-js-highlight', multiple-select-disabled-js-highlight |
+
+    replace: 'code-example-html-rtl', multiple-select-disabled-html-rtl |
+    replace: 'code-example-js-rtl', multiple-select-disabled-js-rtl |
+
+    replace: 'code-example-html', multiple-select-disabled-html |
+    replace: 'code-example-js', multiple-select-disabled-js |
+
+    replace: 'code-example',  'multiple-select-disabled-field'
+%}
+{{ multiple-select-disabled }}

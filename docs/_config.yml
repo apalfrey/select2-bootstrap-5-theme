@@ -83,7 +83,7 @@ sidebar:
     dropdown: true
     pages:
       - /examples/single-select/
-      - /examples/multiple-select/ # TODO multiple select page
+      - /examples/multiple-select/
       - /examples/input-groups/ # TODO input groups page
       - /examples/sizing/ # TODO sizing page
       - /examples/validation/ # TODO validation page

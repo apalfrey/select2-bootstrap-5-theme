@@ -105,7 +105,7 @@ $( '#single-select-optgroup-field' ).select2( {
 
 <h2 id="single-select-clear">Single select w/ allow clear</h2>
 {% capture single-select-clear-html %}
-<select class="form-select" data-placeholder="Choose one thing" id="single-select-clear-field" data-allow-clear="1">
+<select class="form-select" data-placeholder="Choose one thing" id="single-select-clear-field">
     <option></option>
     <option>Reactive</option>
     <option>Solution</option>
@@ -120,7 +120,7 @@ $( '#single-select-clear-field' ).select2( {
     theme: "bootstrap-5",
     width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
     placeholder: $( this ).data( 'placeholder' ),
-    allowClear: Boolean( $( this ).data( "allow-clear" ) ),
+    allowClear: true,
 } );
 {% endcapture %}
 
