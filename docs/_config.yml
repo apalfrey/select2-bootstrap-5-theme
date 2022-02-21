@@ -82,7 +82,7 @@ sidebar:
     version-switch: true
     dropdown: true
     pages:
-      - /examples/single-select/ # TODO single select page
+      - /examples/single-select/
       - /examples/multiple-select/ # TODO multiple select page
       - /examples/input-groups/ # TODO input groups page
       - /examples/sizing/ # TODO sizing page

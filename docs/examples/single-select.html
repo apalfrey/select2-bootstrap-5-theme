@@ -9,9 +9,9 @@ permalink: /examples/single-select/
 {% include example.html %}
 {% endcapture %}
 
-<h2 id="single-select">Single select</h2>
+<h2 id="single-select">Basic single select</h2>
 {% capture single-select-html %}
-<select class="form-select" data-placeholder="Choose one thing" id="single-select-field" data-allow-clear="1">
+<select class="form-select" data-placeholder="Choose one thing" id="single-select-field">
     <option></option>
     <option>Reactive</option>
     <option>Solution</option>
@@ -56,7 +56,7 @@ $( '#single-select-field' ).select2( {
 
 <h2 id="single-select-optgroup">Single select w/ optgroup</h2>
 {% capture single-select-optgroup-html %}
-<select class="form-select" data-placeholder="Choose one thing" id="single-select-optgroup-field" data-allow-clear="1">
+<select class="form-select" data-placeholder="Choose one thing" id="single-select-optgroup-field">
     <option></option>
     <optgroup label="Group 1">
         <option>Reactive</option>
@@ -103,9 +103,55 @@ $( '#single-select-optgroup-field' ).select2( {
 %}
 {{ single-select-optgroup }}
 
+<h2 id="single-select-clear">Single select w/ allow clear</h2>
+{% capture single-select-clear-html %}
+<select class="form-select" data-placeholder="Choose one thing" id="single-select-clear-field" data-allow-clear="1">
+    <option></option>
+    <option>Reactive</option>
+    <option>Solution</option>
+    <option>Conglomeration</option>
+    <option>Algoritm</option>
+    <option>Holistic</option>
+</select>
+{% endcapture %}
+
+{% capture single-select-clear-js %}
+$( '#single-select-clear-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    allowClear: Boolean( $( this ).data( "allow-clear" ) ),
+} );
+{% endcapture %}
+
+{% assign single-select-clear-html-rtl = single-select-clear-html | replace: 'single-select-clear-field', 'single-select-clear-rtl-field' %}
+{% assign single-select-clear-js-rtl = single-select-clear-js | replace: 'single-select-clear-field', 'single-select-clear-rtl-field' %}
+
+{% capture single-select-clear-html-highlight %}
+{% highlight html %}{{ single-select-clear-html }}{% endhighlight %}
+{% endcapture %}
+
+{% capture single-select-clear-js-highlight %}
+{% highlight js %}{{ single-select-clear-js }}{% endhighlight %}
+{% endcapture %}
+
+{% assign single-select-clear = code-example |
+    replace: 'code-example-html-highlight', single-select-clear-html-highlight |
+    replace: 'code-example-js-highlight', single-select-clear-js-highlight |
+
+    replace: 'code-example-html-rtl', single-select-clear-html-rtl |
+    replace: 'code-example-js-rtl', single-select-clear-js-rtl |
+
+    replace: 'code-example-html', single-select-clear-html |
+    replace: 'code-example-js', single-select-clear-js |
+
+    replace: 'code-example',  'single-select-clear-field'
+%}
+{{ single-select-clear }}
+
 <h2 id="single-select-disabled">Disabled single select</h2>
 {% capture single-select-disabled-html %}
-<select class="form-select" data-placeholder="Choose one thing" id="single-select-disabled-field" data-allow-clear="1" disabled>
+<select class="form-select" data-placeholder="Choose one thing" id="single-select-disabled-field" disabled>
     <option></option>
     <option>Reactive</option>
     <option>Solution</option>
