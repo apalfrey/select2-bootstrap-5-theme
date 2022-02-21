@@ -6,7 +6,7 @@ description: >- # ignore newlines until "baseurl:"
   Google search results) and in your feed.xml site description.
 baseurl: /select2-bootstrap-5-theme # the subpath of the site
 url: https://apalfrey.github.io # the base hostname & protocol for the site
-version: 1.1.1
+version: 1.2.0
 
 # Build settings
 theme: null # prevents style.css from being generated
