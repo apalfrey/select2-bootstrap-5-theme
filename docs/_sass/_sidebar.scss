@@ -33,14 +33,14 @@
         padding: .1875rem .5rem;
         margin-top: .125rem;
         margin-left: 1.25rem;
-        color: rgba($black, .65);
+        color: rgba($black, .85);
         text-decoration: if($link-decoration == none, null, none);
 
         &:hover,
         &:focus {
-            color: rgba($black, .85);
+            color: $s2bs5-primary;
             text-decoration: if($link-hover-decoration == underline, none, null);
-            background-color: rgba($s2bs5-primary, .1);
+            background-color: rgba($s2bs5-primary-light, .15);
         }
     }
 
@@ -48,18 +48,18 @@
         // Custom styles (as we don't have a completely neutral button style)
         padding: .25rem .5rem;
         font-weight: 600;
-        color: rgba($black, .65);
+        color: rgba($black, .85);
         background-color: transparent;
         border: 0;
 
         &:hover,
         &:focus {
-            color: rgba($black, .85);
-            background-color: rgba($s2bs5-primary, .1);
+            color: $s2bs5-primary;
+            background-color: rgba($s2bs5-primary-light, .15);
         }
 
         &:focus {
-            box-shadow: 0 0 0 1px rgba($s2bs5-primary, .7);
+            box-shadow: 0 0 0 1px rgba($s2bs5-primary-light, .75);
         }
 
         // Add chevron if there's a submenu
@@ -72,7 +72,7 @@
         }
 
         &[aria-expanded="true"] {
-            color: rgba($black, .85);
+            color: $s2bs5-primary;
 
             &::before {
                 transform: rotate(90deg);
@@ -82,6 +82,6 @@
 
     .active {
         font-weight: 600;
-        color: rgba($black, .85);
+        color: $s2bs5-primary;
     }
 }

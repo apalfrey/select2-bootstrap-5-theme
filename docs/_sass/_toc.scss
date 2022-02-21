@@ -28,10 +28,12 @@
         }
 
         a {
-            color: inherit;
+            color: rgba($black, .85);
+            text-decoration: none;
 
-            &:not(:hover) {
-                text-decoration: none;
+            &:hover {
+                color: $s2bs5-primary;
+                text-decoration: underline;
             }
 
             // stylelint-disable selector-max-type

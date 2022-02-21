@@ -1,3 +1,14 @@
+.nav-tabs {
+    .nav-link {
+        color: $s2bs5-primary;
+
+        &:hover,
+        &:focus {
+            color: $s2bs5-primary-dark;
+        }
+    }
+}
+
 .s2bs5-example {
     position: relative;
     padding: 1rem;
