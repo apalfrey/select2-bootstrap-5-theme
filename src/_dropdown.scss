@@ -6,7 +6,8 @@
     // Dropdown
     .select2-dropdown {
         z-index: $s2bs5-zindex;
-        border-color: $s2bs5-border-color;
+        overflow: hidden;
+        border-color: $s2bs5-focus-border-color;
         @include border-radius($s2bs5-border-radius);
 
         // Open Below
@@ -17,6 +18,7 @@
 
         // Open Above
         &.select2-dropdown--above {
+            border-bottom: 0 solid transparent;
             @include border-bottom-radius(0);
         }
 

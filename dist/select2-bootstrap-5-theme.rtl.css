@@ -35,12 +35,12 @@
   box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 .select2-container--bootstrap-5.select2-container--open.select2-container--below .select2-selection {
-  border-bottom: 1px solid transparent;
+  border-bottom: 0 solid transparent;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
 .select2-container--bootstrap-5.select2-container--open.select2-container--above .select2-selection {
-  border-top: 1px solid transparent;
+  border-top: 0 solid transparent;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -78,7 +78,8 @@
 }
 .select2-container--bootstrap-5 .select2-dropdown {
   z-index: 1056;
-  border-color: #ced4da;
+  overflow: hidden;
+  border-color: #86b7fe;
   border-radius: 0.25rem;
 }
 .select2-container--bootstrap-5 .select2-dropdown.select2-dropdown--below {
@@ -87,6 +88,7 @@
   border-top-left-radius: 0;
 }
 .select2-container--bootstrap-5 .select2-dropdown.select2-dropdown--above {
+  border-bottom: 0 solid transparent;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
@@ -287,10 +289,10 @@
   box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
 }
 .is-valid + .select2-container--bootstrap-5.select2-container--open.select2-container--below .select2-selection, .was-validated select:valid + .select2-container--bootstrap-5.select2-container--open.select2-container--below .select2-selection {
-  border-bottom: 1px solid transparent;
+  border-bottom: 0 solid transparent;
 }
 .is-valid + .select2-container--bootstrap-5.select2-container--open.select2-container--above .select2-selection, .was-validated select:valid + .select2-container--bootstrap-5.select2-container--open.select2-container--above .select2-selection {
-  border-top: 1px solid transparent;
+  border-top: 0 solid transparent;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
@@ -302,10 +304,10 @@
   box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
 }
 .is-invalid + .select2-container--bootstrap-5.select2-container--open.select2-container--below .select2-selection, .was-validated select:invalid + .select2-container--bootstrap-5.select2-container--open.select2-container--below .select2-selection {
-  border-bottom: 1px solid transparent;
+  border-bottom: 0 solid transparent;
 }
 .is-invalid + .select2-container--bootstrap-5.select2-container--open.select2-container--above .select2-selection, .was-validated select:invalid + .select2-container--bootstrap-5.select2-container--open.select2-container--above .select2-selection {
-  border-top: 1px solid transparent;
+  border-top: 0 solid transparent;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
 }
