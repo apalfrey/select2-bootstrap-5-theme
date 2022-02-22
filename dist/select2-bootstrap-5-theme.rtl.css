@@ -2,7 +2,7 @@
  * Select2 v4 Bootstrap 5 theme v1.2.0
 */
 .select2-container--bootstrap-5 {
-  z-index: 1061;
+  z-index: 1;
   display: block;
 }
 .select2-container--bootstrap-5 *:focus {
@@ -74,7 +74,7 @@
 }
 
 .select2-container--bootstrap-5 .select2-dropdown {
-  z-index: 1056;
+  z-index: 1061;
   border-color: #ced4da;
   border-radius: 0.25rem;
 }

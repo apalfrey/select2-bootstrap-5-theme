@@ -1,7 +1,7 @@
 .select2-container--bootstrap-5 {
     // Dropdown
     .select2-dropdown {
-        z-index: 1056;
+        z-index: $s2bs5-zindex;
         border-color: $s2bs5-border-color;
         @include border-radius($s2bs5-border-radius);
 
