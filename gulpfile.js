@@ -8,7 +8,7 @@ const gulpif = require( "gulp-if" )
 const postcss = require( "gulp-postcss" )
 const rename = require( "gulp-rename" )
 const rtlcss = require( "gulp-rtlcss" )
-const sass = require( "gulp-dart-sass" )
+const sass = require( "gulp-sass" )( require( "sass" ) )
 const stylelint = require( "@ronilaukkarinen/gulp-stylelint" )
 
 /* Start docs tasks */
