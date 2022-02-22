@@ -1,0 +1,23 @@
+.s2bs5-footer {
+    li {
+        color: $gray-500;
+    }
+
+    a {
+        color: $white;
+        text-decoration: none;
+
+        &:hover,
+        &:focus {
+            color: $s2bs5-primary-light;
+            text-decoration: underline;
+        }
+    }
+
+    .footer-icon {
+        svg {
+            width: 5rem;
+            height: 5rem;
+        }
+    }
+}

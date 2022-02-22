@@ -1,0 +1,5 @@
+// stylelint-disable scss/dollar-variable-default
+$s2bs5-primary: $indigo;
+$s2bs5-primary-light: lighten(saturate($s2bs5-primary, 5%), 25%); // stylelint-disable-line function-disallowed-list
+$s2bs5-primary-dark: darken(saturate($s2bs5-primary, 5%), 25%); // stylelint-disable-line function-disallowed-list
+$sidebar-collapse-icon: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'><path fill='none' stroke='rgba(0,0,0,.5)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M5 14l6-6-6-6'/></svg>");

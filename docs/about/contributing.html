@@ -1,0 +1,117 @@
+---
+layout: default
+title: Contributing
+permalink: /about/contributing/
+---
+
+<p class="s2bs5-lead">Find out how you can contribute to the Select2 Bootstrap 5 theme with bug reports, feature requests and pull requests.</p>
+
+<p>Please follow these guidelines in order to keep the process simple and prevent any possible confusions.</p>
+
+<h2 id="issues">Issues</h2>
+<p>The <a href="{{ site.links.github | append: "issues" }}" target="_blank" rel="noopener noreferrer">issue tracker</a> is a useful way to <a href="#bug-reports">report bugs</a> and <a href="feature-requests">request features</a>. However, we do have some rules that you should follow;</p>
+
+<ul>
+    <li><strong>Be civil and polite.</strong> It should be a welcoming place, ensuring nobody feels alienated.</li>
+    <li><strong>Make sure your bug report or feature request doesn't already exist.</strong> This helps prevents duplication, if an issue already exists and you're able to provide more insight, feel free to comment on the existing issue.</li>
+    <li><strong>Stick to the issue templates.</strong> These templates help us gather all the information needed to fix the issue or implement the feature.</li>
+    <li><strong>Format any code snippets.</strong> If your bug report/feature request has any code snippets, please make sure you use <a href="https://docs.github.com/en/github/writing-on-github/working-with-advanced-formatting/creating-and-highlighting-code-blocks" target="_blank" rel="noopener noreferrer">code blocks</a> to highlight and format your code.</li>
+    <li><strong>Use screenshots & code examples where possible.</strong> This will further help us to understand what the bug or feature request is.</li>
+</ul>
+
+<h3 id="labels">Labels</h3>
+<p>The bug tracker utilises several labels in order to organise and identify all issues submitted. Here's what labels we currently use;</p>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Label</th>
+                <th scope="col">Use</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"><code>bug</code></th>
+                <td>Bug reports that need to be fixed.</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>dependencies</code></th>
+                <td>Issues stemming from, or that will alter, any dependencies used.</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>documentation</code></th>
+                <td>Issues that require documentation to be changed.</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>duplicate</code></th>
+                <td>Issues that have already been created, these issues get closed and linked to the original issue.</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>enhancement</code></th>
+                <td>Feature requests that need to be implemented.</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>help wanted</code></th>
+                <td>Issues we need some help in resolving.</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>on hold</code></th>
+                <td>Issues that will be tackled at a later date, a reason should always be given in the comments.</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>pending release</code></th>
+                <td>The issue has been resolved, but is pending release in the next version.</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>question</code></th>
+                <td>More information is needed on these issues.</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>wontfix</code></th>
+                <td>Issues that are out of our remit (e.g. issues related to Bootstrap or Select2) or non-issues (e.g. support requests).</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h3 id="bug-reports">Bug reports</h3>
+<p>Found a bug? Please <a href="https://github.com/apalfrey/select2-bootstrap-5-theme/issues/new" target="_blank" rel="noopener noreferrer">open a bug report</a>, however please try and take the following steps:</p>
+
+<ul>
+    <li>Make sure the bug hasn't already been reported. <a href="https://github.com/apalfrey/select2-bootstrap-5-theme/issues" target="_blank" rel="noopener noreferrer">Search the issues</a> (both open and closed).</li>
+    <li>Make sure the issue isn't with Select2:</li>
+    <ul>
+        <li>Check the <a href="https://github.com/select2/select2/issues" target="_blank" rel="noopener noreferrer">Select2 Github issues page</a> to make sure it hasn't been reported there.</li>
+        <li>Disable the Select2 Bootstrap 5 Theme to see if the issue goes away or not.</li>
+    </ul>
+    <li>Provide an example of the issue. Images are always helpful, however an example of the issue would be preferrable. Here's some tools that would help with this:</li>
+    <ul>
+        <li><a href="https://jsbin.com/" target="_blank" rel="noopener noreferrer">JS Bin</a></li>
+        <li><a href="https://jsfiddle.net/" target="_blank" rel="noopener noreferrer">JSFiddle</a></li>
+        <li><a href="https://codepen.io/" target="_blank" rel="noopener noreferrer">CodePen</a></li>
+    </ul>
+</ul>
+
+<h3 id="feature-requests">Feature requests</h3>
+<p>Got an idea to expand the functionality? Feel free to <a href="https://github.com/apalfrey/select2-bootstrap-5-theme/issues/new" target="_blank" rel="noopener noreferrer">submit a feature request</a>, or fork the repo and <a href="#pull-requests">submit a pull request</a>. If you're submitting a feature request, please be aware of the following:</p>
+
+<ul>
+    <li>Make sure the feature hasn't already been requested. <a href="https://github.com/apalfrey/select2-bootstrap-5-theme/issues" target="_blank" rel="noopener noreferrer">Search the issues</a> (both open and closed).</li>
+    <li>Make sure the feature is related to the styling. Functionality for Select2 cannot be altered, this theme simply styles it to fit with Bootstrap 5.</li>
+</ul>
+
+<h2 id="pull-requests">Pull requests</h2>
+<p>Fixed a bug or implemented a new feature? Please <a href="https://help.github.com/articles/about-pull-requests/" target="_blank" rel="noopener noreferrer">submit a pull request</a> to the repo so we can include it in the theme. Please be aware of the following when submitting a pull request:</p>
+
+<ul>
+    <li>Merge any changes from the <code>master</code> branch to ensure you have the latest version and prevent merge conflicts.</li>
+    <li>Run the compile scripts <code>npm run compile</code> and <code>npm run docs:compile</code> so that a compiled version is available.</li>
+    <li>Make sure the title and description are clear as to what was changed and why. Screenshots of the changes are welcome.</li>
+    <li>Tag any relevant issues so that we can easily see what the pull request relates to.</li>
+</ul>
+
+<h2 id="license">License</h2>
+<p>By contributing, you agree that your code falls under the <a href="{{ site.links.github | append: "blob/master/LICENSE" }}" target="_blank" rel="license noopener noreferrer">MIT License</a>.</p>
+
+<p>By contributing to the documentation, you agree that your contribution falls under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="license noopener noreferrer">Creative Commons Attribution 4.0 International Public License</a>.</p>

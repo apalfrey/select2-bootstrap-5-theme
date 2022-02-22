@@ -1,0 +1,46 @@
+.s2bs5-toc {
+    @include media-breakpoint-up(lg) {
+        position: sticky;
+        top: 5rem;
+        right: 0;
+        z-index: 2;
+        height: subtract(100vh, 7.875rem);
+        overflow-y: auto;
+    }
+
+    nav {
+        @include font-size(.875rem);
+
+        ul {
+            padding-left: 0;
+            list-style: none;
+
+            // stylelint-disable selector-max-type
+            ul {
+                padding-left: 1rem;
+                margin-top: .25rem;
+            }
+            // stylelint-enable selector-max-type
+        }
+
+        li {
+            margin-bottom: .25rem;
+        }
+
+        a {
+            color: rgba($black, .85);
+            text-decoration: none;
+
+            &:hover {
+                color: $s2bs5-primary;
+                text-decoration: underline;
+            }
+
+            // stylelint-disable selector-max-type
+            code {
+                font: inherit;
+            }
+            // stylelint-enable selector-max-type
+        }
+    }
+}

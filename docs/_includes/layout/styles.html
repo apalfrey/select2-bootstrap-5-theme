@@ -1,0 +1,8 @@
+{% if page.permalink contains "4.0" %}
+<link rel="stylesheet" href="{{ site.styles.select2.old }}" />
+{% else %}
+<link rel="stylesheet" href="{{ site.styles.select2.new }}" />
+{% endif %}
+
+<link rel="stylesheet" href="{{ site.styles.docs.ltr | absolute_url }}" />
+<link rel="stylesheet" href="{{ site.styles.docs.rtl | absolute_url }}" />

@@ -1,0 +1,20 @@
+<nav class="s2bs5-subnavbar py-2" aria-label="Secondary navigation">
+    <div class="container-xxl d-flex align-items-md-center">
+        <div class="dropdown ms-auto">
+            <button class="btn btn-dropdown dropdown-toggle" type="button" id="s2bs5-versions" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="d-none d-lg-inline">Select2</span> {% if page.permalink contains "4.0" %}v4.0.x{% else %}v4.1.x{% endif %}
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="s2bs5-versions">
+                <li><a class="dropdown-item{% unless page.permalink contains "4.0" %} active{% endunless %}" aria-current="true" href="{{ site.links.new | absolute_url }}">Select2 v4.1.x</a></li>
+                <li><a class="dropdown-item{% if page.permalink contains "4.0" %} active{% endif %}" aria-current="true" href="{{ site.links.old | absolute_url }}">Select2 v4.0.x</a></li>
+            </ul>
+        </div>
+
+        <button class="btn s2bs5-sidebar-toggle d-md-none py-0 px-1 ms-3 order-3 collapsed" type="button"
+            data-bs-toggle="collapse" data-bs-target="#s2bs5-docs-nav" aria-controls="s2bs5-docs-nav" aria-expanded="false"
+            aria-label="Toggle docs navigation">
+            {% include svgs/expand.svg %}
+            {% include svgs/collapse.svg %}
+        </button>
+    </div>
+</nav>

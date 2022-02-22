@@ -1,0 +1,79 @@
+{% capture sidebar_workspace %}
+    {% capture sidebar_links %}{% endcapture %}
+    {% for section in site.sidebar %}
+        {% assign current_url = page.permalink | absolute_url %}
+        {% assign base_btn_class = "btn d-inline-flex align-items-center rounded" %}
+        {% assign base_collapse_class = "collapse" %}
+        {% assign base_list_class = "d-inline-flex align-items-center rounded" %}
+
+        {% if section.dropdown %}
+            {% assign active_dropdown = false %}
+            {% assign btn_class = base_btn_class %}
+            {% assign collapse_class = base_collapse_class %}
+            {% assign collapse_id = section.name | append: "-collapse" %}
+            {% if current_url contains section.name | append: "/" | prepend: "/" %}
+                {% assign active_dropdown = true %}
+                {% assign btn_class = btn_class | append: " active" %}
+                {% assign collapse_class = collapse_class | append: " show" %}
+            {% endif %}
+
+            {% capture sidebar_links %}{{ sidebar_links }}
+            <li class="mb-1">
+                <button class="{{ btn_class }}" data-bs-toggle="collapse" data-bs-target="#{{ collapse_id }}" aria-expanded="{{ active_dropdown }}">{{ section.label }}</button>
+                <div class="{{ collapse_class }}" id="{{ collapse_id }}">
+                    <ul class="list-unstyled fw-normal pb-1 small">{% endcapture %}
+
+                    {% for section_page in section.pages %}
+                        {% assign page_url = section_page | absolute_url %}
+                        {% if section.version-switch and page.permalink contains "4.0" %}
+                            {% assign page_url = page_url | append: "4.0/" %}
+                        {% endif %}
+
+                        {% assign class = base_list_class %}
+                        {% if page_url == current_url %}
+                            {% assign class = class | append: " active" %}
+                        {% endif %}
+
+                        {% assign page_label = "" %}
+                        {% for item in site.pages %}
+                            {% if item.permalink == section_page and item.title %}
+                            {% assign page_label = item.title %}
+                            {% endif %}
+                        {% endfor %}
+
+                        {% capture sidebar_links %}{{ sidebar_links }}
+                        <li>
+                            <a href="{{ page_url }}" class="{{ class }}">{{ page_label }}</a>
+                        </li>{% endcapture %}
+                    {% endfor %}
+
+                    {% capture sidebar_links %}{{ sidebar_links }}
+                    </ul>
+                </div>
+            </li>{% endcapture %}
+        {% else %}
+            {% assign section_url = section.permalink | absolute_url %}
+            {% if section.version-switch and page.permalink contains "4.0" %}
+                {% assign section_url = section_url | append: "4.0/" %}
+            {% endif %}
+
+            {% assign class = base_list_class %}
+            {% if section_url == current_url %}
+                {% assign class = class | append: " active" %}
+            {% endif %}
+
+            {% capture sidebar_links %}{{ sidebar_links }}
+            <li class="mb-1">
+                <a href="{{ section_url }}" class="{{ class }}">{{ section.label }}</a>
+            </li>{% endcapture %}
+        {% endif %}
+    {% endfor %}
+{% endcapture %}
+
+<aside class="s2bs5-sidebar">
+    <nav class="collapse s2bs5-links" id="s2bs5-docs-nav" aria-label="Docs Navigation">
+        <ul class="list-unstyled mb-0 py-3 pt-md-1">
+            {{ sidebar_links }}
+        </ul>
+    </nav>
+</aside>

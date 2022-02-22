@@ -1,0 +1,117 @@
+---
+layout: default
+title: Download & install
+title_tag: true
+permalink: /getting-started/download-install/
+---
+
+<p class="s2bs5-lead">Download the compiled or source code of the Select2 Bootstrap 5 theme, or include it in your package manager of choice, currently supporting npm, yarn and Composer</p>
+
+<h2 id="compiled">Compiled code</h2>
+<p>Download the pre-compiled code for the Select2 Bootstrap 5 theme and easily include it in your project. This option ONLY includes the compiled files and does not include the documentation or the source files.</p>
+
+<a href="{{ site.links.github | append: "releases/download/" | append: site.version | append: "/select2-bootstrap-5-theme-" | append: site.version | append: ".zip" }}" class="btn btn-s2bs5-primary" download="select2-bootstrap-5-theme-{{ site.version }}-dist.zip">Download</a>
+
+<h2 id="source">Source files</h2>
+<p>Download the original source files to compile it with any modifications you need. This option includes the source SCSS files, documentation and the compiled files.</p>
+
+<p>We recommend checking out the <a href="{{ "/getting-started/build-tools" | absolute_url }}">build tools documentation</a> to see how the build tools are set up for this project, along with alternatives that can be used.</p>
+
+<a href="{{ site.links.github | append: "archive/" | append: site.version | append: ".zip" }}" class="btn btn-s2bs5-primary" download="select2-bootstrap-5-theme-{{ site.version }}-source.zip">Download source</a>
+
+<h2 id="cdn">CDN via jsDelivr</h2>
+
+<p>Include the compiled files straight from <a href="https://www.jsdelivr.com/" target="_blank" rel="noopener noreferrer">jsDelivr</a> by copying one of the following options below directly into your project.</p>
+
+<h3 id="4-0">Select2 v4.0.x</h3>
+<div class="simple-highlight">
+    {% include clipboard.html %}
+{% highlight html %}
+<!-- Styles -->
+<link rel="stylesheet" href="{{ site.styles.bootstrap }}" />
+<link rel="stylesheet" href="{{ site.styles.select2.old }}" />
+<link rel="stylesheet" href="{{ site.styles.s2bs5.ltr }}" />
+<!-- Or for RTL support -->
+<link rel="stylesheet" href="{{ site.styles.s2bs5.rtl }}" />
+
+<!-- Scripts -->
+<script src="{{ site.scripts.jquery }}"></script>
+<script src="{{ site.scripts.bootstrap }}"></script>
+<script src="{{ site.scripts.select2.old }}"></script>
+{% endhighlight %}
+</div>
+
+<h3 id="4-1">Select2 v4.1.x</h3>
+<div class="simple-highlight">
+    {% include clipboard.html %}
+{% highlight html %}
+<!-- Styles -->
+<link rel="stylesheet" href="{{ site.styles.bootstrap }}" />
+<link rel="stylesheet" href="{{ site.styles.select2.new }}" />
+<link rel="stylesheet" href="{{ site.styles.s2bs5.ltr }}" />
+<!-- Or for RTL support -->
+<link rel="stylesheet" href="{{ site.styles.s2bs5.rtl }}" />
+
+<!-- Scripts -->
+<script src="{{ site.scripts.jquery }}"></script>
+<script src="{{ site.scripts.bootstrap }}"></script>
+<script src="{{ site.scripts.select2.new }}"></script>
+{% endhighlight %}
+</div>
+
+<h2 id="package-managers">Package managers</h2>
+<p>Include the Select2 Bootstrap 5 theme's source and compiled files directly into your project using either npm, yarn or Composer. Using the source files will require a Sass compiler as well as Autoprefixer in order to compile the code to match both the compiled files and the Bootstrap 5 compiled files. You can find more information in the <a href="{{ "/getting-started/build-tools" | absolute_url }}">build tools documentation</a>.</p>
+
+<p>You can import the source files into your project by using the following code:</p>
+
+<div class="simple-highlight">
+    {% include clipboard.html %}
+{% highlight scss %}
+@import "node_modules/select2/src/scss/core";
+// If you need to import Bootstrap as well:
+@import "node_modules/select2-bootstrap-5-theme/src/select2-bootstrap-5-theme";
+// Or if you have already imported Bootstrap:
+@import "node_modules/select2-bootstrap-5-theme/src/include-all";
+{% endhighlight %}
+</div>
+
+<p><strong>Note:</strong> you will need to include the <code>select2</code> package into your project as well for the above code. Alternatively, simply remove the <code>@import "node_modules/select2/src/scss/core";</code> line if you're already importing <code>select2</code> elsewhere.</p>
+
+<h3 id="npm">npm</h3>
+<p>Install the Select2 Bootstrap 5 theme into your Node.js powered apps with the <a href="{{ site.links.npm }}" target="_blank" rel="noopener noreferrer">npm package</a>:</p>
+
+<div class="simple-highlight">
+    {% include clipboard.html %}
+    {% highlight sh %}npm install select2-bootstrap-5-theme{% endhighlight %}
+</div>
+
+<p>The Select2 Bootstrap 5 theme's <code>package.json</code> includes some additional properties under the following keys:</p>
+<ul>
+    <li><code>sass</code> - path to the Select2 Bootstrap 5 theme's main <a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">Sass</a> source file</li>
+    <li><code>style</code> - path to the Select2 Bootstrap 5 theme's non-minified, pre-compiled CSS</li>
+</ul>
+
+<h3 id="yarn">yarn</h3>
+<p>Install the Select2 Bootstrap 5 theme into your Node.js powered apps with the <a href="{{ site.links.npm }}" target="_blank" rel="noopener noreferrer">npm package</a>:</p>
+
+<div class="simple-highlight">
+    {% include clipboard.html %}
+    {% highlight sh %}yarn add select2-bootstrap-5-theme{% endhighlight %}
+</div>
+
+<p>The Select2 Bootstrap 5 theme's <code>package.json</code> includes some additional properties under the following keys:</p>
+<ul>
+    <li><code>sass</code> - path to the Select2 Bootstrap 5 theme's main <a href="https://sass-lang.com/" target="_blank" rel="noopener noreferrer">Sass</a> source file</li>
+    <li><code>style</code> - path to the Select2 Bootstrap 5 theme's non-minified, pre-compiled CSS</li>
+</ul>
+
+<h3 id="composer">Composer</h3>
+<p>Install the Select2 Bootstrap 5 theme into your Composer based projects with the <a href="{{ site.links.packagist }}" target="_blank" rel="noopener noreferrer">Composer package</a>:</p>
+
+<div class="simple-highlight">
+    {% include clipboard.html %}
+    {% highlight sh %}composer require apalfrey/select2-bootstrap-5-theme{% endhighlight %}
+</div>
+
+<h2 id="rtl">RTL support</h2>
+<p>Like Bootstrap 5, the Select2 Bootstrap 5 theme includes RTL support using the gulp version of <a href="https://rtlcss.com/" target="_blank" rel="noopener noreferrer">RTLCSS</a>. Find out more about how to use the RTL version in the <a href="https://getbootstrap.com/docs/5.1/getting-started/rtl/" target="_blank" rel="noopener noreferrer">Bootstrap 5 docs</a>.</p>

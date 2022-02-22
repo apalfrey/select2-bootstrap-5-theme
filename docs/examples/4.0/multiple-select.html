@@ -1,0 +1,209 @@
+---
+layout: default
+title: Multiple select
+title_tag: true
+permalink: /examples/multiple-select/4.0/
+---
+
+<h2 id="multiple-select">Basic multiple select</h2>
+{% assign field_name = "multiple-select" %}
+
+{% capture example_html %}
+<select class="form-select" id="{{ field_name }}-field" data-placeholder="Choose anything" multiple>
+    <option>Christmas Island</option>
+    <option>South Sudan</option>
+    <option>Jamaica</option>
+    <option>Kenya</option>
+    <option>French Guiana</option>
+    <option>Mayotta</option>
+    <option>Liechtenstein</option>
+    <option>Denmark</option>
+    <option>Eritrea</option>
+    <option>Gibraltar</option>
+    <option>Saint Helena, Ascension and Tristan da Cunha</option>
+    <option>Haiti</option>
+    <option>Namibia</option>
+    <option>South Georgia and the South Sandwich Islands</option>
+    <option>Vietnam</option>
+    <option>Yemen</option>
+    <option>Philippines</option>
+    <option>Benin</option>
+    <option>Czech Republic</option>
+    <option>Russia</option>
+</select>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="multiple-select-optgroup">Multiple select w/ optgroup</h2>
+{% assign field_name = "multiple-select-optgroup" %}
+
+{% capture example_html %}
+<select class="form-select" id="{{ field_name }}-field" data-placeholder="Choose anything" multiple>
+    <optgroup label="Group 1">
+        <option>Christmas Island</option>
+        <option>South Sudan</option>
+        <option>Jamaica</option>
+        <option>Kenya</option>
+        <option>French Guiana</option>
+        <option>Mayotta</option>
+    </optgroup>
+    <optgroup label="Group 2">
+        <option>Liechtenstein</option>
+        <option>Denmark</option>
+        <option>Eritrea</option>
+        <option>Gibraltar</option>
+        <option>Saint Helena, Ascension and Tristan da Cunha</option>
+        <option>Haiti</option>
+        <option>Namibia</option>
+    </optgroup>
+    <optgroup label="Group 3">
+        <option>South Georgia and the South Sandwich Islands</option>
+        <option>Vietnam</option>
+        <option>Yemen</option>
+        <option>Philippines</option>
+        <option>Benin</option>
+        <option>Czech Republic</option>
+        <option>Russia</option>
+    </optgroup>
+</select>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="multiple-select-clear">Multiple select w/ allow clear</h2>
+{% assign field_name = "multiple-select-clear" %}
+
+{% capture example_html %}
+<select class="form-select" id="{{ field_name }}-field" data-placeholder="Choose anything" multiple>
+    <option>Christmas Island</option>
+    <option>South Sudan</option>
+    <option>Jamaica</option>
+    <option>Kenya</option>
+    <option>French Guiana</option>
+    <option>Mayotta</option>
+    <option>Liechtenstein</option>
+    <option>Denmark</option>
+    <option>Eritrea</option>
+    <option>Gibraltar</option>
+    <option>Saint Helena, Ascension and Tristan da Cunha</option>
+    <option>Haiti</option>
+    <option>Namibia</option>
+    <option>South Georgia and the South Sandwich Islands</option>
+    <option>Vietnam</option>
+    <option>Yemen</option>
+    <option>Philippines</option>
+    <option>Benin</option>
+    <option>Czech Republic</option>
+    <option>Russia</option>
+</select>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    allowClear: true,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="multiple-select-custom">Multiple select w/ custom entries</h2>
+{% assign field_name = "multiple-select-custom" %}
+
+{% capture example_html %}
+<select class="form-select" id="{{ field_name }}-field" data-placeholder="Choose anything" multiple>
+    <option>Christmas Island</option>
+    <option>South Sudan</option>
+    <option>Jamaica</option>
+    <option>Kenya</option>
+    <option>French Guiana</option>
+    <option>Mayotta</option>
+    <option>Liechtenstein</option>
+    <option>Denmark</option>
+    <option>Eritrea</option>
+    <option>Gibraltar</option>
+    <option>Saint Helena, Ascension and Tristan da Cunha</option>
+    <option>Haiti</option>
+    <option>Namibia</option>
+    <option>South Georgia and the South Sandwich Islands</option>
+    <option>Vietnam</option>
+    <option>Yemen</option>
+    <option>Philippines</option>
+    <option>Benin</option>
+    <option>Czech Republic</option>
+    <option>Russia</option>
+</select>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    tags: true
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="multiple-select-disabled">Disabled multiple select</h2>
+{% assign field_name = "multiple-select-disabled" %}
+
+{% capture example_html %}
+<select class="form-select" id="{{ field_name }}-field" data-placeholder="Choose anything" multiple disabled>
+    <option>Christmas Island</option>
+    <option>South Sudan</option>
+    <option>Jamaica</option>
+    <option>Kenya</option>
+    <option>French Guiana</option>
+    <option>Mayotta</option>
+    <option>Liechtenstein</option>
+    <option>Denmark</option>
+    <option>Eritrea</option>
+    <option>Gibraltar</option>
+    <option>Saint Helena, Ascension and Tristan da Cunha</option>
+    <option>Haiti</option>
+    <option>Namibia</option>
+    <option>South Georgia and the South Sandwich Islands</option>
+    <option>Vietnam</option>
+    <option>Yemen</option>
+    <option>Philippines</option>
+    <option>Benin</option>
+    <option>Czech Republic</option>
+    <option>Russia</option>
+</select>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}

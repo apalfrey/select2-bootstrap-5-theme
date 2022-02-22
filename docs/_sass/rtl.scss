@@ -1,0 +1,5 @@
+// stylelint-disable no-invalid-position-at-import-rule
+[dir="rtl"] {
+    @import "src/select2-bootstrap-5-theme";
+}
+// stylelint-enable no-invalid-position-at-import-rule

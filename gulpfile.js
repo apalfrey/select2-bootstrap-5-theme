@@ -3,7 +3,6 @@ const gulp = require( "gulp" )
 
 // External dependencies
 const autoprefixer = require( "autoprefixer" )
-const browsersync = require( "browser-sync" )
 const del = require( "del" )
 const gulpif = require( "gulp-if" )
 const postcss = require( "gulp-postcss" )
@@ -11,6 +10,58 @@ const rename = require( "gulp-rename" )
 const rtlcss = require( "gulp-rtlcss" )
 const sass = require( "gulp-dart-sass" )
 const stylelint = require( "gulp-stylelint" )
+
+/* Start docs tasks */
+gulp.task( "docs:clean", () => {
+    return del( [
+        "docs/assets/css"
+    ] )
+} )
+
+gulp.task( "docs:lint", () => {
+    return gulp.src( "docs/_sass/**/*.scss" )
+        .pipe( stylelint( {
+            failAfterError: true,
+            reporters: [
+                { formatter: "verbose", console: true },
+            ]
+        } ) )
+} )
+
+gulp.task( "docs:compile:main", () => {
+    return gulp.src( "docs/_sass/docs.scss" )
+        .pipe( sass.sync( {
+            outputStyle: "compressed"
+        } ).on( "error", sass.logError ) )
+        .pipe( postcss( [
+            autoprefixer( {
+                cascade: true
+            } )
+        ] ) )
+        .pipe( gulp.dest( "docs/assets/css" ) )
+} )
+gulp.task( "docs:compile:rtl", () => {
+    return gulp.src( "docs/_sass/rtl.scss" )
+        .pipe( sass.sync( {
+            outputStyle: "compressed"
+        } ).on( "error", sass.logError ) )
+        .pipe( postcss( [
+            autoprefixer( {
+                cascade: true
+            } )
+        ] ) )
+        .pipe( rtlcss() )
+        .pipe( gulp.dest( "docs/assets/css" ) )
+} )
+
+gulp.task( "docs:watch", ( done ) => {
+    gulp.watch( "docs/_sass/**/*.scss", gulp.series( "docs:compile" ) )
+
+    done()
+} )
+
+gulp.task( "docs:compile", gulp.series( "docs:clean", "docs:lint", "docs:compile:main", "docs:compile:rtl" ) )
+/* End docs tasks */
 
 gulp.task( "clean", () => {
     return del( [
@@ -46,7 +97,6 @@ const compile = ( style, rtl = false ) => {
             suffix: ".min"
         } ) ) )
         .pipe( gulp.dest( "dist" ) )
-        .pipe( gulpif( style == "expanded", gulp.dest( "docs" ) ) )
 }
 
 gulp.task( "compile:main:dev", () => {
@@ -67,27 +117,13 @@ gulp.task( "compile:rtl:min", () => {
 
 gulp.task( "compile:rtl", gulp.series( "compile:rtl:dev", "compile:rtl:min" ) )
 
-gulp.task( "compile", gulp.series( "clean", "lint", "compile:main", "compile:rtl" ) )
+gulp.task( "compile", gulp.series( "clean", "lint", "compile:main", "compile:rtl", "docs:compile" ) )
 
 gulp.task( "watch", ( done ) => {
     gulp.watch( "src/*.scss", gulp.series( "compile" ) )
     done()
 } )
 
-gulp.task( "browsersync", ( done ) => {
-    browsersync.init( {
-        files: "./docs/**/*",
-        startPath: "/select2-bootstrap-5-theme",
-        server: {
-            baseDir: "-",
-            routes: {
-                "/select2-bootstrap-5-theme": "./docs"
-            }
-        },
-        watch: true,
-        ui: false,
-        open: false,
-    }, done )
-} )
+gulp.task( "default", gulp.series( "compile", "watch" ) )
 
-gulp.task( "default", gulp.series( "compile", "browsersync", "watch" ) )
+gulp.task( "docs", gulp.series( "docs:compile", "docs:watch" ) )
