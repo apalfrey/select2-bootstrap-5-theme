@@ -16,11 +16,12 @@
         </script>
     </div>
     <div class="tab-pane fade" id="{{ field_name }}-rtl-content" role="tabpanel" aria-labelledby="{{ field_name }}-rtl-tab">
+        {%- assign rtl_name = field_name | append: "-rtl" -%}
         <div dir="rtl">
-            {{ example_html | replace: "-field", "-rtl-field" }}
+            {{ example_html | replace: field_name, rtl_name }}
         </div>
         <script>
-            {{ example_js | replace: "-field", "-rtl-field" }}
+            {{ example_js | replace: field_name, rtl_name }}
         </script>
     </div>
 </div>
