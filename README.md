@@ -141,7 +141,7 @@ If you have ideas for improvements or changes, feel free to submit an [issue](ht
 ```
 MIT License
 
-Copyright (c) 2020 Andrew Palfrey <apalfrey@apalfrey.me>
+Copyright (c) 2022 Andrew Palfrey <apalfrey@apalfrey.me>
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
