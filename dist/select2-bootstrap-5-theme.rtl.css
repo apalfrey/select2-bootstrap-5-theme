@@ -73,6 +73,9 @@
   display: none;
 }
 
+.select2-container--bootstrap-5 + .select2-container--bootstrap-5 {
+  z-index: 1061;
+}
 .select2-container--bootstrap-5 .select2-dropdown {
   z-index: 1061;
   border-color: #ced4da;
@@ -132,9 +135,9 @@
 }
 .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--highlighted {
   color: #000;
-  background-color: #f8f9fa;
+  background-color: #e9ecef;
 }
-.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--selected, .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[aria-selected=true] {
+.select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option.select2-results__option--selected, .select2-container--bootstrap-5 .select2-dropdown .select2-results__options .select2-results__option[aria-selected=true]:not(.select2-results__option--highlighted) {
   color: #fff;
   background-color: #0d6efd;
 }
@@ -346,9 +349,6 @@
 .select2-container--bootstrap-5 .select2--small.select2-selection--single {
   padding: 0.25rem 0.5rem 0.25rem 2.25rem;
 }
-.select2-container--bootstrap-5 .select2--small.select2-selection--multiple .select2-selection__rendered:not(:empty) {
-  padding-bottom: 0.25rem;
-}
 .select2-container--bootstrap-5 .select2--small.select2-selection--multiple .select2-selection__rendered .select2-selection__choice {
   padding: 0.35em 0.65em;
   font-size: 0.875rem;
@@ -403,9 +403,6 @@
 }
 .select2-container--bootstrap-5 .select2--large.select2-selection--single {
   padding: 0.5rem 1rem 0.5rem 2.25rem;
-}
-.select2-container--bootstrap-5 .select2--large.select2-selection--multiple .select2-selection__rendered:not(:empty) {
-  padding-bottom: 0.5rem;
 }
 .select2-container--bootstrap-5 .select2--large.select2-selection--multiple .select2-selection__rendered .select2-selection__choice {
   padding: 0.35em 0.65em;
@@ -463,9 +460,6 @@
 .form-select-sm ~ .select2-container--bootstrap-5 .select2-selection--single {
   padding: 0.25rem 0.5rem 0.25rem 2.25rem;
 }
-.form-select-sm ~ .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered:not(:empty) {
-  padding-bottom: 0.25rem;
-}
 .form-select-sm ~ .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered .select2-selection__choice {
   padding: 0.35em 0.65em;
   font-size: 0.875rem;
@@ -521,9 +515,6 @@
 }
 .form-select-lg ~ .select2-container--bootstrap-5 .select2-selection--single {
   padding: 0.5rem 1rem 0.5rem 2.25rem;
-}
-.form-select-lg ~ .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered:not(:empty) {
-  padding-bottom: 0.5rem;
 }
 .form-select-lg ~ .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__rendered .select2-selection__choice {
   padding: 0.35em 0.65em;

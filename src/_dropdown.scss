@@ -1,4 +1,8 @@
 .select2-container--bootstrap-5 {
+    + .select2-container--bootstrap-5 {
+        z-index: $s2bs5-zindex;
+    }
+
     // Dropdown
     .select2-dropdown {
         z-index: $s2bs5-zindex;
@@ -73,7 +77,7 @@
 
                 // Selected Item
                 &.select2-results__option--selected,
-                &[aria-selected="true"] {
+                &[aria-selected="true"]:not(.select2-results__option--highlighted) {
                     color: color-contrast($s2bs5-item-active-bg);
                     background-color: $s2bs5-item-active-bg;
                 }

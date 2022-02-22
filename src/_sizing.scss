@@ -64,10 +64,6 @@
     // Multiple
     #{$selector}.select2-selection--multiple {
         .select2-selection__rendered {
-            &:not(:empty) {
-                padding-bottom: map-get($size-list, padding-y);
-            }
-
             .select2-selection__choice {
                 padding: $s2bs5-multi-item-padding-y $s2bs5-multi-item-padding-x;
                 @include font-size(map-get($size-list, font-size));
