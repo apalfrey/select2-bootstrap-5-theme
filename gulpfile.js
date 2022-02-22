@@ -65,7 +65,7 @@ gulp.task( "compile:rtl:min", () => {
 
 gulp.task( "compile:rtl", gulp.series( "compile:rtl:dev", "compile:rtl:min" ) )
 
-gulp.task( "compile", gulp.series( "clean", "lint", "compile:main", "compile:rtl" ) )
+gulp.task( "compile", gulp.series( "clean", "lint", "compile:main", "compile:rtl", "docs:compile" ) )
 
 gulp.task( "watch", ( done ) => {
     gulp.watch( "src/*.scss", gulp.series( "compile" ) )

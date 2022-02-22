@@ -113,7 +113,7 @@ This repo uses Gulp to compile the assets, see below for the included npm script
 | `start:full`        | N/A                 | Cleans, lints, compiles and watches the SCSS (theme & docs) and serves the docs for development                                  |
 | `clean`             | `clean`             | Cleans the `dist` directory, removing the directory and it's contents                                                            |
 | `lint`              | `lint`              | Lints the SCSS files using [Stylelint](https://stylelint.io/), see [.stylelintrc](.stylelintrc) and [stylelint-config-twbs-bootstrap](https://github.com/twbs/stylelint-config-twbs-bootstrap) for linting rules |
-| `compile`           | `compile`           | Cleans the `dist` directory, lints the SCSS, compiles the LTR and RTL dev and min versions                                       |
+| `compile`           | `compile`           | Cleans the `dist` directory, lints the SCSS, compiles the LTR and RTL dev and min versions. Does the same for the docs           |
 | `compile:main`      | `compile:main`      | Compiles all LTR versions                                                                                                        |
 | `compile:main:dev`  | `compile:main:dev`  | Compiles the LTR expanded version                                                                                                |
 | `compile:main:min`  | `compile:main:min`  | Compiles the LTR compressed version                                                                                              |
