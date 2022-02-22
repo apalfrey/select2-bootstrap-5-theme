@@ -9,7 +9,7 @@ const postcss = require( "gulp-postcss" )
 const rename = require( "gulp-rename" )
 const rtlcss = require( "gulp-rtlcss" )
 const sass = require( "gulp-dart-sass" )
-const stylelint = require( "gulp-stylelint" )
+const stylelint = require( "@ronilaukkarinen/gulp-stylelint" )
 
 /* Start docs tasks */
 gulp.task( "docs:clean", () => {

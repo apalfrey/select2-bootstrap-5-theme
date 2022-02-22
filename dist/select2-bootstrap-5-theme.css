@@ -10,7 +10,7 @@
 }
 .select2-container--bootstrap-5 .select2-selection {
   width: 100%;
-  min-height: calc(1.5em + (0.75rem + 2px));
+  min-height: calc(1.5em + 0.75rem + 2px);
   padding: 0.375rem 0.75rem;
   font-family: inherit;
   font-size: 1rem;
@@ -74,10 +74,10 @@
 }
 
 .select2-container--bootstrap-5 + .select2-container--bootstrap-5 {
-  z-index: 1061;
+  z-index: 1056;
 }
 .select2-container--bootstrap-5 .select2-dropdown {
-  z-index: 1061;
+  z-index: 1056;
   border-color: #ced4da;
   border-radius: 0.25rem;
 }
@@ -311,7 +311,7 @@
 }
 
 .select2-container--bootstrap-5 .select2--small.select2-selection {
-  min-height: calc(1.5em + (0.5rem + 2px));
+  min-height: calc(1.5em + 0.5rem + 2px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
 }
@@ -366,7 +366,7 @@
   right: 0.5rem;
 }
 .select2-container--bootstrap-5 .select2--large.select2-selection {
-  min-height: calc(1.5em + (1rem + 2px));
+  min-height: calc(1.5em + 1rem + 2px);
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
 }
@@ -422,7 +422,7 @@
 }
 
 .form-select-sm ~ .select2-container--bootstrap-5 .select2-selection {
-  min-height: calc(1.5em + (0.5rem + 2px));
+  min-height: calc(1.5em + 0.5rem + 2px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
 }
@@ -478,7 +478,7 @@
 }
 
 .form-select-lg ~ .select2-container--bootstrap-5 .select2-selection {
-  min-height: calc(1.5em + (1rem + 2px));
+  min-height: calc(1.5em + 1rem + 2px);
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
 }
