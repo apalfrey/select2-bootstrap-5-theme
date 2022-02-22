@@ -34,8 +34,8 @@ styles:
     old: https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css
     new: https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css
   s2bs5:
-    ltr: https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.1.1/dist/select2-bootstrap-5-theme.min.css
-    rtl: https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.1.1/dist/select2-bootstrap-5-theme.rtl.min.css
+    ltr: https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.2.0/dist/select2-bootstrap-5-theme.min.css
+    rtl: https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.2.0/dist/select2-bootstrap-5-theme.rtl.min.css
   docs:
     ltr: /assets/css/docs.css
     rtl: /assets/css/rtl.css
@@ -84,9 +84,9 @@ sidebar:
     pages:
       - /examples/single-select/
       - /examples/multiple-select/
-      - /examples/input-groups/ # TODO input groups page
+      - /examples/input-groups/
       - /examples/sizing/ # TODO sizing page
-      - /examples/validation/ # TODO validation page
+      - /examples/validation/
   - name: about
     label: About
     version-switch: false
