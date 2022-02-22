@@ -50,6 +50,12 @@
         width: 100%;
     }
 
+    .select2-search--inline {
+        .select2-search__field {
+            vertical-align: top;
+        }
+    }
+
     // Clear Button
     .select2-selection--single,
     .select2-selection--multiple {
