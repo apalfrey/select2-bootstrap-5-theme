@@ -1,5 +1,6 @@
 // Base layout
 .select2-container--bootstrap-5 {
+    z-index: $s2bs5-zindex;
     display: block;
 
     *:focus {

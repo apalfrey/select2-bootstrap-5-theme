@@ -2,6 +2,9 @@
 $s2bs5-height:                   $input-height !default;
 $s2bs5-height-inner:             $input-line-height * 1rem !default;
 
+// Z-Index
+$s2bs5-zindex:                   $zindex-modal + 1 !default;
+
 // Padding
 $s2bs5-padding-y:                $form-select-padding-y !default;
 $s2bs5-padding-x:                $form-select-padding-x !default;

@@ -2,6 +2,7 @@
  * Select2 v4 Bootstrap 5 theme v1.2.0
 */
 .select2-container--bootstrap-5 {
+  z-index: 1061;
   display: block;
 }
 .select2-container--bootstrap-5 *:focus {
