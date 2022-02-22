@@ -85,7 +85,7 @@ sidebar:
       - /examples/single-select/
       - /examples/multiple-select/
       - /examples/input-groups/
-      - /examples/sizing/ # TODO sizing page
+      - /examples/sizing/
       - /examples/validation/
   - name: about
     label: About
