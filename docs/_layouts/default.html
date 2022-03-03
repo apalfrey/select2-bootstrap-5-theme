@@ -22,11 +22,17 @@
             {% include layout/sidebar.html %}
             <main class="s2bs5-main order-1">
                 {% if page.layout != "redirect" and page.error != true and page.toc != false %}
+                {%- capture toc -%}
+                {% include layout/toc.html html=content sanitize=true %}
+                {%- endcapture -%}
+                {% assign toc_test = toc | strip_newlines %}
                 <div class="s2bs5-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5">
+                    {% if toc_test != "" %}
                     <strong class="d-block h6 my-2 pb-2 border-bottom">On this page</strong>
                     <nav id="table-of-contents">
-                        {% include layout/toc.html html=content sanitize=true %}
+                        {{ toc }}
                     </nav>
+                    {% endif %}
                 </div>
                 {% endif %}
                 <div class="s2bs5-content ps-lg-4">
