@@ -316,6 +316,7 @@
   min-height: calc(1.5em + 0.5rem + 2px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
+  border-radius: 0.2rem;
 }
 .select2-container--bootstrap-5 .select2--small.select2-selection--single .select2-selection__clear,
 .select2-container--bootstrap-5 .select2--small.select2-selection--multiple .select2-selection__clear {
@@ -333,6 +334,17 @@
 .select2-container--bootstrap-5 .select2--small.select2-selection--multiple .select2-search,
 .select2-container--bootstrap-5 .select2--small.select2-selection--multiple .select2-search .select2-search__field {
   height: 1.5em;
+}
+.select2-container--bootstrap-5 .select2--small.select2-dropdown {
+  border-radius: 0.2rem;
+}
+.select2-container--bootstrap-5 .select2--small.select2-dropdown.select2-dropdown--below {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.select2-container--bootstrap-5 .select2--small.select2-dropdown.select2-dropdown--above {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .select2-container--bootstrap-5 .select2--small.select2-dropdown .select2-search .select2-search__field {
   padding: 0.25rem 0.5rem;
@@ -371,6 +383,7 @@
   min-height: calc(1.5em + 1rem + 2px);
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
+  border-radius: 0.3rem;
 }
 .select2-container--bootstrap-5 .select2--large.select2-selection--single .select2-selection__clear,
 .select2-container--bootstrap-5 .select2--large.select2-selection--multiple .select2-selection__clear {
@@ -388,6 +401,17 @@
 .select2-container--bootstrap-5 .select2--large.select2-selection--multiple .select2-search,
 .select2-container--bootstrap-5 .select2--large.select2-selection--multiple .select2-search .select2-search__field {
   height: 1.5em;
+}
+.select2-container--bootstrap-5 .select2--large.select2-dropdown {
+  border-radius: 0.3rem;
+}
+.select2-container--bootstrap-5 .select2--large.select2-dropdown.select2-dropdown--below {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.select2-container--bootstrap-5 .select2--large.select2-dropdown.select2-dropdown--above {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .select2-container--bootstrap-5 .select2--large.select2-dropdown .select2-search .select2-search__field {
   padding: 0.5rem 1rem;
@@ -427,6 +451,7 @@
   min-height: calc(1.5em + 0.5rem + 2px);
   padding: 0.25rem 0.5rem;
   font-size: 0.875rem;
+  border-radius: 0.2rem;
 }
 .form-select-sm ~ .select2-container--bootstrap-5 .select2-selection--single .select2-selection__clear,
 .form-select-sm ~ .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__clear {
@@ -444,6 +469,17 @@
 .form-select-sm ~ .select2-container--bootstrap-5 .select2-selection--multiple .select2-search,
 .form-select-sm ~ .select2-container--bootstrap-5 .select2-selection--multiple .select2-search .select2-search__field {
   height: 1.5em;
+}
+.form-select-sm ~ .select2-container--bootstrap-5 .select2-dropdown {
+  border-radius: 0.2rem;
+}
+.form-select-sm ~ .select2-container--bootstrap-5 .select2-dropdown.select2-dropdown--below {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.form-select-sm ~ .select2-container--bootstrap-5 .select2-dropdown.select2-dropdown--above {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .form-select-sm ~ .select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field {
   padding: 0.25rem 0.5rem;
@@ -483,6 +519,7 @@
   min-height: calc(1.5em + 1rem + 2px);
   padding: 0.5rem 1rem;
   font-size: 1.25rem;
+  border-radius: 0.3rem;
 }
 .form-select-lg ~ .select2-container--bootstrap-5 .select2-selection--single .select2-selection__clear,
 .form-select-lg ~ .select2-container--bootstrap-5 .select2-selection--multiple .select2-selection__clear {
@@ -500,6 +537,17 @@
 .form-select-lg ~ .select2-container--bootstrap-5 .select2-selection--multiple .select2-search,
 .form-select-lg ~ .select2-container--bootstrap-5 .select2-selection--multiple .select2-search .select2-search__field {
   height: 1.5em;
+}
+.form-select-lg ~ .select2-container--bootstrap-5 .select2-dropdown {
+  border-radius: 0.3rem;
+}
+.form-select-lg ~ .select2-container--bootstrap-5 .select2-dropdown.select2-dropdown--below {
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+}
+.form-select-lg ~ .select2-container--bootstrap-5 .select2-dropdown.select2-dropdown--above {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 }
 .form-select-lg ~ .select2-container--bootstrap-5 .select2-dropdown .select2-search .select2-search__field {
   padding: 0.5rem 1rem;

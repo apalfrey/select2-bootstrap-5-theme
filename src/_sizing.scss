@@ -4,6 +4,7 @@
         min-height: map-get($size-list, height);
         padding: map-get($size-list, padding-y) map-get($size-list, padding-x);
         @include font-size(map-get($size-list, font-size));
+        @include border-radius(map-get($size-list, border-radius), 0);
     }
 
     #{$selector}.select2-selection--single,
@@ -29,6 +30,18 @@
 
     // Dropdown
     #{$selector}.select2-dropdown {
+        @include border-radius(map-get($size-list, border-radius));
+
+        // Open Below
+        &.select2-dropdown--below {
+            @include border-top-radius(0);
+        }
+
+        // Open Above
+        &.select2-dropdown--above {
+            @include border-bottom-radius(0);
+        }
+
         .select2-search {
             .select2-search__field {
                 padding: map-get($size-list, padding-y) map-get($size-list, padding-x);

@@ -85,6 +85,7 @@ $s2bs5-height-inner-sm:          $input-line-height * 1em !default;
 $s2bs5-padding-y-sm:             $form-select-padding-y-sm !default;
 $s2bs5-padding-x-sm:             $form-select-padding-x-sm !default;
 $s2bs5-font-size-sm:             $form-select-font-size-sm !default;
+$s2bs5-border-radius-sm:         $form-select-border-radius-sm !default;
 $s2bs5-item-padding-y-sm:        $s2bs5-padding-y-sm !default;
 $s2bs5-item-padding-x-sm:        $s2bs5-padding-x-sm !default;
 $s2bs5-group-padding-y-sm:       $s2bs5-padding-y-sm !default;
@@ -102,6 +103,7 @@ $s2bs5-small: (
     "padding-y": $s2bs5-padding-y-sm,
     "padding-x": $s2bs5-padding-x-sm,
     "font-size": $s2bs5-font-size-sm,
+    "border-radius": $s2bs5-border-radius-sm,
     "item-padding-y": $s2bs5-item-padding-y-sm,
     "item-padding-x": $s2bs5-item-padding-x-sm,
     "group-padding-y": $s2bs5-group-padding-y-sm,
@@ -120,6 +122,7 @@ $s2bs5-height-inner-lg:          $input-line-height * 1em !default;
 $s2bs5-padding-y-lg:             $form-select-padding-y-lg !default;
 $s2bs5-padding-x-lg:             $form-select-padding-x-lg !default;
 $s2bs5-font-size-lg:             $form-select-font-size-lg !default;
+$s2bs5-border-radius-lg:         $form-select-border-radius-lg !default;
 $s2bs5-item-padding-y-lg:        $s2bs5-padding-y-lg !default;
 $s2bs5-item-padding-x-lg:        $s2bs5-padding-x-lg !default;
 $s2bs5-group-padding-y-lg:       $s2bs5-padding-y-lg !default;
@@ -137,6 +140,7 @@ $s2bs5-large: (
     "padding-y": $s2bs5-padding-y-lg,
     "padding-x": $s2bs5-padding-x-lg,
     "font-size": $s2bs5-font-size-lg,
+    "border-radius": $s2bs5-border-radius-lg,
     "item-padding-y": $s2bs5-item-padding-y-lg,
     "item-padding-x": $s2bs5-item-padding-x-lg,
     "group-padding-y": $s2bs5-group-padding-y-lg,
