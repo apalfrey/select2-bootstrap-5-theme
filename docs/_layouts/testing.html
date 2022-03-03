@@ -791,6 +791,43 @@ $( '#invalid-is-invalid-multiple-field' ).select2( {
 } );
 </script>
 
+<h2 id="modal">Inside modal</h2>
+<button type="button" class="btn btn-s2bs5-primary" data-bs-toggle="modal" data-bs-target="#modal-test">Launch modal</button>
+<div class="modal fade" id="modal-test" tabindex="-1" aria-labelledby="modal-test-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-test-label">Test modal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <select class="form-select" id="modal-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+                </div>
+
+                <div class="mb-3">
+                    <select class="form-select" data-placeholder="Choose anything" id="modal-multiple-field" multiple>{{ multiple_options }}</select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$( '#modal-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#modal-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
 {%- endcapture -%}
 
 <!DOCTYPE html>

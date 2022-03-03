@@ -1,7 +1,10 @@
 // Base layout
 .select2-container--bootstrap-5 {
-    z-index: 1;
     display: block;
+
+    @at-root select + & {
+        z-index: 1;
+    }
 
     *:focus {
         outline: 0;
