@@ -125,11 +125,7 @@ This repo uses Gulp to compile the assets, see below for the included npm script
 | `lint`              | `lint`              | Lints the SCSS files using [Stylelint](https://stylelint.io/), see [.stylelintrc](.stylelintrc) and [stylelint-config-twbs-bootstrap](https://github.com/twbs/stylelint-config-twbs-bootstrap) for linting rules |
 | `compile`           | `compile`           | Cleans the `dist` directory, lints the SCSS, compiles the LTR and RTL dev and min versions. Does the same for the docs           |
 | `compile:main`      | `compile:main`      | Compiles all LTR versions                                                                                                        |
-| `compile:main:dev`  | `compile:main:dev`  | Compiles the LTR expanded version                                                                                                |
-| `compile:main:min`  | `compile:main:min`  | Compiles the LTR compressed version                                                                                              |
 | `compile:rtl`       | `compile:rtl`       | Compiles all RTL versions                                                                                                        |
-| `compile:rtl:dev`   | `compile:rtl:dev`   | Compiles the RTL expanded version                                                                                                |
-| `compile:rtl:min`   | `compile:rtl:min`   | Compiles the RTL compressed version                                                                                              |
 | `watch`             | `watch`             | Watches all files in `src`, compiling the SCSS when changes are detected                                                         |
 | `docs`              | `docs`              | Cleans the `docs/assets/css` directory, lints the docs SCSS, compiles the docsSCSS and starts watching the docs SCSS for changes |
 | `docs:clean`        | `docs:clean`        | Cleans the `docs/assets/css` directory, removing the directory and it's contents                                                 |
