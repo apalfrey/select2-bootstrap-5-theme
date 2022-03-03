@@ -15,3 +15,7 @@
 .btn-s2bs5-primary {
     @include button-variant($s2bs5-primary, $s2bs5-primary);
 }
+
+.btn-outline-s2bs5-primary {
+    @include button-outline-variant($s2bs5-primary, $white);
+}

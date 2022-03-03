@@ -26,11 +26,7 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - testing.html
-  - testing-4.0.html
-  - assets/css/testing.css
-  - assets/css/testing.rtl.css
-  - _config_dev.yml
+  - _config.yml
 
 # Site styles
 styles:

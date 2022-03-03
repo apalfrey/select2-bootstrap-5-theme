@@ -45,7 +45,7 @@
     "docs:compile:rtl": "gulp docs:compile:rtl",
     "docs:watch": "gulp docs:watch",
     "docs:build": "cd docs && bundle exec jekyll build",
-    "docs:serve": "cd docs && bundle exec jekyll serve"
+    "docs:serve": "cd docs && bundle exec jekyll serve --config _config_dev.yml"
   },
   "dependencies": {
     "bootstrap": "^5.1.3"

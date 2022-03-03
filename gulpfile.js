@@ -60,6 +60,7 @@ gulp.task( "docs:compile:main", () => {
         ] ) )
         .pipe( gulp.dest( "docs/assets/css" ) )
 } )
+
 gulp.task( "docs:compile:rtl", () => {
     return gulp.src( "docs/_sass/rtl.scss" )
         .pipe( sass.sync( config.sass ).on( "error", sass.logError ) )
@@ -71,13 +72,29 @@ gulp.task( "docs:compile:rtl", () => {
         .pipe( gulp.dest( "docs/assets/css" ) )
 } )
 
+gulp.task( "docs:compile:testing", () => {
+    return gulp.src( "docs/_sass/testing.scss" )
+        .pipe( sass.sync( config.sass ).on( "error", sass.logError ) )
+        .pipe( postcss( [
+            autoprefixer( config.autoprefixer )
+        ] ) )
+        .pipe( gulp.dest( "docs/assets/css" ) )
+        .pipe( postcss( [
+            rtlcss()
+        ] ) )
+        .pipe( rename( {
+            suffix: ".rtl"
+        } ) )
+        .pipe( gulp.dest( "docs/assets/css" ) )
+} )
+
 gulp.task( "docs:watch", ( done ) => {
     gulp.watch( "docs/_sass/**/*.scss", gulp.series( "docs:compile" ) )
 
     done()
 } )
 
-gulp.task( "docs:compile", gulp.series( "docs:clean", "docs:lint", "docs:compile:main", "docs:compile:rtl" ) )
+gulp.task( "docs:compile", gulp.series( "docs:clean", "docs:lint", "docs:compile:main", "docs:compile:rtl", "docs:compile:testing" ) )
 /* End docs tasks */
 
 gulp.task( "clean", () => {
