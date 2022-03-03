@@ -3,13 +3,41 @@ const gulp = require( "gulp" )
 
 // External dependencies
 const autoprefixer = require( "autoprefixer" )
+const cssnano = require( "cssnano" )
 const del = require( "del" )
 const gulpif = require( "gulp-if" )
 const postcss = require( "gulp-postcss" )
 const rename = require( "gulp-rename" )
-const rtlcss = require( "gulp-rtlcss" )
+const rtlcss = require( "rtlcss" )
 const sass = require( "gulp-sass" )( require( "sass" ) )
 const stylelint = require( "@ronilaukkarinen/gulp-stylelint" )
+
+const config = {
+    stylelint: {
+        failAfterError: true,
+        reporters: [
+            {
+                formatter: "verbose",
+                console: true,
+            },
+        ],
+    },
+    sass: {
+        outputStyle: "expanded",
+    },
+    autoprefixer: {
+        cascade: true,
+    },
+    cssnano: {
+        preset: [
+            "default",
+            {
+                cssDeclarationSorter: false,
+                svgo: false,
+            }
+        ],
+    },
+}
 
 /* Start docs tasks */
 gulp.task( "docs:clean", () => {
@@ -20,37 +48,26 @@ gulp.task( "docs:clean", () => {
 
 gulp.task( "docs:lint", () => {
     return gulp.src( "docs/_sass/**/*.scss" )
-        .pipe( stylelint( {
-            failAfterError: true,
-            reporters: [
-                { formatter: "verbose", console: true },
-            ]
-        } ) )
+        .pipe( stylelint( config.stylelint ) )
 } )
 
 gulp.task( "docs:compile:main", () => {
     return gulp.src( "docs/_sass/docs.scss" )
-        .pipe( sass.sync( {
-            outputStyle: "compressed"
-        } ).on( "error", sass.logError ) )
+        .pipe( sass.sync( config.sass ).on( "error", sass.logError ) )
         .pipe( postcss( [
-            autoprefixer( {
-                cascade: true
-            } )
+            autoprefixer( config.autoprefixer ),
+            cssnano( config.cssnano )
         ] ) )
         .pipe( gulp.dest( "docs/assets/css" ) )
 } )
 gulp.task( "docs:compile:rtl", () => {
     return gulp.src( "docs/_sass/rtl.scss" )
-        .pipe( sass.sync( {
-            outputStyle: "compressed"
-        } ).on( "error", sass.logError ) )
+        .pipe( sass.sync( config.sass ).on( "error", sass.logError ) )
         .pipe( postcss( [
-            autoprefixer( {
-                cascade: true
-            } )
+            autoprefixer( config.autoprefixer ),
+            rtlcss(),
+            cssnano( config.cssnano )
         ] ) )
-        .pipe( rtlcss() )
         .pipe( gulp.dest( "docs/assets/css" ) )
 } )
 
@@ -71,51 +88,41 @@ gulp.task( "clean", () => {
 
 gulp.task( "lint", () => {
     return gulp.src( "src/**/*.scss" )
-        .pipe( stylelint( {
-            failAfterError: true,
-            reporters: [
-                { formatter: "verbose", console: true },
-            ]
-        } ) )
+        .pipe( stylelint( config.stylelint ) )
 } )
 
-const compile = ( style, rtl = false ) => {
+const compile = ( rtl = false ) => {
+    let postcss_options = [
+        autoprefixer( config.autoprefixer )
+    ]
+
+    if ( rtl ) {
+        postcss_options.push( rtlcss() )
+    }
+
     return gulp.src( "src/select2-bootstrap-5-theme.scss" )
-        .pipe( sass.sync( {
-            outputStyle: style
-        } ).on( "error", sass.logError ) )
-        .pipe( postcss( [
-            autoprefixer( {
-                cascade: true
-            } )
-        ] ) )
-        .pipe( gulpif( rtl, rtlcss() ) )
+        .pipe( sass.sync( config.sass ).on( "error", sass.logError ) )
+        .pipe( postcss( postcss_options ) )
         .pipe( gulpif( rtl, rename( {
             suffix: ".rtl"
         } ) ) )
-        .pipe( gulpif( style == "compressed", rename( {
+        .pipe( gulp.dest( "dist" ) )
+        .pipe( postcss( [
+            cssnano( config.cssnano )
+        ] ) )
+        .pipe( rename( {
             suffix: ".min"
-        } ) ) )
+        } ) )
         .pipe( gulp.dest( "dist" ) )
 }
 
-gulp.task( "compile:main:dev", () => {
-    return compile( "expanded" )
-} )
-gulp.task( "compile:main:min", () => {
-    return compile( "compressed" )
+gulp.task( "compile:main", () => {
+    return compile( false )
 } )
 
-gulp.task( "compile:main", gulp.series( "compile:main:dev", "compile:main:min" ) )
-
-gulp.task( "compile:rtl:dev", () => {
-    return compile( "expanded", true )
+gulp.task( "compile:rtl", () => {
+    return compile( true )
 } )
-gulp.task( "compile:rtl:min", () => {
-    return compile( "compressed", true )
-} )
-
-gulp.task( "compile:rtl", gulp.series( "compile:rtl:dev", "compile:rtl:min" ) )
 
 gulp.task( "compile", gulp.series( "clean", "lint", "compile:main", "compile:rtl", "docs:compile" ) )
 
