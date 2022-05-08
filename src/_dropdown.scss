@@ -11,15 +11,20 @@
         background-color: $s2bs5-bg;
         border-color: $s2bs5-focus-border-color;
         @include border-radius($s2bs5-border-radius);
+        box-shadow: $s2bs5-focus-box-shadow;
 
         // Open Below
         &.select2-dropdown--below {
+            // https://stackoverflow.com/questions/5115427/how-can-i-add-a-box-shadow-on-one-side-of-an-element
+            clip-path: inset(0 -.5rem -.5rem);
             border-top: 0 solid transparent;
             @include border-top-radius(0);
         }
 
         // Open Above
         &.select2-dropdown--above {
+            // https://stackoverflow.com/questions/5115427/how-can-i-add-a-box-shadow-on-one-side-of-an-element
+            clip-path: inset(-.5rem -.5rem 0);
             border-bottom: 0 solid transparent;
             @include border-bottom-radius(0);
         }

@@ -39,12 +39,16 @@
 
     // Hide bottom border when open and below
     &.select2-container--open.select2-container--below .select2-selection {
+        // https://stackoverflow.com/questions/5115427/how-can-i-add-a-box-shadow-on-one-side-of-an-element
+        clip-path: inset(-.5rem -.5rem 0);
         border-bottom: 0 solid transparent;
         @include border-bottom-radius(0);
     }
 
     // Hide top border when open and above
     &.select2-container--open.select2-container--above .select2-selection {
+        // https://stackoverflow.com/questions/5115427/how-can-i-add-a-box-shadow-on-one-side-of-an-element
+        clip-path: inset(0 -.5rem -.5rem);
         border-top: 0 solid transparent;
         @include border-top-radius(0);
     }
