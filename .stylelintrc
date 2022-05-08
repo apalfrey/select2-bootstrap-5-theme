@@ -1,12 +1,13 @@
 {
     "extends": [
-        "stylelint-config-twbs-bootstrap/scss"
+        "stylelint-config-twbs-bootstrap"
     ],
     "rules": {
         "color-hex-length": "long",
+        "declaration-no-important": null,
         "declaration-property-value-disallowed-list": {
-            "border": "none",
-            "outline": "none"
+            "border": ["none"],
+            "outline": ["none"]
         },
         "function-disallowed-list": [
             "calc",

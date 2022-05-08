@@ -1,0 +1,475 @@
+---
+layout: default
+title: Input groups
+title_tag: true
+permalink: /examples/input-groups/
+---
+
+{%- capture single_select -%}
+<select class="form-select" id="single-select-single-field" data-placeholder="Choose one thing">
+        <option></option>
+        <option>Reactive</option>
+        <option>Solution</option>
+        <option>Conglomeration</option>
+        <option>Algoritm</option>
+        <option>Holistic</option>
+    </select>
+{%- endcapture -%}
+
+{%- capture multiple_select -%}
+<select class="form-select" data-placeholder="Choose anything" id="multiple-select-multiple-field" multiple>
+        <option>Christmas Island</option>
+        <option>South Sudan</option>
+        <option>Jamaica</option>
+        <option>Kenya</option>
+        <option>French Guiana</option>
+        <option>Mayotta</option>
+        <option>Liechtenstein</option>
+        <option>Denmark</option>
+        <option>Eritrea</option>
+        <option>Gibraltar</option>
+        <option>Saint Helena, Ascension and Tristan da Cunha</option>
+        <option>Haiti</option>
+        <option>Namibia</option>
+        <option>South Georgia and the South Sandwich Islands</option>
+        <option>Vietnam</option>
+        <option>Yemen</option>
+        <option>Philippines</option>
+        <option>Benin</option>
+        <option>Czech Republic</option>
+        <option>Russia</option>
+    </select>
+{%- endcapture -%}
+
+{%- capture prepend_text -%}
+<div class="input-group-text">Prepend</div>
+{%- endcapture -%}
+
+{%- capture prepend_button -%}
+<button class="btn btn-outline-secondary" type="button">Prepend</button>
+{%- endcapture -%}
+
+{%- capture prepend_dropdown -%}
+<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Prepend</button>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+    </ul>
+{%- endcapture -%}
+
+{%- capture prepend_toggle -%}
+<button class="btn btn-outline-secondary">Prepend</button>
+    <button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <span class="visually-hidden">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><hr class="dropdown-divider"></li>
+        <li><a class="dropdown-item" href="#">Separated link</a></li>
+    </ul>
+{%- endcapture -%}
+
+{% assign append_text = prepend_text | replace: "Prepend", "Append" %}
+{% assign append_button = prepend_button | replace: "Prepend", "Append" %}
+{% assign append_dropdown = prepend_dropdown | replace: "Prepend", "Append" %}
+{% assign append_toggle = prepend_toggle | replace: "Prepend", "Append" %}
+
+<h2 id="prepend">Prepend</h2>
+<h3 id="prepend-text">Text</h3>
+{% assign field_name = "prepend-text" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ prepend_text }}
+    {{ single_select | replace: "single-select", field_name }}
+</div>
+
+<div class="input-group mb-3">
+    {{ prepend_text }}
+    {{ multiple_select | replace: "multiple-select", field_name }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="prepend-button">Button</h3>
+{% assign field_name = "prepend-button" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ prepend_button }}
+    {{ single_select | replace: "single-select", field_name }}
+</div>
+
+<div class="input-group mb-3">
+    {{ prepend_button }}
+    {{ multiple_select | replace: "multiple-select", field_name }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="prepend-dropdown">Dropdown</h3>
+{% assign field_name = "prepend-dropdown" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ prepend_dropdown }}
+    {{ single_select | replace: "single-select", field_name }}
+</div>
+
+<div class="input-group mb-3">
+    {{ prepend_dropdown }}
+    {{ multiple_select | replace: "multiple-select", field_name }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="prepend-toggle">Dropdown toggle</h3>
+{% assign field_name = "prepend-toggle" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ prepend_toggle }}
+    {{ single_select | replace: "single-select", field_name }}
+</div>
+
+<div class="input-group mb-3">
+    {{ prepend_toggle }}
+    {{ multiple_select | replace: "multiple-select", field_name }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="append">Append</h2>
+<h3 id="append-text">Text</h3>
+{% assign field_name = "append-text" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ single_select | replace: "single-select", field_name }}
+    {{ append_text }}
+</div>
+
+<div class="input-group mb-3">
+    {{ multiple_select | replace: "multiple-select", field_name }}
+    {{ append_text }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="append-button">Button</h3>
+{% assign field_name = "append-button" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ single_select | replace: "single-select", field_name }}
+    {{ append_button }}
+</div>
+
+<div class="input-group mb-3">
+    {{ multiple_select | replace: "multiple-select", field_name }}
+    {{ append_button }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="append-dropdown">Dropdown</h3>
+{% assign field_name = "append-dropdown" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ single_select | replace: "single-select", field_name }}
+    {{ append_dropdown }}
+</div>
+
+<div class="input-group mb-3">
+    {{ multiple_select | replace: "multiple-select", field_name }}
+    {{ append_dropdown }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="append-toggle">Dropdown toggle</h3>
+{% assign field_name = "append-toggle" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ single_select | replace: "single-select", field_name }}
+    {{ append_toggle }}
+</div>
+
+<div class="input-group mb-3">
+    {{ multiple_select | replace: "multiple-select", field_name }}
+    {{ append_toggle }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="prepend-append">Prepend & Append</h2>
+<h3 id="prepend-append-text">Text</h3>
+{% assign field_name = "prepend-append-text" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ prepend_text }}
+    {{ single_select | replace: "single-select", field_name }}
+    {{ append_text }}
+</div>
+
+<div class="input-group mb-3">
+    {{ prepend_text }}
+    {{ multiple_select | replace: "multiple-select", field_name }}
+    {{ append_text }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="prepend-append-button">Button</h3>
+{% assign field_name = "prepend-append-button" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ prepend_button }}
+    {{ single_select | replace: "single-select", field_name }}
+    {{ append_button }}
+</div>
+
+<div class="input-group mb-3">
+    {{ prepend_button }}
+    {{ multiple_select | replace: "multiple-select", field_name }}
+    {{ append_button }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="prepend-append-dropdown">Dropdown</h3>
+{% assign field_name = "prepend-append-dropdown" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ prepend_dropdown }}
+    {{ single_select | replace: "single-select", field_name }}
+    {{ append_dropdown }}
+</div>
+
+<div class="input-group mb-3">
+    {{ prepend_dropdown }}
+    {{ multiple_select | replace: "multiple-select", field_name }}
+    {{ append_dropdown }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="prepend-append-toggle">Dropdown toggle</h3>
+{% assign field_name = "prepend-append-toggle" %}
+
+{% capture example_html %}
+<div class="input-group mb-3">
+    {{ prepend_toggle }}
+    {{ single_select | replace: "single-select", field_name }}
+    {{ append_toggle }}
+</div>
+
+<div class="input-group mb-3">
+    {{ prepend_toggle }}
+    {{ multiple_select | replace: "multiple-select", field_name }}
+    {{ append_toggle }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}

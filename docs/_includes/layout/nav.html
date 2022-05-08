@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-md navbar-dark s2bs5-navbar">
+    <div class="container-xxl">
+        <a href="{{ "/" | absolute_url }}" class="navbar-brand">{% include svgs/s2bs5.svg %} Select2 Bootstrap 5 Theme</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#s2bs5-navbar" aria-controls="s2bs5-navbar" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="s2bs5-navbar">
+            <ul class="navbar-nav ms-md-auto">
+                <li class="nav-item">
+                    <a class="nav-link p-2" href="{{ site.links.github }}" target="_blank" rel="noopener noreferrer">
+                        {% include svgs/github.svg %}
+                        <span class="visually-hidden">GitHub</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link p-2" href="{{ site.links.npm }}" target="_blank" rel="noopener noreferrer">
+                        {% include svgs/npm.svg %}
+                        <span class="visually-hidden">npm</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link p-2" href="{{ site.links.packagist }}" target="_blank" rel="noopener noreferrer">
+                        {% include svgs/packagist.svg %}
+                        <span class="visually-hidden">Packagist</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link p-2" href="{{ site.links.select2 }}" target="_blank" rel="noopener noreferrer">
+                        {% include svgs/select2.svg %}
+                        <span class="visually-hidden">Select2</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link p-2" href="{{ site.links.bootstrap }}" target="_blank" rel="noopener noreferrer">
+                        {% include svgs/bootstrap.svg %}
+                        <span class="visually-hidden">Bootstrap 5</span>
+                    </a>
+                </li>
+            </ul>
+            <a class="btn btn-outline-light my-2 my-md-0 ms-md-3" href="{{ site.links.download | absolute_url }}">Download</a>
+        </div>
+    </div>
+</nav>

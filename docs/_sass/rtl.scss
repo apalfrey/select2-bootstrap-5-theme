@@ -1,0 +1,100 @@
+// stylelint-disable no-invalid-position-at-import-rule, property-disallowed-list, no-duplicate-selectors, comment-whitespace-inside, comment-empty-line-before
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+[dir="rtl"] {
+    @import "src/include-all";
+}
+
+/*rtl:begin:ignore*/
+[dir="rtl"] {
+    .input-group {
+        > .form-control,
+        > .form-select,
+        > .input-group-text,
+        > .btn,
+        > .select2-container--bootstrap-5 .select2-selection {
+            border-radius: $input-border-radius !important;
+        }
+    }
+
+    .input-group-lg {
+        > .form-control,
+        > .form-select,
+        > .input-group-text,
+        > .btn,
+        > .select2-container--bootstrap-5 .select2-selection {
+            border-radius: $input-border-radius-lg !important;
+        }
+    }
+
+    .input-group-sm {
+        > .form-control,
+        > .form-select,
+        > .input-group-text,
+        > .btn,
+        > .select2-container--bootstrap-5 .select2-selection {
+            border-radius: $input-border-radius-sm !important;
+        }
+    }
+
+    .input-group {
+        &:not(.has-validation) {
+            > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu),
+            > .dropdown-toggle:nth-last-child(n+3),
+            > :not(:last-child):not(.dropdown-toggle):not(.dropdown-menu).select2-container--bootstrap-5 .select2-selection {
+                border-top-left-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
+            }
+        }
+
+        &.has-validation {
+            > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu),
+            > .dropdown-toggle:nth-last-child(n+4),
+            > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu),
+            > .dropdown-toggle:nth-last-child(n+4),
+            > :nth-last-child(n+3):not(.dropdown-toggle):not(.dropdown-menu).select2-container--bootstrap-5 .select2-selection {
+                border-top-left-radius: 0 !important;
+                border-bottom-left-radius: 0 !important;
+            }
+        }
+
+        > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+            margin-right: -1px;
+            margin-left: 0;
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        > .input-group-text ~ .select2-container--bootstrap-5 .select2-selection,
+        > .btn ~ .select2-container--bootstrap-5 .select2-selection,
+        > .dropdown-menu ~ .select2-container--bootstrap-5 .select2-selection {
+            border-top-right-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+        }
+
+        .select2-container--bootstrap-5.select2-container--open.select2-container--below .select2-selection {
+            border-bottom-right-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+        }
+
+        .select2-container--bootstrap-5.select2-container--open.select2-container--above .select2-selection {
+            border-top-left-radius: 0 !important;
+            border-top-right-radius: 0 !important;
+        }
+    }
+
+    .dropdown-toggle {
+        &::after {
+            margin-left: 0;
+        }
+
+        &:not(.dropdown-toggle-split)::after {
+            margin-right: $caret-spacing;
+        }
+    }
+
+}
+/*rtl:end:ignore*/
+// stylelint-enable no-invalid-position-at-import-rule

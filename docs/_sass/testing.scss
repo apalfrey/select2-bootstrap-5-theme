@@ -1,0 +1,9 @@
+@import "docs";
+
+@import "node_modules/bootstrap/scss/close";
+@import "node_modules/bootstrap/scss/modal";
+
+// Testing override
+.s2bs5-layout {
+    display: block !important;
+}

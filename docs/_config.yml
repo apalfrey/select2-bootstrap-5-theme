@@ -1,0 +1,101 @@
+# Site settings
+title: Select2 Bootstrap 5 Theme # the title for the site
+description: >- # ignore newlines until "baseurl:"
+  Write an awesome description for your new site here. You can edit this
+  line in _config.yml. It will appear in your document head meta (for
+  Google search results) and in your feed.xml site description.
+baseurl: /select2-bootstrap-5-theme # the subpath of the site
+url: https://apalfrey.github.io # the base hostname & protocol for the site
+version: 1.2.0
+
+# Build settings
+theme: null # prevents style.css from being generated
+plugins:
+  - jekyll-sitemap
+
+# Exclude from processing.
+exclude:
+  - _sass/
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - testing.html
+  - testing-4.0.html
+  - assets/css/testing.css
+  - assets/css/testing.rtl.css
+  - _config_dev.yml
+
+# Site styles
+styles:
+  bootstrap: https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css
+  select2:
+    old: https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/css/select2.min.css
+    new: https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css
+  s2bs5:
+    ltr: https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.2.0/dist/select2-bootstrap-5-theme.min.css
+    rtl: https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.2.0/dist/select2-bootstrap-5-theme.rtl.min.css
+  docs:
+    ltr: /assets/css/docs.css
+    rtl: /assets/css/rtl.css
+
+# Site scripts
+scripts:
+  jquery: https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js
+  bootstrap: https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js
+  select2:
+    old: https://cdn.jsdelivr.net/npm/select2@4.0.13/dist/js/select2.full.min.js
+    new: https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js
+  clipboardjs: https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js
+  anchorjs: https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js
+  docs: /assets/js/docs.js
+
+# Header links
+links:
+  github: https://github.com/apalfrey/select2-bootstrap-5-theme/
+  npm: https://www.npmjs.com/package/select2-bootstrap-5-theme/
+  packagist: https://packagist.org/packages/apalfrey/select2-bootstrap-5-theme/
+  select2: https://select2.org/
+  bootstrap: https://getbootstrap.com/
+  download: /getting-started/download-install/
+  old: /examples/single-select/4.0/
+  new: /examples/single-select/
+
+# Sidebar
+sidebar:
+  - name: introduction
+    label: Introduction
+    version-switch: false
+    dropdown: false
+    permalink: /
+  - name: getting-started
+    label: Getting started
+    version-switch: false
+    dropdown: true
+    pages:
+      - /getting-started/download-install/
+      - /getting-started/basic-usage/
+      - /getting-started/build-tools/
+  - name: examples
+    label: Examples
+    version-switch: true
+    dropdown: true
+    pages:
+      - /examples/single-select/
+      - /examples/multiple-select/
+      - /examples/input-groups/
+      - /examples/sizing/
+      - /examples/validation/
+  - name: about
+    label: About
+    version-switch: false
+    dropdown: true
+    pages:
+      - /about/contributing/
+      - /about/license/

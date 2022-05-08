@@ -1,0 +1,21 @@
+.btn-dropdown {
+    @include button-outline-variant($s2bs5-primary-light, $s2bs5-primary, $white, $s2bs5-primary, $s2bs5-primary);
+}
+
+.btn-clipboard {
+    z-index: 10;
+    display: block;
+    padding: .25rem .5rem;
+    margin-top: .65rem;
+    margin-right: .65rem;
+    @include font-size(.65rem);
+    @include button-outline-variant($s2bs5-primary);
+}
+
+.btn-s2bs5-primary {
+    @include button-variant($s2bs5-primary, $s2bs5-primary);
+}
+
+.btn-outline-s2bs5-primary {
+    @include button-outline-variant($s2bs5-primary, $white);
+}

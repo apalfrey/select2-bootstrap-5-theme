@@ -1,0 +1,108 @@
+---
+layout: default
+title: Single select
+title_tag: true
+permalink: /examples/single-select/
+---
+
+<h2 id="single-select">Basic single select</h2>
+{% assign field_name = "single-select" %}
+
+{% capture example_html %}
+<select class="form-select" id="{{ field_name }}-field" data-placeholder="Choose one thing">
+    <option></option>
+    <option>Reactive</option>
+    <option>Solution</option>
+    <option>Conglomeration</option>
+    <option>Algoritm</option>
+    <option>Holistic</option>
+</select>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="single-select-optgroup">Single select w/ optgroup</h2>
+{% assign field_name = "single-select-optgroup" %}
+
+{% capture example_html %}
+<select class="form-select" id="{{ field_name }}-field" data-placeholder="Choose one thing">
+    <option></option>
+    <optgroup label="Group 1">
+        <option>Reactive</option>
+        <option>Solution</option>
+        <option>Conglomeration</option>
+    </optgroup>
+    <optgroup label="Group 2">
+        <option>Algoritm</option>
+        <option>Holistic</option>
+    </optgroup>
+</select>
+{% endcapture %}
+
+{% capture example_js %}
+
+$( '#{{ field_name }}-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="single-select-clear">Single select w/ allow clear</h2>
+{% assign field_name = "single-select-clear" %}
+
+{% capture example_html %}
+<select class="form-select" id="{{ field_name }}-field" data-placeholder="Choose one thing">
+    <option></option>
+    <option>Reactive</option>
+    <option>Solution</option>
+    <option>Conglomeration</option>
+    <option>Algoritm</option>
+    <option>Holistic</option>
+</select>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    allowClear: true
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="single-select-disabled">Disabled single select</h2>
+{% assign field_name = "single-select-disabled" %}
+
+{% capture example_html %}
+<select class="form-select" id="{{ field_name }}-field" data-placeholder="Choose one thing" disabled>
+    <option></option>
+    <option>Reactive</option>
+    <option>Solution</option>
+    <option>Conglomeration</option>
+    <option>Algoritm</option>
+    <option>Holistic</option>
+</select>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+{% endcapture %}
+
+{% include example.html %}

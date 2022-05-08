@@ -1,0 +1,11 @@
+.anchorjs-link {
+    font-weight: 400;
+    color: rgba($s2bs5-primary, .5);
+    @include transition(color .15s ease-in-out);
+
+    &:focus,
+    &:hover {
+        color: $s2bs5-primary;
+        text-decoration: none;
+    }
+}

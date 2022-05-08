@@ -1,0 +1,904 @@
+{%- capture single_options -%}
+<option></option>
+<option>Reactive</option>
+<option>Solution</option>
+<option>Conglomeration</option>
+<option>Algoritm</option>
+<option>Holistic</option>
+{%- endcapture -%}
+
+{%- capture single_optgroup -%}
+<option></option>
+<optgroup label="Group 1">
+    <option>Reactive</option>
+    <option>Solution</option>
+    <option>Conglomeration</option>
+</optgroup>
+<optgroup label="Group 2">
+    <option>Algoritm</option>
+    <option>Holistic</option>
+</optgroup>
+{%- endcapture -%}
+
+{%- capture multiple_options -%}
+<option>Christmas Island</option>
+<option>South Sudan</option>
+<option>Jamaica</option>
+<option>Kenya</option>
+<option>French Guiana</option>
+<option>Mayotta</option>
+<option>Liechtenstein</option>
+<option>Denmark</option>
+<option>Eritrea</option>
+<option>Gibraltar</option>
+<option>Saint Helena, Ascension and Tristan da Cunha</option>
+<option>Haiti</option>
+<option>Namibia</option>
+<option>South Georgia and the South Sandwich Islands</option>
+<option>Vietnam</option>
+<option>Yemen</option>
+<option>Philippines</option>
+<option>Benin</option>
+<option>Czech Republic</option>
+<option>Russia</option>
+{%- endcapture -%}
+
+{%- capture multiple_optgroup -%}
+<optgroup label="Group 1">
+    <option>Christmas Island</option>
+    <option>South Sudan</option>
+    <option>Jamaica</option>
+    <option>Kenya</option>
+    <option>French Guiana</option>
+    <option>Mayotta</option>
+</optgroup>
+<optgroup label="Group 2">
+    <option>Liechtenstein</option>
+    <option>Denmark</option>
+    <option>Eritrea</option>
+    <option>Gibraltar</option>
+    <option>Saint Helena, Ascension and Tristan da Cunha</option>
+    <option>Haiti</option>
+    <option>Namibia</option>
+</optgroup>
+<optgroup label="Group 3">
+    <option>South Georgia and the South Sandwich Islands</option>
+    <option>Vietnam</option>
+    <option>Yemen</option>
+    <option>Philippines</option>
+    <option>Benin</option>
+    <option>Czech Republic</option>
+    <option>Russia</option>
+</optgroup>
+{%- endcapture -%}
+
+{%- capture prepend_text -%}
+<div class="input-group-text">Prepend</div>
+{%- endcapture -%}
+{%- assign append_text = prepend_text | replace: "Prepend", "Append" -%}
+
+{%- capture prepend_button -%}
+<button class="btn btn-outline-secondary" type="button">Prepend</button>
+{%- endcapture -%}
+{%- assign append_button = prepend_button | replace: "Prepend", "Append" -%}
+
+{%- capture prepend_dropdown -%}
+<button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Prepend</button>
+<ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+</ul>
+{%- endcapture -%}
+{%- assign append_dropdown = prepend_dropdown | replace: "Prepend", "Append" -%}
+
+{%- capture prepend_toggle -%}
+<button class="btn btn-outline-secondary">Prepend</button>
+<button class="btn btn-outline-secondary dropdown-toggle dropdown-toggle-split" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    <span class="visually-hidden">Toggle Dropdown</span>
+</button>
+<ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+</ul>
+{%- endcapture -%}
+{%- assign append_toggle = prepend_toggle | replace: "Prepend", "Append" -%}
+
+{%- capture content -%}
+<h2 id="single-select">Single select</h2>
+<h3 id="single-basic">Basic single select</h3>
+<select class="form-select" id="single-select-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+
+<script>
+$( '#single-select-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<h3 id="single-optgroup">Single select w/ optgroup</h3>
+<select class="form-select" id="single-select-optgroup-field" data-placeholder="Choose one thing">{{ single_optgroup }}</select>
+
+<script>
+$( '#single-select-optgroup-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<h3 id="single-clear">Single select w/ allow clear</h3>
+<select class="form-select" id="single-select-clear-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+
+<script>
+$( '#single-select-clear-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    allowClear: true
+} );
+</script>
+
+<h3 id="single-disabled">Disabled single select</h3>
+<select class="form-select" id="single-select-disabled-field" data-placeholder="Choose one thing" disabled>{{ single_options }}</select>
+
+<script>
+$( '#single-select-disabled-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<h2 id="multiple">Multiple select</h2>
+<h3 id="multiple-basic">Basic multiple select</h3>
+<select class="form-select" id="multiple-select-field" data-placeholder="Choose anything" multiple>{{ multiple_options }}</select>
+
+<script>
+$( '#multiple-select-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<h3 id="multiple-optgroup">Multiple select w/ optgroup</h3>
+<select class="form-select" id="multiple-select-optgroup-field" data-placeholder="Choose anything" multiple>{{ multiple_optgroup }}</select>
+
+<script>
+$( '#multiple-select-optgroup-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<h3 id="multiple-clear">Multiple select w/ allow clear</h3>
+<select class="form-select" id="multiple-select-clear-field" data-placeholder="Choose anything" multiple>{{ multiple_options }}</select>
+
+<script>
+$( '#multiple-select-clear-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    allowClear: true,
+} );
+</script>
+
+<h3 id="multiple-custom">Multiple select w/ custom entries</h3>
+<select class="form-select" id="multiple-select-custom-field" data-placeholder="Choose anything" multiple>{{ multiple_options }}</select>
+
+<script>
+$( '#multiple-select-custom-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    tags: true
+} );
+</script>
+
+<h3 id="multiple-disabled">Disabled multiple select</h3>
+<select class="form-select" id="multiple-select-disabled-field" data-placeholder="Choose anything" multiple disabled>{{ multiple_options }}</select>
+
+<script>
+$( '#multiple-select-disabled-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<h2 id="input-groups">Input groups</h2>
+<h3 id="prepend">Prepend</h3>
+
+<div class="input-group mb-3">
+    {{ prepend_text }}
+    <select class="form-select" id="prepend-text-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+</div>
+
+<script>
+$( '#prepend-text-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_text }}
+    <select class="form-select" data-placeholder="Choose anything" id="prepend-text-multiple-field" multiple>{{ multiple_options }}</select>
+</div>
+
+<script>
+$( '#prepend-text-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_button }}
+    <select class="form-select" id="prepend-button-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+</div>
+
+<script>
+$( '#prepend-button-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_button }}
+    <select class="form-select" data-placeholder="Choose anything" id="prepend-button-multiple-field" multiple>{{ multiple_options }}</select>
+</div>
+
+<script>
+$( '#prepend-button-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_dropdown }}
+    <select class="form-select" id="prepend-dropdown-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+</div>
+
+<script>
+$( '#prepend-dropdown-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_dropdown }}
+    <select class="form-select" data-placeholder="Choose anything" id="prepend-dropdown-multiple-field" multiple>{{ multiple_options }}</select>
+</div>
+
+<script>
+$( '#prepend-dropdown-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_toggle }}
+    <select class="form-select" id="prepend-toggle-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+</div>
+
+<script>
+$( '#prepend-toggle-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_toggle }}
+    <select class="form-select" data-placeholder="Choose anything" id="prepend-toggle-multiple-field" multiple>{{ multiple_options }}</select>
+</div>
+
+<script>
+$( '#prepend-toggle-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<h3 id="append">Append</h3>
+
+<div class="input-group mb-3">
+    <select class="form-select" id="append-text-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+    {{ append_text }}
+</div>
+
+<script>
+$( '#append-text-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    <select class="form-select" data-placeholder="Choose anything" id="append-text-multiple-field" multiple>{{ multiple_options }}</select>
+    {{ append_text }}
+</div>
+
+<script>
+$( '#append-text-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<div class="input-group mb-3">
+    <select class="form-select" id="append-button-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+    {{ append_button }}
+</div>
+
+<script>
+$( '#append-button-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    <select class="form-select" data-placeholder="Choose anything" id="append-button-multiple-field" multiple>{{ multiple_options }}</select>
+    {{ append_button }}
+</div>
+
+<script>
+$( '#append-button-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<div class="input-group mb-3">
+    <select class="form-select" id="append-dropdown-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+    {{ append_dropdown }}
+</div>
+
+<script>
+$( '#append-dropdown-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    <select class="form-select" data-placeholder="Choose anything" id="append-dropdown-multiple-field" multiple>{{ multiple_options }}</select>
+    {{ append_dropdown }}
+</div>
+
+<script>
+$( '#append-dropdown-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<div class="input-group mb-3">
+    <select class="form-select" id="append-toggle-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+    {{ append_toggle }}
+</div>
+
+<script>
+$( '#append-toggle-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    <select class="form-select" data-placeholder="Choose anything" id="append-toggle-multiple-field" multiple>{{ multiple_options }}</select>
+    {{ append_toggle }}
+</div>
+
+<script>
+$( '#append-toggle-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<h3 id="prepend-append">Prepend &amp; Append</h3>
+
+<div class="input-group mb-3">
+    {{ prepend_text }}
+    <select class="form-select" id="prepend-append-text-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+    {{ append_text }}
+</div>
+
+<script>
+$( '#prepend-append-text-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_text }}
+    <select class="form-select" data-placeholder="Choose anything" id="prepend-append-text-multiple-field" multiple>{{ multiple_options }}</select>
+    {{ append_text }}
+</div>
+
+<script>
+$( '#prepend-append-text-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_button }}
+    <select class="form-select" id="prepend-append-button-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+    {{ append_button }}
+</div>
+
+<script>
+$( '#prepend-append-button-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_button }}
+    <select class="form-select" data-placeholder="Choose anything" id="prepend-append-button-multiple-field" multiple>{{ multiple_options }}</select>
+    {{ append_button }}
+</div>
+
+<script>
+$( '#prepend-append-button-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_dropdown }}
+    <select class="form-select" id="prepend-append-dropdown-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+    {{ append_dropdown }}
+</div>
+
+<script>
+$( '#prepend-append-dropdown-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_dropdown }}
+    <select class="form-select" data-placeholder="Choose anything" id="prepend-append-dropdown-multiple-field" multiple>{{ multiple_options }}</select>
+    {{ append_dropdown }}
+</div>
+
+<script>
+$( '#prepend-append-dropdown-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_toggle }}
+    <select class="form-select" id="prepend-append-toggle-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+    {{ append_toggle }}
+</div>
+
+<script>
+$( '#prepend-append-toggle-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="input-group mb-3">
+    {{ prepend_toggle }}
+    <select class="form-select" data-placeholder="Choose anything" id="prepend-append-toggle-multiple-field" multiple>{{ multiple_options }}</select>
+    {{ append_toggle }}
+</div>
+
+<script>
+$( '#prepend-append-toggle-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<h2 id="sizing">Sizing</h2>
+<h3 id="small">Small</h3>
+<h4 id="small-select2">Select2 options</h4>
+
+<div class="mb-3">
+    <select class="form-select" id="small-select2-options-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+</div>
+
+<script>
+$( '#small-select2-options-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    containerCssClass: 'select2--small',
+    selectionCssClass: 'select2--small',
+    dropdownCssClass: 'select2--small',
+} );
+</script>
+
+<div class="mb-3">
+    <select class="form-select" data-placeholder="Choose anything" id="small-select2-options-multiple-field" multiple>{{ multiple_options }}</select>
+</div>
+
+<script>
+$( '#small-select2-options-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    containerCssClass: 'select2--small',
+    selectionCssClass: 'select2--small',
+    dropdownCssClass: 'select2--small',
+} );
+</script>
+
+<h4 id="small-bs5">Bootstrap 5 class</h4>
+<div class="mb-3">
+    <select class="form-select form-select-sm" id="small-bootstrap-class-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+</div>
+
+<script>
+$( '#small-bootstrap-class-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    dropdownParent: $( '#small-bootstrap-class-single-field' ).parent(),
+} );
+</script>
+
+<div class="mb-3">
+    <select class="form-select form-select-sm" data-placeholder="Choose anything" id="small-bootstrap-class-multiple-field" multiple>{{ multiple_options }}</select>
+</div>
+
+<script>
+$( '#small-bootstrap-class-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    dropdownParent: $( '#small-bootstrap-class-multiple-field' ).parent(),
+} );
+</script>
+
+<h3 id="large">Small</h3>
+<h4 id="large-select2">Select2 options</h4>
+
+<div class="mb-3">
+    <select class="form-select" id="large-select2-options-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+</div>
+
+<script>
+$( '#large-select2-options-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    containerCssClass: 'select2--large',
+    selectionCssClass: 'select2--large',
+    dropdownCssClass: 'select2--large',
+} );
+</script>
+
+<div class="mb-3">
+    <select class="form-select" data-placeholder="Choose anything" id="large-select2-options-multiple-field" multiple>{{ multiple_options }}</select>
+</div>
+
+<script>
+$( '#large-select2-options-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    containerCssClass: 'select2--large',
+    selectionCssClass: 'select2--large',
+    dropdownCssClass: 'select2--large',
+} );
+</script>
+
+<h4 id="large-bs5">Bootstrap 5 class</h4>
+<div class="mb-3">
+    <select class="form-select form-select-lg" id="large-bootstrap-class-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+</div>
+
+<script>
+$( '#large-bootstrap-class-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    dropdownParent: $( '#large-bootstrap-class-single-field' ).parent(),
+} );
+</script>
+
+<div class="mb-3">
+    <select class="form-select form-select-lg" data-placeholder="Choose anything" id="large-bootstrap-class-multiple-field" multiple>{{ multiple_options }}</select>
+</div>
+
+<script>
+$( '#large-bootstrap-class-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    dropdownParent: $( '#large-bootstrap-class-multiple-field' ).parent(),
+} );
+</script>
+
+<h2 id="validation">Validation</h2>
+<h3 id="valid">Valid fields</h3>
+<h4 id="valid-was-validated"><code>.was-validated</code></h4>
+
+<form class="was-validated mb-3">
+    <select class="form-select" id="valid-was-validated-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+</form>
+
+<script>
+$( '#valid-was-validated-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<form class="was-validated mb-3">
+    <select class="form-select" data-placeholder="Choose anything" id="valid-was-validated-multiple-field" multiple>{{ multiple_options }}</select>
+</form>
+
+<script>
+$( '#valid-was-validated-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<h4 id="valid-is-valid"><code>.is-valid</code></h4>
+<div class="mb-3">
+    <select class="form-select is-valid" id="valid-is-valid-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+</div>
+
+<script>
+$( '#valid-is-valid-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="mb-3">
+    <select class="form-select is-valid" data-placeholder="Choose anything" id="valid-is-valid-multiple-field" multiple>{{ multiple_options }}</select>
+</div>
+
+<script>
+$( '#valid-is-valid-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<h3 id="invalid">Invalid fields</h3>
+<h4 id="invalid-was-validated"><code>.was-validated</code></h4>
+<form class="was-validated mb-3">
+    <select class="form-select" id="invalid-was-validated-single-field" data-placeholder="Choose one thing" required>{{ single_options }}</select>
+</form>
+
+<script>
+$( '#invalid-was-validated-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<form class="was-validated mb-3">
+    <select class="form-select" data-placeholder="Choose anything" id="invalid-was-validated-multiple-field" multiple required>{{ multiple_options }}</select>
+</form>
+
+<script>
+$( '#invalid-was-validated-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<h4 id="invalid-is-invalid"><code>.is-invalid</code></h4>
+<div class="mb-3">
+    <select class="form-select is-invalid" id="invalid-is-invalid-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+</div>
+
+<script>
+$( '#invalid-is-invalid-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+</script>
+
+<div class="mb-3">
+    <select class="form-select is-invalid" data-placeholder="Choose anything" id="invalid-is-invalid-multiple-field" multiple>{{ multiple_options }}</select>
+</div>
+
+<script>
+$( '#invalid-is-invalid-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+<h2 id="modal">Inside modal</h2>
+<button type="button" class="btn btn-s2bs5-primary" data-bs-toggle="modal" data-bs-target="#modal-test">Launch modal</button>
+<div class="modal fade" id="modal-test" tabindex="-1" aria-labelledby="modal-test-label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modal-test-label">Test modal</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <select class="form-select" id="modal-single-field" data-placeholder="Choose one thing">{{ single_options }}</select>
+                </div>
+
+                <div class="mb-3">
+                    <select class="form-select" data-placeholder="Choose anything" id="modal-multiple-field" multiple>{{ multiple_options }}</select>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+$( '#modal-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#modal-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+</script>
+
+{%- endcapture -%}
+
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ page.title }} - {{ site.title }}</title>
+        {% if page.permalink contains "4.0" %}
+        <link rel="stylesheet" href="{{ site.styles.select2.old }}" />
+        {% else %}
+        <link rel="stylesheet" href="{{ site.styles.select2.new }}" />
+        {% endif %}
+
+        <link rel="stylesheet" href="{{ "/assets/css/testing.css" | absolute_url }}" id="testing-css" />
+        {% include layout/scripts.html %}
+
+        <script>
+            $( function() {
+                var rtl = false
+                $( '#rtl-switch' ).click( function() {
+                    var url = '{{ "/assets/css/testing.css" | absolute_url }}'
+                    var text = 'RTL'
+                    if ( !rtl ) {
+                        url = '{{ "/assets/css/testing.rtl.css" | absolute_url }}'
+                        text = 'LTR'
+                    }
+                    $( '#testing-css' ).attr( 'href', url )
+                    $( '#rtl-switch' ).text( text )
+                    rtl = !rtl
+                } )
+            } )
+        </script>
+    </head>
+    <body>
+        <header>
+            {% include layout/nav.html %}
+        </header>
+        <nav class="s2bs5-subnavbar py-2" aria-label="Secondary navigation">
+            <div class="container-xxl d-flex align-items-md-center">
+                <div class="ms-auto">
+                    <button class="btn btn-outline-s2bs5-primary" id="rtl-switch">RTL</button>
+                    {% if page.permalink contains "4.0" %}
+                    <a href="{{ "/testing/" | absolute_url }}" class="btn btn-outline-s2bs5-primary">4.1</a>
+                    {% else %}
+                    <a href="{{ "/testing/4.0/" | absolute_url }}" class="btn btn-outline-s2bs5-primary">4.0</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+        <div class="container-xxl my-md-4 s2bs5-layout">
+            <main class="s2bs5-main order-1">
+                {%- capture toc -%}
+                {% include layout/toc.html html=content sanitize=true %}
+                {%- endcapture -%}
+                {% assign toc_test = toc | strip_newlines %}
+                <div class="s2bs5-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5">
+                    {% if toc_test != "" %}
+                    <strong class="d-block h6 my-2 pb-2 border-bottom">On this page</strong>
+                    <nav id="table-of-contents">
+                        {{ toc }}
+                    </nav>
+                    {% endif %}
+                </div>
+                <div class="s2bs5-content ps-lg-4">
+                    {% if page.title and page.layout != "redirect" and page.error != true %}<h1 class="s2bs5-title">{{ page.title }}</h1>{% endif %}
+                    {{ content }}
+                </div>
+            </main>
+        </div>
+        {% include layout/footer.html %}
+    </body>
+</html>

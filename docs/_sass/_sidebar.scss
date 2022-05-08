@@ -1,0 +1,87 @@
+.s2bs5-sidebar {
+    @include media-breakpoint-down(md) {
+        margin: 0 -.75rem 1rem;
+    }
+}
+
+.s2bs5-links {
+    overflow: auto;
+    font-weight: 600;
+
+    @include media-breakpoint-up(md) {
+        position: sticky;
+        top: 5rem;
+        // Override collapse behaviors
+        // stylelint-disable-next-line declaration-no-important
+        display: block !important;
+        height: subtract(100vh, 7.875rem);
+        // Prevent focus styles to be cut off:
+        padding-left: .25rem;
+        margin-left: -.25rem;
+        overflow-y: auto;
+    }
+
+    > ul {
+        @include media-breakpoint-down(md) {
+            padding: 1.5rem .75rem;
+            background-color: $gray-100;
+            border-bottom: 1px solid $gray-200;
+        }
+    }
+
+    a {
+        padding: .1875rem .5rem;
+        margin-top: .125rem;
+        margin-left: 1.25rem;
+        color: rgba($black, .85);
+        text-decoration: if($link-decoration == none, null, none);
+
+        &:hover,
+        &:focus {
+            color: $s2bs5-primary;
+            text-decoration: if($link-hover-decoration == underline, none, null);
+            background-color: rgba($s2bs5-primary-light, .15);
+        }
+    }
+
+    .btn {
+        // Custom styles (as we don't have a completely neutral button style)
+        padding: .25rem .5rem;
+        font-weight: 600;
+        color: rgba($black, .85);
+        background-color: transparent;
+        border: 0;
+
+        &:hover,
+        &:focus {
+            color: $s2bs5-primary;
+            background-color: rgba($s2bs5-primary-light, .15);
+        }
+
+        &:focus {
+            box-shadow: 0 0 0 1px rgba($s2bs5-primary-light, .75);
+        }
+
+        // Add chevron if there's a submenu
+        &::before {
+            width: 1.25em;
+            line-height: 0; // Align in the middle
+            content: escape-svg($sidebar-collapse-icon);
+            @include transition(transform .35s ease);
+            transform-origin: .5em 50%;
+        }
+
+        &[aria-expanded="true"] {
+            color: $s2bs5-primary;
+
+            &::before {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .active {
+        font-weight: 600;
+        color: $s2bs5-primary;
+    }
+}

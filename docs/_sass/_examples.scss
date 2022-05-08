@@ -1,0 +1,35 @@
+.nav-tabs {
+    .nav-link {
+        color: $s2bs5-primary;
+
+        &:hover,
+        &:focus {
+            color: $s2bs5-primary-dark;
+        }
+    }
+}
+
+.s2bs5-example {
+    position: relative;
+    padding: 1rem;
+    margin: 0 (-$grid-gutter-width * .5);
+    border: solid $gray-300;
+    border-width: 1px 0 0;
+    @include clearfix();
+
+    @include media-breakpoint-up(sm) {
+        padding: 1.5rem;
+        margin-right: 0;
+        margin-left: 0;
+        border-width: 1px 1px 0;
+    }
+
+    + nav {
+        margin: 0 (-$grid-gutter-width * .5);
+
+        @include media-breakpoint-up(sm) {
+            margin-right: 0;
+            margin-left: 0;
+        }
+    }
+}

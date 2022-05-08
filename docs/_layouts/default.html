@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{% if page.title_tag and page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+        {% if layout.redirect %}
+        <link rel="canonical" href="{{ page.redirect_to | absolute_url }}"/>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta http-equiv="refresh" content="1; URL={{ page.redirect_to | absolute_url }}" />
+        {% endif %}
+        {% include layout/styles.html %}
+        {% include layout/scripts.html %}
+    </head>
+    <body>
+        <header>
+            {% include layout/nav.html %}
+        </header>
+        {% include layout/subnav.html %}
+        <div class="container-xxl my-md-4 s2bs5-layout">
+            {% include layout/sidebar.html %}
+            <main class="s2bs5-main order-1">
+                {% if page.layout != "redirect" and page.error != true and page.toc != false %}
+                {%- capture toc -%}
+                {% include layout/toc.html html=content sanitize=true %}
+                {%- endcapture -%}
+                {% assign toc_test = toc | strip_newlines %}
+                <div class="s2bs5-toc mt-4 mb-5 my-md-0 ps-xl-3 mb-lg-5">
+                    {% if toc_test != "" %}
+                    <strong class="d-block h6 my-2 pb-2 border-bottom">On this page</strong>
+                    <nav id="table-of-contents">
+                        {{ toc }}
+                    </nav>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="s2bs5-content ps-lg-4">
+                    {% if page.title and page.layout != "redirect" and page.error != true %}<h1 class="s2bs5-title">{{ page.title }}</h1>{% endif %}
+                    {{ content }}
+                </div>
+            </main>
+        </div>
+        {% include layout/footer.html %}
+    </body>
+</html>

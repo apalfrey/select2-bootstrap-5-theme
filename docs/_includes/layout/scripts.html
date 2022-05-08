@@ -1,0 +1,11 @@
+<script src="{{ site.scripts.jquery }}"></script>
+<script src="{{ site.scripts.bootstrap }}"></script>
+{% if page.permalink contains "4.0" %}
+<script src="{{ site.scripts.select2.old }}"></script>
+{% else %}
+<script src="{{ site.scripts.select2.new }}"></script>
+{% endif %}
+<script src="{{ site.scripts.clipboardjs }}"></script>
+<script src="{{ site.scripts.anchorjs }}"></script>
+
+<script src="{{ site.scripts.docs | absolute_url }}"></script>

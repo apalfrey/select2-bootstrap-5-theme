@@ -1,0 +1,49 @@
+<nav class="mt-3">
+    <div class="nav nav-tabs border-0" id="{{ field_name }}-tab" role="tablist">
+        <button class="nav-link active" id="{{ field_name }}-ltr-tab" data-bs-toggle="tab" data-bs-target="#{{ field_name }}-ltr-content" type="button"
+            role="tab" aria-controls="{{ field_name }}-ltr" aria-selected="true">LTR</button>
+        <button class="nav-link" id="{{ field_name }}-rtl-tab" data-bs-toggle="tab" data-bs-target="#{{ field_name }}-rtl-content" type="button" role="tab"
+            aria-controls="{{ field_name }}-rtl" aria-selected="false">RTL</button>
+    </div>
+</nav>
+<div class="tab-content s2bs5-example" id="{{ field_name }}-content">
+    <div class="tab-pane fade show active" id="{{ field_name }}-ltr-content" role="tabpanel" aria-labelledby="{{ field_name }}-ltr-tab">
+        <div dir="ltr">
+            {{ example_html }}
+        </div>
+        <script>
+            {{ example_js }}
+        </script>
+    </div>
+    <div class="tab-pane fade" id="{{ field_name }}-rtl-content" role="tabpanel" aria-labelledby="{{ field_name }}-rtl-tab">
+        {%- assign rtl_name = field_name | append: "-rtl" -%}
+        <div dir="rtl">
+            {{ example_html | replace: field_name, rtl_name }}
+        </div>
+        <script>
+            {{ example_js | replace: field_name, rtl_name }}
+        </script>
+    </div>
+</div>
+<nav class="border-start border-end border-top">
+    <div class="nav nav-tabs" id="{{ field_name }}-code-tab" role="tablist">
+        <button class="nav-link rounded-0 border-start-0 border-top-0 active" id="{{ field_name }}-code-html-tab" data-bs-toggle="tab" data-bs-target="#{{ field_name }}-code-html" type="button"
+            role="tab" aria-controls="{{ field_name }}-code-html" aria-selected="true">HTML</button>
+        <button class="nav-link rounded-0 border-top-0" id="{{ field_name }}-code-js-tab" data-bs-toggle="tab" data-bs-target="#{{ field_name }}-code-js" type="button" role="tab"
+            aria-controls="{{ field_name }}-code-js" aria-selected="false">JS</button>
+    </div>
+</nav>
+<div class="tab-content highlight-container" id="{{ field_name }}-code-content">
+    <div class="tab-pane fade show active" id="{{ field_name }}-code-html" role="tabpanel" aria-labelledby="{{ field_name }}-code-html-tab">
+        <div class="simple-highlight">
+            {% include clipboard.html %}
+            {% highlight html %}{{ example_html }}{% endhighlight %}
+        </div>
+    </div>
+    <div class="tab-pane fade" id="{{ field_name }}-code-js" role="tabpanel" aria-labelledby="{{ field_name }}-code-js-tab">
+        <div class="simple-highlight">
+            {% include clipboard.html %}
+            {% highlight js %}{{ example_js }}{% endhighlight %}
+        </div>
+    </div>
+</div>

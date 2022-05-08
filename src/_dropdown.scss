@@ -1,10 +1,15 @@
 .select2-container--bootstrap-5 {
+    + .select2-container--bootstrap-5 {
+        z-index: $s2bs5-zindex;
+    }
+
     // Dropdown
     .select2-dropdown {
-        z-index: 1056;
+        z-index: $s2bs5-zindex;
         background-color: $s2bs5-bg;
         color: $s2bs5-color;
-        border-color: $s2bs5-border-color;
+        overflow: hidden;
+        border-color: $s2bs5-focus-border-color;
         @include border-radius($s2bs5-border-radius);
 
         // Open Below
@@ -15,6 +20,7 @@
 
         // Open Above
         &.select2-dropdown--above {
+            border-bottom: 0 solid transparent;
             @include border-bottom-radius(0);
         }
 
@@ -75,7 +81,7 @@
 
                 // Selected Item
                 &.select2-results__option--selected,
-                &[aria-selected="true"] {
+                &[aria-selected="true"]:not(.select2-results__option--highlighted) {
                     color: color-contrast($s2bs5-item-active-bg);
                     background-color: $s2bs5-item-active-bg;
                 }

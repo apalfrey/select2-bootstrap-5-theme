@@ -1,0 +1,164 @@
+---
+layout: default
+title: Validation
+title_tag: true
+permalink: /examples/validation/4.0/
+---
+
+{%- capture single_select -%}
+<select class="form-select" id="single-select-single-field" data-placeholder="Choose one thing">
+        <option></option>
+        <option>Reactive</option>
+        <option>Solution</option>
+        <option>Conglomeration</option>
+        <option>Algoritm</option>
+        <option>Holistic</option>
+    </select>
+{%- endcapture -%}
+
+{%- capture multiple_select -%}
+<select class="form-select" data-placeholder="Choose anything" id="multiple-select-multiple-field" multiple>
+        <option>Christmas Island</option>
+        <option>South Sudan</option>
+        <option>Jamaica</option>
+        <option>Kenya</option>
+        <option>French Guiana</option>
+        <option>Mayotta</option>
+        <option>Liechtenstein</option>
+        <option>Denmark</option>
+        <option>Eritrea</option>
+        <option>Gibraltar</option>
+        <option>Saint Helena, Ascension and Tristan da Cunha</option>
+        <option>Haiti</option>
+        <option>Namibia</option>
+        <option>South Georgia and the South Sandwich Islands</option>
+        <option>Vietnam</option>
+        <option>Yemen</option>
+        <option>Philippines</option>
+        <option>Benin</option>
+        <option>Czech Republic</option>
+        <option>Russia</option>
+    </select>
+{%- endcapture -%}
+
+<h2 id="valid">Valid fields</h2>
+<h3 id="valid-was-validated"><code>.was-validated</code></h3>
+{% assign field_name = "valid-was-validated" %}
+
+{% capture example_html %}
+<form class="was-validated mb-3">
+    {{ single_select | replace: "single-select", field_name }}
+</form>
+
+<form class="was-validated mb-3">
+    {{ multiple_select | replace: "multiple-select", field_name }}
+</form>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="valid-is-valid"><code>.is-valid</code></h3>
+{% assign field_name = "valid-is-valid" %}
+
+{% capture example_html %}
+<div class="mb-3">
+    {{ single_select | replace: "single-select", field_name | replace: "form-select", "form-select is-valid" }}
+</div>
+
+<div class="mb-3">
+    {{ multiple_select | replace: "multiple-select", field_name | replace: "form-select", "form-select is-valid" }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="invalid">Invalid fields</h2>
+<h3 id="invalid-was-validated"><code>.was-validated</code></h3>
+{% assign field_name = "invalid-was-validated" %}
+
+{% capture example_html %}
+<form class="was-validated mb-3">
+    {{ single_select | replace: "single-select", field_name | replace: 'thing">', 'thing" required>' }}
+</form>
+
+<form class="was-validated mb-3">
+    {{ multiple_select | replace: "multiple-select", field_name | replace: "multiple>", "multiple required>" }}
+</form>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="invalid-is-invalid"><code>.is-invalid</code></h3>
+{% assign field_name = "invalid-is-invalid" %}
+
+{% capture example_html %}
+<div class="mb-3">
+    {{ single_select | replace: "single-select", field_name | replace: "form-select", "form-select is-invalid" }}
+</div>
+
+<div class="mb-3">
+    {{ multiple_select | replace: "multiple-select", field_name | replace: "form-select", "form-select is-invalid" }}
+</div>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+} );
+{% endcapture %}
+
+{% include example.html %}

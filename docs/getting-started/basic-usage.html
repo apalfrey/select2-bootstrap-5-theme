@@ -1,0 +1,52 @@
+---
+layout: default
+title: Basic usage
+title_tag: true
+permalink: /getting-started/basic-usage/
+---
+
+{% assign field_name = "basic-usage" %}
+{% capture example_html %}
+<select class="form-select" id="{{ field_name }}" data-placeholder="Choose one thing">
+    <option></option>
+    <option>Reactive</option>
+    <option>Solution</option>
+    <option>Conglomeration</option>
+    <option>Algoritm</option>
+    <option>Holistic</option>
+</select>
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="select2-versions">Select2 versions</h2>
+<p>There are 2 versions of Select2 which changed some options. The Select2 Bootstrap 5 theme supports both 4.0.x and 4.1.x-rc.x. Which version of Select2 you use will change some of the usage for the Select2 Bootstrap 5 theme.</p>
+
+<h3 id="sizing">Sizing</h3>
+<p>There are 2 ways to set the sizing of the Select2 element; using Select2 options, or using Bootstrap 5 classes and Select2 options. Between 4.0.x and 4.1.x-rc.x, Select2 changed the option name for adding classes to the main element (the one you see before opening the dropdown) from <code>containerCssClass</code> to <code>selectionCssClass</code>. See below for an example</p>
+<div class="simple-highlight">
+{% include clipboard.html %}
+{% highlight js %}
+// For Select2 4.0
+$("#form-select-sm").select2({
+    theme: "bootstrap-5",
+    containerCssClass: "select2--small",
+    dropdownCssClass: "select2--small",
+});
+
+// For Select2 4.1
+$("#form-select-sm").select2({
+    theme: "bootstrap-5",
+    selectionCssClass: "select2--small",
+    dropdownCssClass: "select2--small",
+});
+{% endhighlight %}
+</div>

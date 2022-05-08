@@ -1,0 +1,164 @@
+---
+layout: default
+title: Sizing
+title_tag: true
+permalink: /examples/sizing/4.0/
+---
+
+{%- capture single_select -%}
+<div class="mb-3">
+    <select class="form-select" id="single-select-single-field" data-placeholder="Choose one thing">
+        <option></option>
+        <option>Reactive</option>
+        <option>Solution</option>
+        <option>Conglomeration</option>
+        <option>Algoritm</option>
+        <option>Holistic</option>
+    </select>
+</div>
+{%- endcapture -%}
+
+{%- capture multiple_select -%}
+<div class="mb-3">
+    <select class="form-select" data-placeholder="Choose anything" id="multiple-select-multiple-field" multiple>
+        <option>Christmas Island</option>
+        <option>South Sudan</option>
+        <option>Jamaica</option>
+        <option>Kenya</option>
+        <option>French Guiana</option>
+        <option>Mayotta</option>
+        <option>Liechtenstein</option>
+        <option>Denmark</option>
+        <option>Eritrea</option>
+        <option>Gibraltar</option>
+        <option>Saint Helena, Ascension and Tristan da Cunha</option>
+        <option>Haiti</option>
+        <option>Namibia</option>
+        <option>South Georgia and the South Sandwich Islands</option>
+        <option>Vietnam</option>
+        <option>Yemen</option>
+        <option>Philippines</option>
+        <option>Benin</option>
+        <option>Czech Republic</option>
+        <option>Russia</option>
+    </select>
+</div>
+{%- endcapture -%}
+
+<h2 id="small">Small</h2>
+<h3 id="small-select2-options">Select2 Options</h3>
+{% assign field_name = "small-select2-options" %}
+
+{% capture example_html %}
+{{ single_select | replace: "single-select", field_name }}
+
+{{ multiple_select | replace: "multiple-select", field_name }}
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    containerCssClass: 'select2--small',
+    dropdownCssClass: 'select2--small',
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    containerCssClass: 'select2--small',
+    dropdownCssClass: 'select2--small',
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="small-bootstrap-class">Bootstrap 5 Class</h3>
+{% assign field_name = "small-bootstrap-class" %}
+
+{% capture example_html %}
+{{ single_select | replace: "single-select", field_name | replace: "form-select", "form-select form-select-sm" }}
+
+{{ multiple_select | replace: "multiple-select", field_name | replace: "form-select", "form-select form-select-sm" }}
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    dropdownParent: $( '#{{ field_name }}-single-field' ).parent(),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    dropdownParent: $( '#{{ field_name }}-multiple-field' ).parent(),
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h2 id="large">Large</h2>
+<h3 id="large-select2-options">Select2 Options</h3>
+{% assign field_name = "large-select2-options" %}
+
+{% capture example_html %}
+{{ single_select | replace: "single-select", field_name }}
+
+{{ multiple_select | replace: "multiple-select", field_name }}
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    containerCssClass: 'select2--large',
+    dropdownCssClass: 'select2--large',
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    containerCssClass: 'select2--large',
+    dropdownCssClass: 'select2--large',
+} );
+{% endcapture %}
+
+{% include example.html %}
+
+<h3 id="large-bootstrap-class">Bootstrap 5 Class</h3>
+{% assign field_name = "large-bootstrap-class" %}
+
+{% capture example_html %}
+{{ single_select | replace: "single-select", field_name | replace: "form-select", "form-select form-select-lg" }}
+
+{{ multiple_select | replace: "multiple-select", field_name | replace: "form-select", "form-select form-select-lg" }}
+{% endcapture %}
+
+{% capture example_js %}
+$( '#{{ field_name }}-single-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    dropdownParent: $( '#{{ field_name }}-single-field' ).parent(),
+} );
+
+$( '#{{ field_name }}-multiple-field' ).select2( {
+    theme: "bootstrap-5",
+    width: $( this ).data( 'width' ) ? $( this ).data( 'width' ) : $( this ).hasClass( 'w-100' ) ? '100%' : 'style',
+    placeholder: $( this ).data( 'placeholder' ),
+    closeOnSelect: false,
+    dropdownParent: $( '#{{ field_name }}-multiple-field' ).parent(),
+} );
+{% endcapture %}
+
+{% include example.html %}

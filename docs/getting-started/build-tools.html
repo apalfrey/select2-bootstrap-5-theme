@@ -1,0 +1,107 @@
+---
+layout: default
+title: Build tools
+title_tag: true
+permalink: /getting-started/build-tools/
+---
+
+<p class="s2bs5-lead">The Select2 Bootstrap 5 Theme uses Gulp to compile the assets, see below for the included npm scripts and Gulp tasks and what they do;</p>
+
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">npm script</th>
+                <th scope="col">Gulp task</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row"><code>start</code></th>
+                <th scope="row"><code>default</code></th>
+                <td>Cleans the <code>dist</code> directory, lints the SCSS, compiles the dev and min versions and starts watching the SCSS for changes</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>start:full</code></th>
+                <th scope="row">N/A</th>
+                <td>Cleans, lints, compiles and watches the SCSS (theme & docs) and serves the docs for development</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>clean</code></th>
+                <th scope="row"><code>clean</code></th>
+                <td>Cleans the <code>dist</code> directory, removing the directory and it's contents</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>lint</code></th>
+                <th scope="row"><code>lint</code></th>
+                <td>Lints the SCSS files using <a href="https://stylelint.io/" target="_blank" rel="noopener noreferrer">Stylelint</a>, see <a href="{{ site.links.github | append: "blob/master/.stylelintrc" }}" target="_blank" rel="noopener noreferrer">.stylelintrc</a> and <a href="https://github.com/twbs/stylelint-config-twbs-bootstrap" target="_blank" rel="noopener noreferrer">stylelint-config-twbs-bootstrap</a> for linting rules</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>compile</code></th>
+                <th scope="row"><code>compile</code></th>
+                <td>Cleans the <code>dist</code> directory, lints the SCSS, compiles the LTR and RTL dev and min versions. Does the same for the docs</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>compile:main</code></th>
+                <th scope="row"><code>compile:main</code></th>
+                <td>Compiles all LTR versions</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>compile:rtl</code></th>
+                <th scope="row"><code>compile:rtl</code></th>
+                <td>Compiles all RTL versions</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>watch</code></th>
+                <th scope="row"><code>watch</code></th>
+                <td>Watches all files in <code>src</code>, compiling the SCSS when changes are detected</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>docs</code></th>
+                <th scope="row"><code>docs</code></th>
+                <td>Cleans the <code>docs/assets/css</code> directory, lints the docs SCSS, compiles the docsSCSS and starts watching the docs SCSS for changes</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>docs:clean</code></th>
+                <th scope="row"><code>docs:clean</code></th>
+                <td>Cleans the <code>docs/assets/css</code> directory, removing the directory and it's contents</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>docs:lint</code></th>
+                <th scope="row"><code>docs:lint</code></th>
+                <td>Lints the docs SCSS files using <a href="https://stylelint.io/" target="_blank" rel="noopener noreferrer">Stylelint</a>, see <a href="{{ site.links.github | append: "blob/master/.stylelintrc" }}" target="_blank" rel="noopener noreferrer">.stylelintrc</a> and <a href="https://github.com/twbs/stylelint-config-twbs-bootstrap" target="_blank" rel="noopener noreferrer">stylelint-config-twbs-bootstrap</a> for linting rules</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>docs:compile</code></th>
+                <th scope="row"><code>docs:compile</code></th>
+                <td>Cleans the <code>docs/assets/css</code> directory, lints the docs SCSS and compiles the LTR and RTL versions</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>docs:compile:main</code></th>
+                <th scope="row"><code>docs:compile:main</code></th>
+                <td>Compiles the LTR version of the docs SCSS</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>docs:compile:rtl</code></th>
+                <th scope="row"><code>docs:compile:rtl</code></th>
+                <td>Compiles the RTL version of the docs SCSS</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>docs:watch</code></th>
+                <th scope="row"><code>docs:watch</code></th>
+                <td>Watches all files in <code>docs/_sass</code>, compiling the SCSS when changes are detected</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>docs:build</code></th>
+                <th scope="row">N/A</th>
+                <td>Builds the docs using Jekyll</td>
+            </tr>
+            <tr>
+                <th scope="row"><code>docs:serve</code></th>
+                <th scope="row">N/A</th>
+                <td>Serves the docs using Jekyll for development</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
