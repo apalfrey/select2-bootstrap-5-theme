@@ -57,6 +57,10 @@ $ yarn add select2-bootstrap-5-theme
 
 # composer
 $ composer require apalfrey/select2-bootstrap-5-theme
+
+# rubygems
+$ gem install bootstrap-select2-rails
+# See instructions at https://github.com/Nerian/bootstrap-select2-rails#install
 ```
 
 #### HTML
