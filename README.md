@@ -1,8 +1,11 @@
 # Select2 Bootstrap 5 Theme
 
 [![GitHub](https://img.shields.io/github/v/release/apalfrey/select2-bootstrap-5-theme?style=flat-square)](https://github.com/apalfrey/select2-bootstrap-5-theme)
+[![GitHub Release Date](https://img.shields.io/github/release-date/apalfrey/select2-bootstrap-5-theme?style=flat-square)](https://github.com/apalfrey/select2-bootstrap-5-theme/releases)
 [![npm](https://img.shields.io/npm/v/select2-bootstrap-5-theme?style=flat-square)](https://www.npmjs.com/package/select2-bootstrap-5-theme)
+[![npm Total Downloads](https://img.shields.io/npm/dt/select2-bootstrap-5-theme?style=flat-square)](https://www.npmjs.com/package/select2-bootstrap-5-theme?activeTab=versions)
 [![Packagist Version](https://img.shields.io/packagist/v/apalfrey/select2-bootstrap-5-theme?style=flat-square)](https://packagist.org/packages/apalfrey/select2-bootstrap-5-theme)
+[![Packagist Total Downloads](https://img.shields.io/packagist/dt/apalfrey/select2-bootstrap-5-theme?style=flat-square)](https://packagist.org/packages/apalfrey/select2-bootstrap-5-theme/stats)
 [![License](https://img.shields.io/github/license/apalfrey/select2-bootstrap-5-theme?style=flat-square)](LICENSE)
 
 [Select2](https://github.com/select2/select2) v4 theme for Bootstrap 5, inspired by [select2-bootstrap4-theme](https://github.com/ttskch/select2-bootstrap4-theme)
