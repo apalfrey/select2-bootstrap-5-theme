@@ -9603,6 +9603,7 @@ select + .select2-container--bootstrap-5 {
 }
 .input-group .select2-container--bootstrap-5 {
   flex-grow: 1;
+  width: 25%;
 }
 .input-group .select2-container--bootstrap-5 .select2-selection {
   height: 100%;

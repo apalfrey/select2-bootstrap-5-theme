@@ -31,6 +31,7 @@
     // Ensure container takes up remaining room
     .select2-container--bootstrap-5 {
         flex-grow: 1;
+        width: 25%;
         .select2-selection {
             height: 100%;
         }
