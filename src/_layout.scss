@@ -16,16 +16,16 @@
         min-height: $s2bs5-height;
         padding: $s2bs5-padding-y $s2bs5-padding-x;
         font-family: $s2bs5-font-family;
-        @include font-size($s2bs5-font-size);
         font-weight: $s2bs5-font-weight;
         line-height: $s2bs5-line-height;
         color: $s2bs5-color;
         background-color: $s2bs5-bg;
         border: $s2bs5-border-width solid $s2bs5-border-color;
+        appearance: none;
+        @include font-size($s2bs5-font-size);
         @include border-radius($s2bs5-border-radius, 0);
         @include box-shadow($s2bs5-box-shadow);
         @include transition($s2bs5-transition);
-        appearance: none;
     }
 
     // Focused/Open Input
